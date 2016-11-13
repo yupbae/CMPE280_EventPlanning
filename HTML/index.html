@@ -12,8 +12,6 @@
         <meta name="description" content="">
         <meta name="author" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
-        <!-- Favicon -->
-        <link href="favicon.ico" rel="shortcut icon">
         <!-- Bootstrap Core CSS -->
         <link rel="stylesheet" href="assets/css/bootstrap.css" rel="stylesheet">
         <!-- Template CSS -->
@@ -25,7 +23,29 @@
         <!-- Google Fonts-->
         <link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Open Sans:300,400" />
         <link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Source Sans Pro:300,400" />
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
     </head>
+	<script>
+	$(document).ready( function() {
+    var now = new Date();
+    var day = ("0" + now.getDate()).slice(-2);
+    var month = ("0" + (now.getMonth() + 1)).slice(-2);
+    var today = now.getFullYear()+"-"+(month)+"-"+(day) ;
+    $('#eventdate').val(today);
+     
+    
+});
+
+
+function loadTheme(){
+
+var date=$('#eventdate').val();
+var themeSelected=$("#theme option:selected").text();
+var guestesCount=$("#capacity option:selected").text();;
+location.href='locations-by-theme.html?date='+date+"&themeSelected="+themeSelected+"&guestesCount="+guestesCount;
+}
+	
+	</script>
     <body>
         <div id="body_bg">
             <div id="container_header" class="container">
@@ -94,22 +114,27 @@
                                             <span>Event Locations</span>
                                             <ul>
                                                 <li>
-                                                    <a href="portfolio-2-column.html">San Jose</a>
+                                                    <a href="locations-by-theme.html?date=01/12/2016&themeSelected=Business&guestesCount=All">Business</a>
                                                 </li>
                                                 <li>
-                                                    <a href="portfolio-3-column.html">Future Locations</a>
+                                                    <a href="locations-by-theme.html?date=01/12/2016&themeSelected=Wedding&guestesCount=All">Wedding</a>
                                                 </li>
+												<li>
+                                                    <a href="locations-by-theme.html?date=01/12/2016&themeSelected=Cultural&guestesCount=All">Cultural</a>
+                                                </li>
+												<li>
+                                                    <a href="locations-by-theme.html?date=01/12/2016&themeSelected=Birthday&guestesCount=All">Birthday</a>
                                                 </li>
                                             </ul>
                                         </li>
                                         <li>
-                                            <span>Blog</span>
+                                            <span>Services</span>
                                             <ul>
                                                 <li>
-                                                    <a href="blog-list.html">Blog</a>
+                                                    <a href="food.html">Food</a>
                                                 </li>
                                                 <li>
-                                                    <a href="blog-single.html">Blog Single Item</a>
+                                                    <a href="music.html">Live Music</a>
                                                 </li>
                                             </ul>
                                         </li>
@@ -140,7 +165,7 @@
                                 </ol>
                                 <!-- End Carousel Indicators -->
                                 <!-- Carousel Images -->
-                                <div class="carousel-inner">
+                                <div class="carousel-inner" style="height:400px;">
                                     <div class="item active">
                                         <img src="assets/img/slideshow/slide1.jpg">
                                     </div>
@@ -162,6 +187,33 @@
                                 <!-- End Carousel Controls -->
                             </div>
                             <!-- End Carousel Slideshow -->
+							<!-- Selection to Book -->
+							<table>
+								<tr class="customrow">
+									<td class="customcol" ><b>Date:</b>&nbsp;
+										<input style="height:25px" type="date" id="eventdate" >
+									</td>
+									<td class="customcol" ><b>Theme:</b>&nbsp;
+										<select id="theme" class="data" style="height:25px">
+											<option  selected value="All">All</option>
+											<option value="business">Business</option>
+											<option value="wedding">Wedding</option>
+											<option value="cultural">Cultural</option>
+											<option value="birthday">Birthday</option>
+										</select>
+									</td>
+									<td class="customcol" ><b>Number of guests:</b>&nbsp;
+										<select id="capacity" class="data" style="height:25px">
+											<option selected value="all">All</option>
+											<option value="less">Less than 100</option>
+											<option value="ok">100 to 500</option>
+											<option value="medium">500 to 1000</option>
+											<option value="more">More than 1000</option>
+									</td>
+									<td><input type="button"  id="book" class="data" onclick="loadTheme();" value="Book now"></td>
+								</tr>
+							</table>
+							<!-- Selection to Book -->
                             <!-- Tabs -->
                             <div class="tabs-dark" style="padding:0;">
                                 <!-- Tab Navigation -->
@@ -177,7 +229,7 @@
                                 <!-- Tab Panes -->
                                 <div class="tab-content">
                                     <div class="tab-pane fade in active" id="home">
-                                        <img style="float: left; margin-right: 25px; margin-bottom: 10px;" src="assets/img/frontpage/filler1.jpg" alt="filler image">
+                                        <img style="float: left; margin-right: 25px; margin-bottom: 10px;" src="assets/img/portfolio/filler.jpg" alt="filler image">
                                         <h3>Tour your venue</h3>
                                         <p>From the comfort of your house, you can tour the venue which you choose. This helps in knowing your venue better before you come here. It also gives you a chance to undrestand the layout of the room, the exits which are present and other facilities. It gives you accessability information to plan your visit beforehand which will give you more time to carry out your work efficiently.</p>
                                     </div>
@@ -201,7 +253,7 @@
                                 </h2>
                                 <p>
                                 <iframe width="420" height="315"
-                                    src="https://www.youtube.com/embed/pdIXpU17hww?autoplay=1" align="right">
+                                    src="https://www.youtube.com/embed/H9kZk1DdF6c?autoplay=1" align="right">
                                 </iframe>You can tour all the venues right here, right now! We provide high definition virtual reality three dimensional videos of our locations. Here you can movrv from one room to another, turn your view and walk between the rooms using mousepad and keypad. All you have to do now, sit down, relax and let us take you on a tour of our most favorite location of all. Enjoy! </p>
                             </div>
                             <div class="clearfix"></div>
@@ -213,7 +265,7 @@
                         <div class="row">
                             <div class="col-md-12 padding-vert-30">
                                 <h2 class="subtitle text-center">Preview of our locations</h2>
-                                <h3 class="subtitle text-center">The beautiful and amazing San Jose State University in heart of Sillicon Valley, San Jose.</h3>
+                                <h3 class="subtitle text-center">Beautiful indoor and outdoor locations for your event in heart of Silicon Valley, San Jose.</h3>
                             </div>
                         </div>
                         <!-- End Portfolio Header Text -->
@@ -222,12 +274,12 @@
                             <!-- Portfolio Item -->
                             <div class="portfolio-item col-md-3 col-sm-6 col-xs-6 animate fadeInUp">
                                 <div class="image-hover">
-                                    <a href="#">
+                                    <a href="locations-by-theme.html?date=01/12/2016&themeSelected=Business&guestesCount=All">
                                         <figure>
                                             <img src="assets/img/portfolio/image1.jpg" alt="image1">
                                             <figcaption>
-                                                <h3>Tower Lawn</h3>
-                                                <span>Beautiful and luscious.</span>
+                                                <h3>Business</h3>
+                                                <span></span>
                                             </figcaption>
                                         </figure>
                                     </a>
@@ -237,12 +289,12 @@
                             <!-- Portfolio Item -->
                             <div class="portfolio-item col-md-3 col-sm-6 col-xs-6 animate fadeInUp">
                                 <div class="image-hover">
-                                    <a href="#">
+                                    <a href="locations-by-theme.html?date=01/12/2016&themeSelected=Wedding&guestesCount=All">
                                         <figure>
                                             <img src="assets/img/portfolio/image2.jpg" alt="image2">
                                             <figcaption>
-                                                <h3>Party in Tower Lawn</h3>
-                                                <span>Small party on a beautiful day.</span>
+                                                <h3>Wedding</h3>
+                                                <span></span>
                                             </figcaption>
                                         </figure>
                                     </a>
@@ -252,12 +304,12 @@
                             <!-- Portfolio Item -->
                             <div class="portfolio-item col-md-3 col-sm-6 col-xs-6 animate fadeInUp">
                                 <div class="image-hover">
-                                    <a href="#">
+                                    <a href="locations-by-theme.html?date=01/12/2016&themeSelected=Cultural&guestesCount=All">
                                         <figure>
                                             <img src="assets/img/portfolio/image3.jpg" alt="image3">
                                             <figcaption>
-                                                <h3>Orchestra</h3>
-                                                <span>Soothing music in an architecturally beautiful auditorium.</span>
+                                                <h3>Cultural</h3>
+                                                <span></span>
                                             </figcaption>
                                         </figure>
                                     </a>
@@ -267,26 +319,12 @@
                             <!-- Portfolio Item -->
                             <div class="portfolio-item col-md-3 col-sm-6 col-xs-6 animate fadeInUp">
                                 <div class="image-hover">
-                                    <a href="#">
+                                    <a href="locations-by-theme.html?date=01/12/2016&themeSelected=Birthday&guestesCount=All">
                                         <figure>
                                             <img src="assets/img/portfolio/image4.jpg" alt="image4">
                                             <figcaption>
-                                                <h3>Event Centre</h3>
-                                                <span>A place for people to gather, play and have fun.</span>
-                                            </figcaption>
-                                        </figure>
-                                    </a>
-                                </div>
-                            </div>
-                            <!-- //Portfolio Item// -->
-                            <!-- Portfolio Item -->
-                            <div class="portfolio-item col-md-3 col-sm-6 col-xs-6 animate fadeInUp">
-                                <div class="image-hover">
-                                    <a href="#">
-                                        <figure>
-                                            <img src="assets/img/portfolio/image5.jpg" alt="image5">
-                                            <figcaption>
-                                                <h3>Auditorium</h3>
+                                                <h3>Birthday</h3>
+                                                <span></span>
                                             </figcaption>
                                         </figure>
                                     </a>
@@ -332,49 +370,6 @@
                                 </p>
                             </div>
                             <!-- End Contact Details -->
-                            <!-- Sample Menu
-                            <div class="col-md-3">
-                                <h3 class="margin-bottom-10">Sample Menu</h3>
-                                <ul class="menu">
-                                    <li>
-                                        <a class="fa-tasks" href="#">Placerat facer possim</a>
-                                    </li>
-                                    <li>
-                                        <a class="fa-users" href="#">Quam nunc putamus</a>
-                                    </li>
-                                    <li>
-                                        <a class="fa-signal" href="#">Velit esse molestie</a>
-                                    </li>
-                                </ul>
-                                <div class="clearfix"></div>
-                            </div> -->
-                            <!-- End Sample Menu -->
-                            <!--<div class="clearfix"></div>
-                        </div>
-                    </div> -->
-                    <!-- Footer Menu -->
-                    <!--<div id="footermenu" class="container">
-                        <div class="row">
-                            <ul class="list-unstyled list-inline">
-                                <li>
-                                    <a href="#" target="_blank">Sample Link</a>
-                                </li>
-                                <li>
-                                    <a href="#" target="_blank">Sample Link</a>
-                                </li>
-                                <li>
-                                    <a href="#" target="_blank">Sample Link</a>
-                                </li>
-                                <li>
-                                    <a class="fa-shopping-cart" href="#" target="_blank">Sample Link</a>
-                                </li>
-                            </ul>
-                            <div class="clearfix"></div>
-                        </div>
-                    </div> -->
-                    <!-- End Footer Menu -->
-                <!--</div>
-            </div>-->
             <div class="container padding-vert-30">
                 <div class="row">
                     <div id="copyright">
