@@ -29,3 +29,13 @@
 	border-top-right-radius:5px;
 	border-bottom-right-radius:5px;
 }
+#servicemap {
+    height: 600px;
+    width: 50%;
+    border-width: 2px;
+    background-color: #6e5f7c;
+    border: 5px solid #6e5f7c;
+    margin-top: -1%;
+    border-top-right-radius:5px;
+    border-bottom-right-radius:5px;
+}
