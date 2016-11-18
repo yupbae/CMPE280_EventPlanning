@@ -6,14 +6,13 @@
 <html lang="en">
     <!--<![endif]-->
     <head>
-        <title>Virtuoso - Professional Bootstrap Template</title>
+		<link rel="icon" href="http://eclectic.com.s3-website-us-east-1.amazonaws.com/assets/img/Elogo.PNG" type="image/png">
+        <title>Eclectic - Event Planners.</title>
         <!-- Meta -->
-        <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+        <meta http-equiv="content-type" content="text/html; charset=utf-8"/>
         <meta name="description" content="">
         <meta name="author" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
-        <!-- Favicon -->
-        <link href="favicon.ico" rel="shortcut icon">
         <!-- Bootstrap Core CSS -->
         <link rel="stylesheet" href="assets/css/bootstrap.css" rel="stylesheet">
         <!-- Template CSS -->
@@ -26,6 +25,112 @@
         <link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Open Sans:300,400" />
         <link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Source Sans Pro:300,400" />
     </head>
+    <script type ="text/javascript" src= "https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js" ></script>
+	<script>
+	
+	$(document).ready( function() {
+		var now = new Date();
+		var day = ("0" + now.getDate()).slice(-2);
+		var month = ("0" + (now.getMonth() + 1)).slice(-2);
+		var today = now.getFullYear()+"-"+(month)+"-"+(day) ;
+		$('#eventdate').val(today);
+	});
+	
+	function showpopup() {
+		document.getElementById("popup").style.display = "block";
+	}
+	
+	function hidepopup() {
+		document.getElementById("popup").style.display = "none";
+	}
+	
+	function validate_password() {
+  		var val = document.getElementById("password").value;
+		
+   		if(val.length >= 7 && val.length <= 20) {
+	 	document.getElementById("length").className = "valid";
+
+		}
+		else {
+			document.getElementById("length").className = "invalid";
+		}
+		if(val.match(/\w{4}/)) {
+			document.getElementById("alpha").className = "valid";
+		}
+		else {
+			document.getElementById("alpha").className = "invalid";
+		}
+		if(val.match(/\d+/)) {
+			document.getElementById("number").className = "valid"; 
+		}
+		else {
+			document.getElementById("number").className = "invalid";
+		}
+		if(val.match(/[!,#,$,%]{1}/)) {
+			document.getElementById("special").className = "valid"; 
+		}
+		else {
+			document.getElementById("special").className = "invalid";
+		}
+	}
+	function loadTheme(){
+	
+		var date=$('#eventdate').val();
+		var themeSelected=$("#theme option:selected").text();
+		var guestesCount=$("#capacity option:selected").text();;
+		location.href='locations-by-theme.html?date='+date+"&themeSelected="+themeSelected+"&guestesCount="+guestesCount;
+	}
+	
+	function validate() {
+		
+		function check() {
+			if(document.getElementById("firstname").length == 0) {
+					document.getElementById("firstname").focus();
+					return false;
+			}
+			if(document.getElementById("lastname").length == 0) {
+					document.getElementById("lastname").focus();
+					return false;
+			}
+			if(document.getElementById("email").length == 0) {
+					document.getElementById("firstname").focus();
+					return false;
+			}
+			if(document.getElementById("password").length == 0) {
+					document.getElementById("firstname").focus();
+					return false;
+			}
+			if($("#password").val() != $("#confirm").val()) {
+					alert("Password do not match!");
+					document.getElementById("confirm").focus();
+					return false;
+			}
+			if(!document.getElementById("checkb").checked) {
+				alert("You can regsiter only if you agree to the terms and conditions!");
+				document.getElementById("checkb").focus();
+			}
+			else {
+				return true;
+			}
+		}
+		
+		if(check()) {
+			var firstname = $("#firstname").val();
+			var lastname = $("#lastname").val();
+			var email = $("#email").val();
+			var password = $("#password").val();
+			var dataString = 'fname=' + firstname + '&lname=' + lastname + '&email1=' + email +'&password1=' + password;
+			$.ajax({
+				url: "server.php",
+				type: 'POST',
+				data: dataString,
+				success: function(){
+					location.href = "index.html?login=1";
+				}
+			});
+		}
+	}
+	</script>
     <body>
         <div id="body_bg">
             <div id="container_header" class="container">
@@ -33,17 +138,14 @@
                     <div class="col-md-12 margin-top-15">
                         <!-- Header Social Icons -->
                         <ul class="social-icons circle pull-right">
-                            <li class="social-rss">
-                                <a href="#" target="_blank" title="RSS"></a>
-                            </li>
                             <li class="social-twitter">
-                                <a href="#" target="_blank" title="Twitter"></a>
+                                <a href="https://twitter.com/" target="_blank" title="Twitter"></a>
                             </li>
                             <li class="social-facebook">
-                                <a href="#" target="_blank" title="Facebook"></a>
+                                <a href="https://www.facebook.com/" target="_blank" title="Facebook"></a>
                             </li>
                             <li class="social-googleplus">
-                                <a href="#" target="_blank" title="GooglePlus"></a>
+                                <a href="https://plus.google.com/" target="_blank" title="GooglePlus"></a>
                             </li>
                         </ul>
                         <!-- End Header Social Icons -->
@@ -63,12 +165,12 @@
                         <!-- Logo -->
                         <div class="logo">
                             <a href="index.html">
-                                <img src="assets/img/logo.png" alt="Logo" />
+                                <img src="assets/img/logo1.png" alt="Logo" />
                             </a>
                         </div>
                         <!-- End Logo -->
                         <!-- Slogan -->
-                        <p class="site-slogan">A BOOTSTRAP TEMPLATE</p>
+                        <p class="site-slogan">EVENT PLANNERS</p>
                         <!-- End Slogan -->
                         <!-- Top Menu -->
                         <div class="row">
@@ -78,139 +180,52 @@
                                         <li>
                                             <a href="index.html">Home</a>
                                         </li>
+                        
                                         <li>
-                                            <span>Features</span>
+                                            <span>About</span>
                                             <ul>
-                                                <li class="parent">
-                                                    <span>Typography</span>
-                                                    <ul>
-                                                        <li>
-                                                            <a href="features-typo-basic.html">Basic Typography</a>
-                                                        </li>
-                                                        <li>
-                                                            <a href="features-typo-blockquotes.html">Blockquotes</a>
-                                                        </li>
-                                                    </ul>
-                                                </li>
-                                                <li class="parent">
-                                                    <span>Components</span>
-                                                    <ul>
-                                                        <li>
-                                                            <a href="features-labels.html">Labels</a>
-                                                        </li>
-                                                        <li>
-                                                            <a href="features-progress-bars.html">Progress Bars</a>
-                                                        </li>
-                                                        <li>
-                                                            <a href="features-panels.html">Panels</a>
-                                                        </li>
-                                                        <li>
-                                                            <a href="features-pagination.html">Pagination</a>
-                                                        </li>
-                                                    </ul>
-                                                </li>
-                                                <li class="parent">
-                                                    <span>Icons</span>
-                                                    <ul>
-                                                        <li>
-                                                            <a href="features-icons.html">Icons General</a>
-                                                        </li>
-                                                        <li>
-                                                            <a href="features-icons-social.html">Social Icons</a>
-                                                        </li>
-                                                        <li>
-                                                            <a href="features-icons-font-awesome.html">Font Awesome</a>
-                                                        </li>
-                                                        <li>
-                                                            <a href="features-icons-glyphicons.html">Glyphicons</a>
-                                                        </li>
-                                                    </ul>
+                                                <li>
+                                                    <a href="pages-about-us.html">Philosophy</a>
                                                 </li>
                                                 <li>
-                                                    <a href="features-testimonials.html">Testimonials</a>
-                                                </li>
-                                                <li>
-                                                    <a href="features-accordions-tabs.html">Accordions & Tabs</a>
-                                                </li>
-                                                <li>
-                                                    <a href="features-buttons.html">Buttons</a>
-                                                </li>
-                                                <li>
-                                                    <a href="features-carousels.html">Carousels</a>
-                                                </li>
-                                                <li>
-                                                    <a href="features-grid.html">Grid System</a>
-                                                </li>
-                                                <li>
-                                                    <a href="features-animate-on-scroll.html">Animate On Scroll</a>
+                                                    <a href="pages-about-us.html#team">The Team</a>
                                                 </li>
                                             </ul>
                                         </li>
                                         <li>
-                                            <span>Pages</span>
+                                            <span>Event Locations</span>
                                             <ul>
                                                 <li>
-                                                    <a href="pages-about-us.html">About Us</a>
+                                                    <a href="locations-by-theme.html?date=01/12/2016&themeSelected=Business&guestesCount=All">Business</a>
                                                 </li>
                                                 <li>
-                                                    <a href="pages-services.html">Services</a>
+                                                    <a href="locations-by-theme.html?date=01/12/2016&themeSelected=Wedding&guestesCount=All">Wedding</a>
                                                 </li>
-                                                <li>
-                                                    <a href="pages-faq.html">F.A.Q.</a>
+												<li>
+                                                    <a href="locations-by-theme.html?date=01/12/2016&themeSelected=Cultural&guestesCount=All">Cultural</a>
                                                 </li>
-                                                <li>
-                                                    <a href="pages-about-me.html">About Me</a>
-                                                </li>
-                                                <li>
-                                                    <a href="pages-full-width.html">Full Width</a>
-                                                </li>
-                                                <li>
-                                                    <a href="pages-left-sidebar.html">Left Sidebar</a>
-                                                </li>
-                                                <li>
-                                                    <a href="pages-right-sidebar.html">Right Sidebar</a>
-                                                </li>
-                                                <li>
-                                                    <a href="pages-login.html">Login</a>
-                                                </li>
-                                                <li>
-                                                    <a href="pages-sign-up.html">Sign-Up</a>
-                                                </li>
-                                                <li>
-                                                    <a href="pages-404.html">404 Error Page</a>
+												<li>
+                                                    <a href="locations-by-theme.html?date=01/12/2016&themeSelected=Birthday&guestesCount=All">Birthday</a>
                                                 </li>
                                             </ul>
                                         </li>
                                         <li>
-                                            <span>Portfolio</span>
-                                            <ul>
-                                                <li>
-                                                    <a href="portfolio-2-column.html">2 Column</a>
-                                                </li>
-                                                <li>
-                                                    <a href="portfolio-3-column.html">3 Column</a>
-                                                </li>
-                                                <li>
-                                                    <a href="portfolio-4-column.html">4 Column</a>
-                                                </li>
-                                                <li>
-                                                    <a href="portfolio-6-column.html">6 Column</a>
-                                                </li>
-                                            </ul>
-                                        </li>
-                                        <li>
-                                            <span>Blog</span>
-                                            <ul>
-                                                <li>
-                                                    <a href="blog-list.html">Blog</a>
-                                                </li>
-                                                <li>
-                                                    <a href="blog-single.html">Blog Single Item</a>
-                                                </li>
-                                            </ul>
+                                            <!-- <span>Services</span>
+                                             <ul>
+                                             <li>
+                                             <a href="food.html">Food</a>
+                                             </li>
+                                             <li>
+                                             <a href="music.html">Live Music</a>
+                                             </li>
+                                             </ul> -->
+                                            <a href="services.html">Services</a>
                                         </li>
                                         <li>
                                             <a href="contact.html">Contact</a>
+                                        </li>
+										<li>
+                                            <a href="pages-login.html">Login</a>
                                         </li>
                                     </ul>
                                 </div>
@@ -219,55 +234,65 @@
                         </div>
                         <!-- End Top Menu -->
                     </div>
-                    <div class="container">
+                    <div class="container no-padding">
                         <!-- === END HEADER === -->
                         <!-- === BEGIN CONTENT === -->
-                        <div class="row margin-vert-30">
-                            <!-- Register Box -->
-                            <div class="col-md-6 col-md-offset-3 col-sm-offset-3">
-                                <form class="signup-page">
+                        <div class="container">
+                            <div class="row margin-vert-30">
+                                <!-- Login Box -->
+                                <div class="col-md-6 col-md-offset-3 col-sm-offset-3">
+                                    <form class="signup-page" name = "registraton-page">
                                     <div class="signup-header">
                                         <h2>Register a new account</h2>
-                                        <p>Already a member? Click
-                                            <a href="#" class="color-green">HERE</a>to login to your account.</p>
+                                        <p>Already a member?
+                                            <a href="pages-login.html" class="color-green">SignIn</a></p>
                                     </div>
-                                    <label>First Name</label>
-                                    <input class="form-control margin-bottom-20" type="text">
+                                        <label>First Name</label>
+                                    <input class="form-control margin-bottom-20" type="text" id = "firstname">
                                     <label>Last Name</label>
-                                    <input class="form-control margin-bottom-20" type="text">
+                                    <input class="form-control margin-bottom-20" type="text" id = "lastname">
                                     <label>Email Address
                                         <span class="color-red">*</span>
                                     </label>
-                                    <input class="form-control margin-bottom-20" type="text">
-                                    <div class="row">
-                                        <div class="col-sm-6">
-                                            <label>Password
-                                                <span class="color-red">*</span>
-                                            </label>
-                                            <input class="form-control margin-bottom-20" type="password">
-                                        </div>
-                                        <div class="col-sm-6">
+                                    <input class="form-control margin-bottom-20" type="text" id = "email">
+                                    <label>Password
+                                        <span class="color-red">*</span>
+                                    </label>
+                                    <input class="form-control margin-bottom-20" type="password" id = "password" onFocus="showpopup()" onKeyUp="validate_password()" onBlur="hidepopup()">
+                                            <div id="popup" class="popup">
+    						<h5>Password Strength<img style = "margin-left: 110px "src = "assets/img/close.png" onClick="hidepopup()"/></h5>
+                    <div id = "list" style="padding: 8px">
+    				<ul class = "pfields">
+        				<li id="length" class="invalid">Between 7-20 characters</li>
+        				<li id="alpha" class="invalid">Atleast 4 alpha characters</li>
+        				<li id="number" class="invalid">Atleast 1 number</li>
+                        <li id="special" class="invalid">Atleast 1 special character</li>
+    				</ul>
+                    </div>
+				</div>
+
                                             <label>Confirm Password
                                                 <span class="color-red">*</span>
                                             </label>
-                                            <input class="form-control margin-bottom-20" type="password">
-                                        </div>
-                                    </div>
-                                    <hr>
-                                    <div class="row">
+                                            <input class="form-control margin-bottom-20" type="password" id = "confirm">
+                                            <div class="row">
                                         <div class="col-lg-8">
                                             <label class="checkbox">
-                                                <input type="checkbox">I read the
+                                                <input type="checkbox" id = "checkb">I agree to the
                                                 <a href="#">Terms and Conditions</a>
                                             </label>
                                         </div>
                                         <div class="col-lg-4 text-right">
-                                            <button class="btn btn-primary" type="submit">Register</button>
+                                            <input style="position:relative" class="btn btn-primary" type="button" onClick="validate()" value="Register">
                                         </div>
                                     </div>
-                                </form>
+                                        </div>
+                                    </div>
+                                    <hr>
+                                    </form>
+                                </div>
+                                <!-- End Login Box -->
                             </div>
-                            <!-- End Register Box -->
                         </div>
                         <!-- === END CONTENT === -->
                         <!-- === BEGIN FOOTER === -->
@@ -277,74 +302,30 @@
                             <!-- Disclaimer -->
                             <div class="col-md-6">
                                 <h3 class="margin-bottom-10">Disclaimer</h3>
-                                <p>All stock images on this template demo are for presentation purposes only, intended to represent a live site and are not included with this template.</p>
-                                <p>Most of the images used here are available from
-                                    <a class="nobold" href="http://www.shutterstock.com/" target="_blank">shutterstock.com</a>. Links are provided if you wish to purchase them from their copyright owners.</p>
+                                <p style="text-align:justify">All images on this website are for presentation/demonstartion purposes only for CMPE 280 course in San Jose State University, intended to represent a live site and are not have not been bought or solicitated.</p>
+                                <p style="text-align:justify">Most of the images used here are available from
+                                    <a class="nobold" href="http://www.google.com/" target="_blank">google.com</a>. If you wish to purchase them from their copyright owners please visit the appropriate websites. We hold no responsibilty of the images or template or video.</p>
                                 <div class="clearfix"></div>
                             </div>
                             <!-- End Disclaimer -->
                             <!-- Contact Details -->
                             <div class="col-md-3">
                                 <h3 class="margin-bottom-10">Contact Details</h3>
-                                <p>Quay View,
-                                    <br />Mullaghmore,
-                                    <br />Co. Sligo,
-                                    <br />Ireland
+                                <p>One Washington Square,
+                                    <br />San Jose,CA
+                                    <br />95192
                                 </p>
                                 <p>Email:
-                                    <a href="mailto:info@website.com">info@website.com</a>
+                                    <a href="contact.html">info@eclectic.com</a>
                                     <br />Website:
-                                    <a href="http://www.website.com">www.website.com</a>
+                                    <a href="index.html">www.eclectic.com</a>
                                 </p>
                             </div>
                             <!-- End Contact Details -->
-                            <!-- Sample Menu -->
-                            <div class="col-md-3">
-                                <h3 class="margin-bottom-10">Sample Menu</h3>
-                                <ul class="menu">
-                                    <li>
-                                        <a class="fa-tasks" href="#">Placerat facer possim</a>
-                                    </li>
-                                    <li>
-                                        <a class="fa-users" href="#">Quam nunc putamus</a>
-                                    </li>
-                                    <li>
-                                        <a class="fa-signal" href="#">Velit esse molestie</a>
-                                    </li>
-                                </ul>
-                                <div class="clearfix"></div>
-                            </div>
-                            <!-- End Sample Menu -->
-                            <div class="clearfix"></div>
-                        </div>
-                    </div>
-                    <!-- Footer Menu -->
-                    <div id="footermenu" class="container">
-                        <div class="row">
-                            <ul class="list-unstyled list-inline">
-                                <li>
-                                    <a href="#" target="_blank">Sample Link</a>
-                                </li>
-                                <li>
-                                    <a href="#" target="_blank">Sample Link</a>
-                                </li>
-                                <li>
-                                    <a href="#" target="_blank">Sample Link</a>
-                                </li>
-                                <li>
-                                    <a class="fa-shopping-cart" href="#" target="_blank">Sample Link</a>
-                                </li>
-                            </ul>
-                            <div class="clearfix"></div>
-                        </div>
-                    </div>
-                    <!-- End Footer Menu -->
-                </div>
-            </div>
             <div class="container padding-vert-30">
                 <div class="row">
                     <div id="copyright">
-                        <p>(c) 2014 Your Copyright Info</p>
+                        <p>(c) 2016 Eclectic Copyright Info</p>
                     </div>
                 </div>
             </div>

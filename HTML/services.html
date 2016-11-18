@@ -6,101 +6,47 @@
 <html lang="en">
     <!--<![endif]-->
     <head>
-        <title>Femme Fetale - Event Planners.</title>
+		<link rel="icon" href="http://eclectic.com.s3-website-us-east-1.amazonaws.com/assets/img/Elogo.PNG" type="image/png">
+        <title>Eclectic - Event Planners.</title>
         <!-- Meta -->
         <meta http-equiv="content-type" content="text/html; charset=utf-8" />
         <meta name="description" content="">
-            <meta name="author" content="">
-                <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
-                <meta name="viewport" content="initial-scale=1.0, user-scalable=no">
-                        <!-- Bootstrap Core CSS -->
-                        <link rel="stylesheet" href="assets/css/bootstrap.css" rel="stylesheet">
-                            <!-- Template CSS -->
-                            <link rel="stylesheet" href="assets/css/animate.css" rel="stylesheet">
-                                <link rel="stylesheet" href="assets/css/font-awesome.css" rel="stylesheet">
-                                    <link rel="stylesheet" href="assets/css/nexus.css" rel="stylesheet">
-                                        <link rel="stylesheet" href="assets/css/responsive.css" rel="stylesheet">
-                                            <link rel="stylesheet" href="assets/css/custom.css" rel="stylesheet">
-                                                <!-- Google Fonts-->
-                                                <link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Open Sans:300,400" />
-                                                <link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Source Sans Pro:300,400" />
-                                                
-                                                <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
-                                                </head>
-                                                <script>
-                                                    
-                                                    var map;
-                                                    var infowindow;
-                                                    var sanjose;
-                                                    
-                                                    function serviceCall (string) {
-                                                        console.log("string",string);
-                                                        initMap();
-                                                        infowindow = new google.maps.InfoWindow();
-                                                        
-                                                        var service = new google.maps.places.PlacesService(map);
-                                                        
-                                                        service.nearbySearch({
-                                                                             location: sanjose,
-                                                                             radius: 500,
-                                                                             type: [string]
-                                                                             }, callback);
-                                                    }
-                                                
-                                                    function initMap() {
-                                                        sanjose = {lat: 37.340, lng: -121.880};
-                                                        
-                                                        map = new google.maps.Map(document.getElementById('servicemap'), {
-                                                                                  center: sanjose,
-                                                                                  zoom: 15
-                                                                                  });
-                                                    }
-                                                
-                                                function callback(results, status) {
-                                                    if (status === google.maps.places.PlacesServiceStatus.OK) {
-                                                        for (var i = 0; i < results.length; i++) {
-                                                            createMarker(results[i]);
-                                                        }
-                                                    }
-                                                }
-                                                
-                                                function createMarker(place) {
-                                                    var placeLoc = place.geometry.location;
-                                                    var marker = new google.maps.Marker({
-                                                                                        map: map,
-                                                                                        position: place.geometry.location
-                                                                                        });
-                                                                                        
-                                                                                        google.maps.event.addListener(marker, 'click', function() {
-                                                                                                                      infowindow.setContent(place.name);
-                                                                                                                      infowindow.open(map, this);
-                                                                                                                      });
-                                                }
-    
-        </script>
+        <meta name="author" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+        <!-- Bootstrap Core CSS -->
+        <link rel="stylesheet" href="assets/css/bootstrap.css" rel="stylesheet">
+        <!-- Template CSS -->
+        <link rel="stylesheet" href="assets/css/animate.css" rel="stylesheet">
+        <link rel="stylesheet" href="assets/css/font-awesome.css" rel="stylesheet">
+        <link rel="stylesheet" href="assets/css/nexus.css" rel="stylesheet">
+        <link rel="stylesheet" href="assets/css/responsive.css" rel="stylesheet">
+        <link rel="stylesheet" href="assets/css/custom.css" rel="stylesheet">
+        <!-- Google Fonts-->
+        <link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Open Sans:300,400" />
+        <link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Source Sans Pro:300,400" />
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    </head>
     <body>
         <div id="body_bg">
             <div id="container_header" class="container">
                 <div id="header" class="row">
                     <div class="col-md-12 margin-top-15">
                         <!-- Header Social Icons -->
-                        <ul class="social-icons circle pull-right">
-                            <li class="social-rss">
-                                <a href="#" target="_blank" title="RSS"></a>
-                            </li>
-                            <li class="social-twitter">
-                                <a href="#" target="_blank" title="Twitter"></a>
+                        <ul class="social-icons circle pull-right">                  
+                             <li class="social-twitter">
+                                <a href="https://twitter.com/" target="_blank" title="Twitter"></a>
                             </li>
                             <li class="social-facebook">
-                                <a href="#" target="_blank" title="Facebook"></a>
+                                <a href="https://www.facebook.com/" target="_blank" title="Facebook"></a>
                             </li>
                             <li class="social-googleplus">
-                                <a href="#" target="_blank" title="GooglePlus"></a>
+                                <a href="https://plus.google.com/" target="_blank" title="GooglePlus"></a>
                             </li>
                         </ul>
                         <!-- End Header Social Icons -->
                     </div>
-                    <div class="clear"></div>
+                    <div class="clear">
+					</div>
                 </div>
             </div>
             <div class="primary-container-group">
@@ -174,7 +120,7 @@
                                             <a href="contact.html">Contact</a>
                                         </li>
                                         <li>
-                                            <a href="pages-login.html">SignIn</a>
+                                            <a href="pages-login.html">Login</a>
                                         </li>
                                     </ul>
                                 </div>
@@ -192,18 +138,47 @@
                                 <div class="row">
                                     <div class="col-md-6">
                                         <p>Whether you are planning a formal business event or a chic wedding, we strive hard to make your event successful. We provide a list of services and our expertise to help you plan efficiently. Our customized list of events and the nearby locations include:</p>
-                                        <ul class="icon-list list-unstyled">
-                                            <li>
-                                                <i class="fa-check"></i><a href="#" id="florist"onClick="serviceCall('florist')"><font color="#000000">Florist &amp; Flower services.</a></li>
-                                            <li>
-                                                <i class="fa-check"></i><a href="#" id="restaurant"onClick="serviceCall('restaurant')"><font color="#000000">Caterer services.</a></li>
-                                            <li>
-                                                <i class="fa-check"></i><a href="#" id="store"onClick="serviceCall('store')"><font color="#000000">Event and Party rentals.</a></li>
-                                            <li>
-                                                <i class="fa-check"></i><a href="#" id="night_club"onClick="serviceCall('night_club')"><font color="#000000">Concierge Assistants.</a></li>
-                                        </ul>
-                                    </div>
-                                    <div id="servicemap"></div>
+                                        
+											<ul class="icon-list list-unstyled">
+												<li>
+													<a href="#" onClick="serviceCall('floristMap')"><font color="#2B1B17"><span id="toggle-1" class="glyphicon glyphicon-hand-right"></span> &nbsp; &nbsp; Florist & Flower Services &nbsp; &nbsp;</font></a>
+													<p></p>
+												</li> 
+												<li>
+													<a href="#" onClick="serviceCall('restaurantMap')"><font color="#2B1B17"><span id="toggle-2" class="glyphicon glyphicon-hand-right"></span> &nbsp; &nbsp; Caterering Services &nbsp; &nbsp;</font></a></li>
+													<p></p>
+												<li>
+												<li>
+													<a href="#" onClick="serviceCall('djMap')"><font color="#2B1B17"><span id="toggle-3" class="glyphicon glyphicon-hand-right"></span> &nbsp; &nbsp; DJ Services &nbsp; &nbsp;</font></a></li>
+													<p></p>
+												<li>
+													<a href="#" onClick="serviceCall('partyrentalMap')"><font color="#2B1B17"><span id="toggle-4" class="glyphicon glyphicon-hand-right"></span> &nbsp; &nbsp; Party Rentals &nbsp; &nbsp;</font></a></li>
+													<p></p>
+												<li>
+													<a href="#" onClick="serviceCall('carMap')"><font color="#2B1B17"><span id="toggle-5" class="glyphicon glyphicon-hand-right"></span> &nbsp; &nbsp; Car Rentals &nbsp; &nbsp;</font></a></li>
+													<p></p>
+												<li>
+													<a href="#" onClick="serviceCall('bakeryMap')"><font color="#2B1B17"><span id="toggle-6" class="glyphicon glyphicon-hand-right"></span> &nbsp; &nbsp; Bakeries &nbsp; &nbsp;</font></a></li>
+													<p></p>
+												<li>
+													<a href="#" onClick="serviceCall('bouncerMap')"><font color="#2B1B17"><span id="toggle-7" class="glyphicon glyphicon-hand-right"></span> &nbsp; &nbsp; Bouncer Services &nbsp; &nbsp;</font></a></li>
+													<p></p>
+												<li>
+													<a href="#" onClick="serviceCall('photoMap')"><font color="#2B1B17"><span id="toggle-8" class="glyphicon glyphicon-hand-right"></span> &nbsp; &nbsp; Photography Services &nbsp; &nbsp;</font></a></li>
+													<p></p>
+												<li>
+													<a href="#" onClick="serviceCall('hotelMap')"><font color="#2B1B17"><span id="toggle-9" class="glyphicon glyphicon-hand-right"></span> &nbsp; &nbsp; Hotel Services &nbsp; &nbsp;</font></a></li>
+													<p></p>
+											</ul>
+										</font>
+									</div>
+                                    <div id="servicemap" class="col-xs-4 col-sm-6">
+										<iframe id="mapSpace" src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d25379.35342290402!2d-121.8870614!3d37.3325837!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x808fccb864de43d5%3A0x397ffe721937340e!2sSan+Jos%C3%A9+State+University!5e0!3m2!1sen!2sus!4v1479290291506" width="510" height="590" frameborder="0" style="border:0" allowfullscreen></iframe>
+									
+									</div>
+								</div>
+							</div>
+						</div>
                         <!-- === END CONTENT === -->
                         <!-- === BEGIN FOOTER === -->
                     </div>
@@ -214,7 +189,7 @@
                                 <h3 class="margin-bottom-10">Disclaimer</h3>
                                 <p>All images on this website are for presentation/demonstartion purposes only for cmpe 280 course in San Jose State University, intended to represent a live site and are not have not been bought or solicitated.</p>
                                 <p>Most of the images used here are available from
-                                <a class="nobold" href="http://www.google.com/" target="_blank">google.com</a>. If you wish to purchase them from their copyright owners please visit the appropriate websites. We hold no responsibilty of the images or template or video.</p>
+                                    <a class="nobold" href="http://www.google.com/" target="_blank">google.com</a>. If you wish to purchase them from their copyright owners please visit the appropriate websites. We hold no responsibilty of the images or template or video.</p>
                                 <div class="clearfix"></div>
                             </div>
                             <!-- End Disclaimer -->
@@ -222,40 +197,306 @@
                             <div class="col-md-3">
                                 <h3 class="margin-bottom-10">Contact Details</h3>
                                 <p>1 Washington Sq,
-                                <br />San Jose,
-                                <br />CA 95192
+                                    <br />San Jose,
+                                    <br />CA 95192
                                 </p>
                                 <p>Email:
-                                <a href="mailto:info@website.com">info@website.com</a>
-                                <br />Website:
-                                <a href="http://www.website.com">www.website.com</a>
+                                    <a href="mailto:info@website.com">info@website.com</a>
+                                    <br />Website:
+                                    <a href="http://www.website.com">www.website.com</a>
                                 </p>
                             </div>
                             <!-- End Contact Details -->
-                            <div class="container padding-vert-30">
-                                <div class="row">
-                                    <div id="copyright">
-                                        <p>(c) 2014 Femme Fatale Copyright Info</p>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        
-                        <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCwknVRV6LXwZ8jCgOMCr5mlZ6qRUvw6Zw&libraries=places&callback=initMap" async defer></script>
-
-                        <!-- JS -->
-                        <script type="text/javascript" src="assets/js/jquery.min.js" type="text/javascript"></script>
-                        <script type="text/javascript" src="assets/js/bootstrap.min.js" type="text/javascript"></script>
-                        <script type="text/javascript" src="assets/js/scripts.js"></script>
-                        <!-- Isotope - Portfolio Sorting -->
-                        <script type="text/javascript" src="assets/js/jquery.isotope.js" type="text/javascript"></script>
-                        <!-- Mobile Menu - Slicknav -->
-                        <script type="text/javascript" src="assets/js/jquery.slicknav.js" type="text/javascript"></script>
-                        <!-- Animate on Scroll-->
-                        <script type="text/javascript" src="assets/js/jquery.visible.js" charset="utf-8"></script>
-                        <!-- Modernizr -->
-                        <script src="assets/js/modernizr.custom.js" type="text/javascript"></script>
-                        <!-- End JS -->
-                        </body>
+							<div class="container padding-vert-30">
+								<div class="row">
+									<div id="copyright">
+										<p>(c) 2014 Eclectic Fatale Copyright Info</p>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<!-- JS -->
+		<script type="text/javascript" src="assets/js/jquery.min.js" type="text/javascript"></script>
+		<script type="text/javascript" src="assets/js/bootstrap.min.js" type="text/javascript"></script>
+		<script type="text/javascript" src="assets/js/scripts.js"></script>
+		<!-- Isotope - Portfolio Sorting -->
+		<script type="text/javascript" src="assets/js/jquery.isotope.js" type="text/javascript"></script>
+		<!-- Mobile Menu - Slicknav -->
+		<script type="text/javascript" src="assets/js/jquery.slicknav.js" type="text/javascript"></script>
+		<!-- Animate on Scroll-->
+		<script type="text/javascript" src="assets/js/jquery.visible.js" charset="utf-8"></script>
+		<!-- Modernizr -->
+		<script src="assets/js/modernizr.custom.js" type="text/javascript"></script>
+		<script>
+			function serviceCall(etype){
+				if(etype === "floristMap"){
+					//1
+					$('#mapSpace').attr('src', "https://www.google.com/maps/embed?pb=!1m12!1m8!1m3!1d25380.732911195028!2d-121.89906785477184!3d37.32850022869352!3m2!1i1024!2i768!4f13.1!2m1!1sflorist+flower+service+near+san+jose!5e0!3m2!1sen!2sus!4v1479292494905");
+					$("#toggle-1").removeClass('glyphicon glyphicon-hand-right').addClass('glyphicon glyphicon-ok');
+					if($("#toggle-2").hasClass('glyphicon glyphicon-ok')){
+						$("#toggle-2").removeClass('glyphicon glyphicon-ok').addClass('glyphicon glyphicon-hand-right');
+					}
+					if($("#toggle-3").hasClass('glyphicon glyphicon-ok')){
+						$("#toggle-3").removeClass('glyphicon glyphicon-ok').addClass('glyphicon glyphicon-hand-right');
+					}
+					if($("#toggle-4").hasClass('glyphicon glyphicon-ok')){
+						$("#toggle-4").removeClass('glyphicon glyphicon-ok').addClass('glyphicon glyphicon-hand-right');
+					}
+					if($("#toggle-5").hasClass('glyphicon glyphicon-ok')){
+						$("#toggle-5").removeClass('glyphicon glyphicon-ok').addClass('glyphicon glyphicon-hand-right');
+					}
+					if($("#toggle-6").hasClass('glyphicon glyphicon-ok')){
+						$("#toggle-6").removeClass('glyphicon glyphicon-ok').addClass('glyphicon glyphicon-hand-right');
+					}
+					if($("#toggle-7").hasClass('glyphicon glyphicon-ok')){
+						$("#toggle-7").removeClass('glyphicon glyphicon-ok').addClass('glyphicon glyphicon-hand-right');
+					}
+					if($("#toggle-8").hasClass('glyphicon glyphicon-ok')){
+						$("#toggle-8").removeClass('glyphicon glyphicon-ok').addClass('glyphicon glyphicon-hand-right');
+					}
+					if($("#toggle-9").hasClass('glyphicon glyphicon-ok')){
+						$("#toggle-9").removeClass('glyphicon glyphicon-ok').addClass('glyphicon glyphicon-hand-right');
+					}
+				}else if(etype === "restaurantMap"){
+					//2
+					$('#mapSpace').attr('src', "https://www.google.com/maps/embed?pb=!1m16!1m12!1m3!1d17945.909930386762!2d-121.89763511723524!3d37.332596162249565!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!2m1!1scatering+service+near+san+jose!5e0!3m2!1sen!2sus!4v1479316818377");
+					$("#toggle-2").removeClass('glyphicon glyphicon-hand-right').addClass('glyphicon glyphicon-ok');
+					if($("#toggle-1").hasClass('glyphicon glyphicon-ok')){
+						$("#toggle-1").removeClass('glyphicon glyphicon-ok').addClass('glyphicon glyphicon-hand-right');
+					}
+					if($("#toggle-3").hasClass('glyphicon glyphicon-ok')){
+						$("#toggle-3").removeClass('glyphicon glyphicon-ok').addClass('glyphicon glyphicon-hand-right');
+					}
+					if($("#toggle-4").hasClass('glyphicon glyphicon-ok')){
+						$("#toggle-4").removeClass('glyphicon glyphicon-ok').addClass('glyphicon glyphicon-hand-right');
+					}
+					if($("#toggle-5").hasClass('glyphicon glyphicon-ok')){
+						$("#toggle-5").removeClass('glyphicon glyphicon-ok').addClass('glyphicon glyphicon-hand-right');
+					}
+					if($("#toggle-6").hasClass('glyphicon glyphicon-ok')){
+						$("#toggle-6").removeClass('glyphicon glyphicon-ok').addClass('glyphicon glyphicon-hand-right');
+					}
+					if($("#toggle-7").hasClass('glyphicon glyphicon-ok')){
+						$("#toggle-7").removeClass('glyphicon glyphicon-ok').addClass('glyphicon glyphicon-hand-right');
+					}
+					if($("#toggle-8").hasClass('glyphicon glyphicon-ok')){
+						$("#toggle-8").removeClass('glyphicon glyphicon-ok').addClass('glyphicon glyphicon-hand-right');
+					}
+					if($("#toggle-9").hasClass('glyphicon glyphicon-ok')){
+						$("#toggle-9").removeClass('glyphicon glyphicon-ok').addClass('glyphicon glyphicon-hand-right');
+					}
+				}else if(etype === "djMap"){
+					//3
+					$('#mapSpace').attr('src', "https://www.google.com/maps/embed?pb=!1m16!1m12!1m3!1d50755.656888493904!2d-121.9179640158339!3d37.33709739838169!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!2m1!1sDJ+near+san+jose!5e0!3m2!1sen!2sus!4v1479317898346");
+					$("#toggle-3").removeClass('glyphicon glyphicon-hand-right').addClass('glyphicon glyphicon-ok');
+					if($("#toggle-1").hasClass('glyphicon glyphicon-ok')){
+						$("#toggle-1").removeClass('glyphicon glyphicon-ok').addClass('glyphicon glyphicon-hand-right');
+					}
+					if($("#toggle-2").hasClass('glyphicon glyphicon-ok')){
+						$("#toggle-2").removeClass('glyphicon glyphicon-ok').addClass('glyphicon glyphicon-hand-right');
+					}
+					if($("#toggle-4").hasClass('glyphicon glyphicon-ok')){
+						$("#toggle-4").removeClass('glyphicon glyphicon-ok').addClass('glyphicon glyphicon-hand-right');
+					}
+					if($("#toggle-5").hasClass('glyphicon glyphicon-ok')){
+						$("#toggle-5").removeClass('glyphicon glyphicon-ok').addClass('glyphicon glyphicon-hand-right');
+					}
+					if($("#toggle-6").hasClass('glyphicon glyphicon-ok')){
+						$("#toggle-6").removeClass('glyphicon glyphicon-ok').addClass('glyphicon glyphicon-hand-right');
+					}
+					if($("#toggle-7").hasClass('glyphicon glyphicon-ok')){
+						$("#toggle-7").removeClass('glyphicon glyphicon-ok').addClass('glyphicon glyphicon-hand-right');
+					}
+					if($("#toggle-8").hasClass('glyphicon glyphicon-ok')){
+						$("#toggle-8").removeClass('glyphicon glyphicon-ok').addClass('glyphicon glyphicon-hand-right');
+					}
+					if($("#toggle-9").hasClass('glyphicon glyphicon-ok')){
+						$("#toggle-9").removeClass('glyphicon glyphicon-ok').addClass('glyphicon glyphicon-hand-right');
+					}
+				}else if(etype === "partyrentalMap"){
+					//4
+					$('#mapSpace').attr('src', "https://www.google.com/maps/embed?pb=!1m16!1m12!1m3!1d50760.102023094194!2d-121.90932125227992!3d37.330518791271324!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!2m1!1sparty+rentals+near+san+jose!5e0!3m2!1sen!2sus!4v1479318373621");
+					$("#toggle-4").removeClass('glyphicon glyphicon-hand-right').addClass('glyphicon glyphicon-ok');
+					
+					if($("#toggle-1").hasClass('glyphicon glyphicon-ok')){
+						$("#toggle-1").removeClass('glyphicon glyphicon-ok').addClass('glyphicon glyphicon-hand-right');
+					}
+					if($("#toggle-2").hasClass('glyphicon glyphicon-ok')){
+						$("#toggle-2").removeClass('glyphicon glyphicon-ok').addClass('glyphicon glyphicon-hand-right');
+					}
+					if($("#toggle-3").hasClass('glyphicon glyphicon-ok')){
+						$("#toggle-3").removeClass('glyphicon glyphicon-ok').addClass('glyphicon glyphicon-hand-right');
+					}
+					if($("#toggle-5").hasClass('glyphicon glyphicon-ok')){
+						$("#toggle-5").removeClass('glyphicon glyphicon-ok').addClass('glyphicon glyphicon-hand-right');
+					}
+					if($("#toggle-6").hasClass('glyphicon glyphicon-ok')){
+						$("#toggle-6").removeClass('glyphicon glyphicon-ok').addClass('glyphicon glyphicon-hand-right');
+					}
+					if($("#toggle-7").hasClass('glyphicon glyphicon-ok')){
+						$("#toggle-7").removeClass('glyphicon glyphicon-ok').addClass('glyphicon glyphicon-hand-right');
+					}
+					if($("#toggle-8").hasClass('glyphicon glyphicon-ok')){
+						$("#toggle-8").removeClass('glyphicon glyphicon-ok').addClass('glyphicon glyphicon-hand-right');
+					}
+					if($("#toggle-9").hasClass('glyphicon glyphicon-ok')){
+						$("#toggle-9").removeClass('glyphicon glyphicon-ok').addClass('glyphicon glyphicon-hand-right');
+					}
+				}else if(etype === "carMap"){
+					//5
+					$('#mapSpace').attr('src', "https://www.google.com/maps/embed?pb=!1m16!1m12!1m3!1d50760.0167712135!2d-121.90932130159553!3d37.33064496968576!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!2m1!1scar+rentals+near+san+jose!5e0!3m2!1sen!2sus!4v1479318727679");
+					$("#toggle-5").removeClass('glyphicon glyphicon-hand-right').addClass('glyphicon glyphicon-ok');
+					if($("#toggle-1").hasClass('glyphicon glyphicon-ok')){
+						$("#toggle-1").removeClass('glyphicon glyphicon-ok').addClass('glyphicon glyphicon-hand-right');
+					}
+					if($("#toggle-2").hasClass('glyphicon glyphicon-ok')){
+						$("#toggle-2").removeClass('glyphicon glyphicon-ok').addClass('glyphicon glyphicon-hand-right');
+					}
+					if($("#toggle-3").hasClass('glyphicon glyphicon-ok')){
+						$("#toggle-3").removeClass('glyphicon glyphicon-ok').addClass('glyphicon glyphicon-hand-right');
+					}
+					if($("#toggle-4").hasClass('glyphicon glyphicon-ok')){
+						$("#toggle-4").removeClass('glyphicon glyphicon-ok').addClass('glyphicon glyphicon-hand-right');
+					}
+					if($("#toggle-6").hasClass('glyphicon glyphicon-ok')){
+						$("#toggle-6").removeClass('glyphicon glyphicon-ok').addClass('glyphicon glyphicon-hand-right');
+					}
+					if($("#toggle-7").hasClass('glyphicon glyphicon-ok')){
+						$("#toggle-7").removeClass('glyphicon glyphicon-ok').addClass('glyphicon glyphicon-hand-right');
+					}
+					if($("#toggle-8").hasClass('glyphicon glyphicon-ok')){
+						$("#toggle-8").removeClass('glyphicon glyphicon-ok').addClass('glyphicon glyphicon-hand-right');
+					}
+					if($("#toggle-9").hasClass('glyphicon glyphicon-ok')){
+						$("#toggle-9").removeClass('glyphicon glyphicon-ok').addClass('glyphicon glyphicon-hand-right');
+					}
+				}else if(etype === "bakeryMap"){
+					//6
+					$('#mapSpace').attr('src', "https://www.google.com/maps/embed?pb=!1m16!1m12!1m3!1d50759.93151924994!2d-121.90932135091107!3d37.33077114785846!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!2m1!1spastery+near+san+jose!5e0!3m2!1sen!2sus!4v1479319794579");
+					$("#toggle-6").removeClass('glyphicon glyphicon-hand-right').addClass('glyphicon glyphicon-ok');
+					
+					if($("#toggle-1").hasClass('glyphicon glyphicon-ok')){
+						$("#toggle-1").removeClass('glyphicon glyphicon-ok').addClass('glyphicon glyphicon-hand-right');
+					}
+					if($("#toggle-2").hasClass('glyphicon glyphicon-ok')){
+						$("#toggle-2").removeClass('glyphicon glyphicon-ok').addClass('glyphicon glyphicon-hand-right');
+					}
+					if($("#toggle-3").hasClass('glyphicon glyphicon-ok')){
+						$("#toggle-3").removeClass('glyphicon glyphicon-ok').addClass('glyphicon glyphicon-hand-right');
+					}
+					if($("#toggle-4").hasClass('glyphicon glyphicon-ok')){
+						$("#toggle-4").removeClass('glyphicon glyphicon-ok').addClass('glyphicon glyphicon-hand-right');
+					}
+					if($("#toggle-5").hasClass('glyphicon glyphicon-ok')){
+						$("#toggle-5").removeClass('glyphicon glyphicon-ok').addClass('glyphicon glyphicon-hand-right');
+					}
+					if($("#toggle-7").hasClass('glyphicon glyphicon-ok')){
+						$("#toggle-7").removeClass('glyphicon glyphicon-ok').addClass('glyphicon glyphicon-hand-right');
+					}
+					if($("#toggle-8").hasClass('glyphicon glyphicon-ok')){
+						$("#toggle-8").removeClass('glyphicon glyphicon-ok').addClass('glyphicon glyphicon-hand-right');
+					}
+					if($("#toggle-9").hasClass('glyphicon glyphicon-ok')){
+						$("#toggle-9").removeClass('glyphicon glyphicon-ok').addClass('glyphicon glyphicon-hand-right');
+					}
+				}else if(etype === "bouncerMap"){
+					//7
+					$('#mapSpace').attr('src', "https://www.google.com/maps/embed?pb=!1m16!1m12!1m3!1d101520.34865608935!2d-121.90090838391662!3d37.33041177488321!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!2m1!1ssecurity+bouncer+near+san+jose!5e0!3m2!1sen!2sus!4v1479320450616");
+					$("#toggle-7").removeClass('glyphicon glyphicon-hand-right').addClass('glyphicon glyphicon-ok');
+					
+					if($("#toggle-1").hasClass('glyphicon glyphicon-ok')){
+						$("#toggle-1").removeClass('glyphicon glyphicon-ok').addClass('glyphicon glyphicon-hand-right');
+					}
+					if($("#toggle-2").hasClass('glyphicon glyphicon-ok')){
+						$("#toggle-2").removeClass('glyphicon glyphicon-ok').addClass('glyphicon glyphicon-hand-right');
+					}
+					if($("#toggle-3").hasClass('glyphicon glyphicon-ok')){
+						$("#toggle-3").removeClass('glyphicon glyphicon-ok').addClass('glyphicon glyphicon-hand-right');
+					}
+					if($("#toggle-4").hasClass('glyphicon glyphicon-ok')){
+						$("#toggle-4").removeClass('glyphicon glyphicon-ok').addClass('glyphicon glyphicon-hand-right');
+					}
+					if($("#toggle-5").hasClass('glyphicon glyphicon-ok')){
+						$("#toggle-5").removeClass('glyphicon glyphicon-ok').addClass('glyphicon glyphicon-hand-right');
+					}
+					if($("#toggle-6").hasClass('glyphicon glyphicon-ok')){
+						$("#toggle-6").removeClass('glyphicon glyphicon-ok').addClass('glyphicon glyphicon-hand-right');
+					}
+					if($("#toggle-8").hasClass('glyphicon glyphicon-ok')){
+						$("#toggle-8").removeClass('glyphicon glyphicon-ok').addClass('glyphicon glyphicon-hand-right');
+					}
+					if($("#toggle-9").hasClass('glyphicon glyphicon-ok')){
+						$("#toggle-9").removeClass('glyphicon glyphicon-ok').addClass('glyphicon glyphicon-hand-right');
+					}
+				}else if(etype === "photoMap"){
+					//8
+					$('#mapSpace').attr('src', "https://www.google.com/maps/embed?pb=!1m16!1m12!1m3!1d101520.03553652536!2d-121.90090858119358!3d37.330643493989115!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!2m1!1sphotography+near+san+jose!5e0!3m2!1sen!2sus!4v1479320996447");
+					$("#toggle-8").removeClass('glyphicon glyphicon-hand-right').addClass('glyphicon glyphicon-ok');
+					
+					if($("#toggle-1").hasClass('glyphicon glyphicon-ok')){
+						$("#toggle-1").removeClass('glyphicon glyphicon-ok').addClass('glyphicon glyphicon-hand-right');
+					}
+					if($("#toggle-2").hasClass('glyphicon glyphicon-ok')){
+						$("#toggle-2").removeClass('glyphicon glyphicon-ok').addClass('glyphicon glyphicon-hand-right');
+					}
+					if($("#toggle-3").hasClass('glyphicon glyphicon-ok')){
+						$("#toggle-3").removeClass('glyphicon glyphicon-ok').addClass('glyphicon glyphicon-hand-right');
+					}
+					if($("#toggle-4").hasClass('glyphicon glyphicon-ok')){
+						$("#toggle-4").removeClass('glyphicon glyphicon-ok').addClass('glyphicon glyphicon-hand-right');
+					}
+					if($("#toggle-5").hasClass('glyphicon glyphicon-ok')){
+						$("#toggle-5").removeClass('glyphicon glyphicon-ok').addClass('glyphicon glyphicon-hand-right');
+					}
+					if($("#toggle-6").hasClass('glyphicon glyphicon-ok')){
+						$("#toggle-6").removeClass('glyphicon glyphicon-ok').addClass('glyphicon glyphicon-hand-right');
+					}
+					if($("#toggle-7").hasClass('glyphicon glyphicon-ok')){
+						$("#toggle-7").removeClass('glyphicon glyphicon-ok').addClass('glyphicon glyphicon-hand-right');
+					}
+					if($("#toggle-9").hasClass('glyphicon glyphicon-ok')){
+						$("#toggle-9").removeClass('glyphicon glyphicon-ok').addClass('glyphicon glyphicon-hand-right');
+					}
+				}else if(etype === "hotelMap"){
+					//8
+					$('#mapSpace').attr('src', "https://www.google.com/maps/embed?pb=!1m16!1m12!1m3!1d30182.840290752898!2d-121.90253231642572!3d37.3287687498791!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!2m1!1shotels+near+san+jose!5e0!3m2!1sen!2sus!4v1479401249778");
+					$("#toggle-8").removeClass('glyphicon glyphicon-hand-right').addClass('glyphicon glyphicon-ok');
+					
+					if($("#toggle-1").hasClass('glyphicon glyphicon-ok')){
+						$("#toggle-1").removeClass('glyphicon glyphicon-ok').addClass('glyphicon glyphicon-hand-right');
+					}
+					if($("#toggle-2").hasClass('glyphicon glyphicon-ok')){
+						$("#toggle-2").removeClass('glyphicon glyphicon-ok').addClass('glyphicon glyphicon-hand-right');
+					}
+					if($("#toggle-3").hasClass('glyphicon glyphicon-ok')){
+						$("#toggle-3").removeClass('glyphicon glyphicon-ok').addClass('glyphicon glyphicon-hand-right');
+					}
+					if($("#toggle-4").hasClass('glyphicon glyphicon-ok')){
+						$("#toggle-4").removeClass('glyphicon glyphicon-ok').addClass('glyphicon glyphicon-hand-right');
+					}
+					if($("#toggle-5").hasClass('glyphicon glyphicon-ok')){
+						$("#toggle-5").removeClass('glyphicon glyphicon-ok').addClass('glyphicon glyphicon-hand-right');
+					}
+					if($("#toggle-6").hasClass('glyphicon glyphicon-ok')){
+						$("#toggle-6").removeClass('glyphicon glyphicon-ok').addClass('glyphicon glyphicon-hand-right');
+					}
+					if($("#toggle-7").hasClass('glyphicon glyphicon-ok')){
+						$("#toggle-7").removeClass('glyphicon glyphicon-ok').addClass('glyphicon glyphicon-hand-right');
+					}
+					if($("#toggle-8").hasClass('glyphicon glyphicon-ok')){
+						$("#toggle-8").removeClass('glyphicon glyphicon-ok').addClass('glyphicon glyphicon-hand-right');
+					}
+				}						
+				
+//				//
+			}
+		</script>
+		<!-- End JS -->
+	</body>
+		
 </html>
 <!-- === END FOOTER === -->

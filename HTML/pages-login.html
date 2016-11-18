@@ -6,7 +6,8 @@
 <html lang="en">
     <!--<![endif]-->
     <head>
-        <title>Femme Fetale - Event Planners.</title>
+		<link rel="icon" href="http://eclectic.com.s3-website-us-east-1.amazonaws.com/assets/img/Elogo.PNG" type="image/png">
+        <title>Eclectic - Event Planners.</title>
         <!-- Meta -->
         <meta http-equiv="content-type" content="text/html; charset=utf-8" />
         <meta name="description" content="">
@@ -23,7 +24,7 @@
         <!-- Google Fonts-->
         <link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Open Sans:300,400" />
         <link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Source Sans Pro:300,400" />
-		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+		<script type ="text/javascript" src= "https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js" ></script>
     </head>
 	<script>
 	$(document).ready( function() {
@@ -35,8 +36,24 @@
      
     
 });
-
-
+function loginAction() {
+		var name = $("#username").val();
+		var password = $("#password").val();
+		var dataString = 'userid=' + name + '&password1=' + password;
+		$.ajax({
+			url: "check.php",
+			type: 'POST',
+			data: dataString,
+			success: function(response){
+				if(response == "ok") {
+					location.href = "index.html?login=1";
+				}
+				else {
+					alert("userid and password do not match!");
+				}
+			}
+		});
+}
 function loadTheme(){
 
 var date=$('#eventdate').val();
@@ -53,17 +70,14 @@ location.href='locations-by-theme.html?date='+date+"&themeSelected="+themeSelect
                     <div class="col-md-12 margin-top-15">
                         <!-- Header Social Icons -->
                         <ul class="social-icons circle pull-right">
-                            <li class="social-rss">
-                                <a href="#" target="_blank" title="RSS"></a>
-                            </li>
                             <li class="social-twitter">
-                                <a href="#" target="_blank" title="Twitter"></a>
+                                <a href="https://twitter.com/" target="_blank" title="Twitter"></a>
                             </li>
                             <li class="social-facebook">
-                                <a href="#" target="_blank" title="Facebook"></a>
+                                <a href="https://www.facebook.com/" target="_blank" title="Facebook"></a>
                             </li>
                             <li class="social-googleplus">
-                                <a href="#" target="_blank" title="GooglePlus"></a>
+                                <a href="https://plus.google.com/" target="_blank" title="GooglePlus"></a>
                             </li>
                         </ul>
                         <!-- End Header Social Icons -->
@@ -142,8 +156,8 @@ location.href='locations-by-theme.html?date='+date+"&themeSelected="+themeSelect
                                         <li>
                                             <a href="contact.html">Contact</a>
                                         </li>
-                                        <li>
-                                            <a href="pages-login.html">SignIn</a>
+										<li>
+                                            <a href="pages-login.html">Login</a>
                                         </li>
                                     </ul>
                                 </div>
@@ -159,7 +173,7 @@ location.href='locations-by-theme.html?date='+date+"&themeSelected="+themeSelect
                             <div class="row margin-vert-30">
                                 <!-- Login Box -->
                                 <div class="col-md-6 col-md-offset-3 col-sm-offset-3">
-                                    <form class="login-page">
+                                    <form class="login-page" method="post" action="">
                                         <div class="login-header margin-bottom-30">
                                             <h2>Login to your account</h2>
                                         </div>
@@ -167,27 +181,25 @@ location.href='locations-by-theme.html?date='+date+"&themeSelected="+themeSelect
                                             <span class="input-group-addon">
                                                 <i class="fa fa-user"></i>
                                             </span>
-                                            <input placeholder="Username" class="form-control" type="text">
+                                            <input placeholder="Username" class="form-control" type="text" id ="username">
                                         </div>
                                         <div class="input-group margin-bottom-20">
                                             <span class="input-group-addon">
                                                 <i class="fa fa-lock"></i>
                                             </span>
-                                            <input placeholder="Password" class="form-control" type="password">
+                                            <input placeholder="Password" class="form-control" type="password" id ="password">
                                         </div>
                                         <div class="row">
                                             <div class="col-md-6">
-                                                <label class="checkbox">
-                                                    <input type="checkbox">Stay signed in</label>
+                                                <label class="checkbox" style="margin-left: 50px">
+                                                    <input type="checkbox" >Stay signed in</label>
                                             </div>
                                             <div class="col-md-6">
-                                                <button class="btn btn-primary pull-right" type="submit">Login</button>
+                                                <input class="btn btn-primary pull-right" type="button" onClick="loginAction()" value ="Login">
                                             </div>
                                         </div>
                                         <hr>
-                                        <h4>Forget your Password ?</h4>
-                                        <p>
-                                            <a class="color-green" href="#">Click here</a>to reset your password.</p>
+                                        <h4>Don't have an account? <a class="color-green" href="pages-sign-up.html">Sign Up</a></h4>                                       <h4>Forgot your Password ?</h4>
                                     </form>
                                 </div>
                                 <!-- End Login Box -->
@@ -201,8 +213,8 @@ location.href='locations-by-theme.html?date='+date+"&themeSelected="+themeSelect
                             <!-- Disclaimer -->
                             <div class="col-md-6">
                                 <h3 class="margin-bottom-10">Disclaimer</h3>
-                                <p>All images on this website are for presentation/demonstartion purposes only for cmpe 280 course in San Jose State University, intended to represent a live site and are not have not been bought or solicitated.</p>
-                                <p>Most of the images used here are available from
+                                <p style="text-align:justify">All images on this website are for presentation/demonstartion purposes only for CMPE 280 course in San Jose State University, intended to represent a live site and are not have not been bought or solicitated.</p>
+                                <p style="text-align:justify">Most of the images used here are available from
                                     <a class="nobold" href="http://www.google.com/" target="_blank">google.com</a>. If you wish to purchase them from their copyright owners please visit the appropriate websites. We hold no responsibilty of the images or template or video.</p>
                                 <div class="clearfix"></div>
                             </div>
@@ -210,21 +222,21 @@ location.href='locations-by-theme.html?date='+date+"&themeSelected="+themeSelect
                             <!-- Contact Details -->
                             <div class="col-md-3">
                                 <h3 class="margin-bottom-10">Contact Details</h3>
-                                <p>1 Washington Sq,
-                                    <br />San Jose,
-                                    <br />CA 95192
+                                <p>One Washington Square,
+                                    <br />San Jose,CA
+                                    <br />95192
                                 </p>
                                 <p>Email:
-                                    <a href="mailto:info@website.com">info@website.com</a>
+                                    <a href="contact.html">info@eclectic.com</a>
                                     <br />Website:
-                                    <a href="http://www.website.com">www.website.com</a>
+                                    <a href="index.html">www.eclectic.com</a>
                                 </p>
                             </div>
                             <!-- End Contact Details -->
             <div class="container padding-vert-30">
                 <div class="row">
                     <div id="copyright">
-                        <p>(c) 2014 Femme Fatale Copyright Info</p>
+                        <p>(c) 2016 Eclectic Copyright Info</p>
                     </div>
                 </div>
             </div>

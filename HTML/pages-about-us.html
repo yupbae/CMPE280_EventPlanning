@@ -6,7 +6,8 @@
 <html lang="en">
     <!--<![endif]-->
     <head>
-        <title>Femme Fetale - Event Planners.</title>
+		<link rel="icon" href="http://eclectic.com.s3-website-us-east-1.amazonaws.com/assets/img/Elogo.PNG" type="image/png">
+        <title>Eclectic - Event Planners.</title>
         <!-- Meta -->
         <meta http-equiv="content-type" content="text/html; charset=utf-8" />
         <meta name="description" content="">
@@ -27,6 +28,92 @@
     </head>
 	<script>
 	$(document).ready( function() {
+		var queryString = window.location.search;
+		var queries = queryString.split("?");
+		if(queries.length > 1) {
+			
+		if(queries[1].split("=")[1] == "1") {
+			
+			document.getElementById("login").style.display = "none";
+			document.getElementById("account").style.display = "block";
+			var pages = document.getElementsByClassName("business-locations");
+			for(i = 0; i < pages.length; i ++) {
+				pages[i].setAttribute('href', 'locations-by-theme.html?date=01/12/2016&themeSelected=Business&guestesCount=All&login=1');
+			}
+			pages = document.getElementsByClassName("wedding-locations");
+			for(i = 0; i < pages.length; i ++) {
+				pages[i].setAttribute('href', 'locations-by-theme.html?date=01/12/2016&themeSelected=Wedding&guestesCount=All&login=1');
+			}
+			pages = document.getElementsByClassName("cultural-locations");
+			for(i = 0; i < pages.length; i ++) {
+				pages[i].setAttribute('href', 'locations-by-theme.html?date=01/12/2016&themeSelected=Cultural&guestesCount=All&login=1');
+			}
+			pages = document.getElementsByClassName("birthday-locations");
+			for(i = 0; i < pages.length; i ++) {
+				pages[i].setAttribute('href', 'locations-by-theme.html?date=01/12/2016&themeSelected=Birthday&guestesCount=All&login=1');
+			}
+			document.getElementById("home-index").setAttribute('href','index.html?login=1');
+			document.getElementById("philosophy").setAttribute('href','pages-about-us.html?login=1');
+			document.getElementById("team").setAttribute('href','pages-about-us.html#team?login=1');
+			document.getElementById("website").setAttribute('href','index.html?login=1');
+			document.getElementById("help").setAttribute('href','contact.html?login=1');
+			document.getElementById("contact").setAttribute('href','contact.html?login=1');
+			document.getElementById("services").setAttribute('href','services.html?login=1');
+			document.getElementById("image").setAttribute('href','index.html?login=1');
+		}
+		else {
+			var pages = document.getElementsByClassName("business-locations");
+			for(i = 0; i < pages.length; i ++) {
+				pages[i].setAttribute('href', 'locations-by-theme.html?date=01/12/2016&themeSelected=Business&guestesCount=All&login=0');
+			}
+			pages = document.getElementsByClassName("wedding-locations");
+			for(i = 0; i < pages.length; i ++) {
+				pages[i].setAttribute('href', 'locations-by-theme.html?date=01/12/2016&themeSelected=Wedding&guestesCount=All&login=0');
+			}
+			pages = document.getElementsByClassName("cultural-locations");
+			for(i = 0; i < pages.length; i ++) {
+				pages[i].setAttribute('href', 'locations-by-theme.html?date=01/12/2016&themeSelected=Cultural&guestesCount=All&login=0');
+			}
+			pages = document.getElementsByClassName("birthday-locations");
+			for(i = 0; i < pages.length; i ++) {
+				pages[i].setAttribute('href', 'locations-by-theme.html?date=01/12/2016&themeSelected=Birthday&guestesCount=All&login=0');
+			}
+			document.getElementById("home-index").setAttribute('href','index.html?login=0');
+			document.getElementById("philosophy").setAttribute('href','pages-about-us.html?login=0');
+			document.getElementById("team").setAttribute('href','pages-about-us.html#team?login=0');
+			document.getElementById("website").setAttribute('href','index.html?login=0');
+			document.getElementById("help").setAttribute('href','contact.html?login=0');
+			document.getElementById("contact").setAttribute('href','contact.html?login=0');
+			document.getElementById("services").setAttribute('href','services.html?login=0');
+			document.getElementById("image").setAttribute('href','index.html?login=0');
+		}
+		}
+		else {
+			var pages = document.getElementsByClassName("business-locations");
+			for(i = 0; i < pages.length; i ++) {
+				pages[i].setAttribute('href', 'locations-by-theme.html?date=01/12/2016&themeSelected=Business&guestesCount=All&login=0');
+			}
+			pages = document.getElementsByClassName("wedding-locations");
+			for(i = 0; i < pages.length; i ++) {
+				pages[i].setAttribute('href', 'locations-by-theme.html?date=01/12/2016&themeSelected=Wedding&guestesCount=All&login=0');
+			}
+			pages = document.getElementsByClassName("cultural-locations");
+			for(i = 0; i < pages.length; i ++) {
+				pages[i].setAttribute('href', 'locations-by-theme.html?date=01/12/2016&themeSelected=Cultural&guestesCount=All&login=0');
+			}
+			pages = document.getElementsByClassName("birthday-locations");
+			for(i = 0; i < pages.length; i ++) {
+				pages[i].setAttribute('href', 'locations-by-theme.html?date=01/12/2016&themeSelected=Birthday&guestesCount=All&login=0');
+			}
+			document.getElementById("home-index").setAttribute('href','index.html?login=0');
+			document.getElementById("philosophy").setAttribute('href','pages-about-us.html?login=0');
+			document.getElementById("team").setAttribute('href','pages-about-us.html#team?login=0');
+			document.getElementById("website").setAttribute('href','index.html?login=0');
+			document.getElementById("help").setAttribute('href','contact.html?login=0');
+			document.getElementById("contact").setAttribute('href','contact.html?login=0');
+			document.getElementById("services").setAttribute('href','services.html?login=0');
+			document.getElementById("image").setAttribute('href','index.html?login=0');
+		} 
     var now = new Date();
     var day = ("0" + now.getDate()).slice(-2);
     var month = ("0" + (now.getMonth() + 1)).slice(-2);
@@ -53,17 +140,14 @@ location.href='locations-by-theme.html?date='+date+"&themeSelected="+themeSelect
                     <div class="col-md-12 margin-top-15">
                         <!-- Header Social Icons -->
                         <ul class="social-icons circle pull-right">
-                            <li class="social-rss">
-                                <a href="#" target="_blank" title="RSS"></a>
-                            </li>
                             <li class="social-twitter">
-                                <a href="#" target="_blank" title="Twitter"></a>
+                                <a href="https://twitter.com/" target="_blank" title="Twitter"></a>
                             </li>
                             <li class="social-facebook">
-                                <a href="#" target="_blank" title="Facebook"></a>
+                                <a href="https://www.facebook.com/" target="_blank" title="Facebook"></a>
                             </li>
                             <li class="social-googleplus">
-                                <a href="#" target="_blank" title="GooglePlus"></a>
+                                <a href="https://plus.google.com/" target="_blank" title="GooglePlus"></a>
                             </li>
                         </ul>
                         <!-- End Header Social Icons -->
@@ -82,7 +166,7 @@ location.href='locations-by-theme.html?date='+date+"&themeSelected="+themeSelect
                     <div id="container_hornav" class="container no-padding">
                         <!-- Logo -->
                         <div class="logo">
-                            <a href="index.html">
+                            <a id ="image">
                                 <img src="assets/img/logo1.png" alt="Logo" />
                             </a>
                         </div>
@@ -96,17 +180,17 @@ location.href='locations-by-theme.html?date='+date+"&themeSelected="+themeSelect
                                 <div id="hornav" class="pull-right">
                                     <ul id="hornavmenu" class="nav navbar-nav">
                                         <li>
-                                            <a href="index.html">Home</a>
+                                            <a id = "home-index">Home</a>
                                         </li>
                         
                                         <li>
                                             <span>About</span>
                                             <ul>
                                                 <li>
-                                                    <a href="pages-about-us.html">Philosophy</a>
+                                                    <a id ="philosophy">Philosophy</a>
                                                 </li>
                                                 <li>
-                                                    <a href="pages-about-us.html#team">The Team</a>
+                                                    <a id ="team">The Team</a>
                                                 </li>
                                             </ul>
                                         </li>
@@ -114,16 +198,16 @@ location.href='locations-by-theme.html?date='+date+"&themeSelected="+themeSelect
                                             <span>Event Locations</span>
                                             <ul>
                                                 <li>
-                                                    <a href="locations-by-theme.html?date=01/12/2016&themeSelected=Business&guestesCount=All">Business</a>
+                                                    <a class = "business-locations">Business</a>
                                                 </li>
                                                 <li>
-                                                    <a href="locations-by-theme.html?date=01/12/2016&themeSelected=Wedding&guestesCount=All">Wedding</a>
+                                                    <a class = "wedding-locations">Wedding</a>
                                                 </li>
 												<li>
-                                                    <a href="locations-by-theme.html?date=01/12/2016&themeSelected=Cultural&guestesCount=All">Cultural</a>
+                                                    <a class = "cultural-locations">Cultural</a>
                                                 </li>
 												<li>
-                                                    <a href="locations-by-theme.html?date=01/12/2016&themeSelected=Birthday&guestesCount=All">Birthday</a>
+                                                    <a class = "birthday-locations">Birthday</a>
                                                 </li>
                                             </ul>
                                         </li>
@@ -137,13 +221,27 @@ location.href='locations-by-theme.html?date='+date+"&themeSelected="+themeSelect
                                              <a href="music.html">Live Music</a>
                                              </li>
                                              </ul> -->
-                                            <a href="services.html">Services</a>
+                                            <a id="services">Services</a>
                                         </li>
                                         <li>
-                                            <a href="contact.html">Contact</a>
+                                            <a id="contact">Contact</a>
                                         </li>
-                                        <li>
-                                            <a href="pages-login.html">SignIn</a>
+                                        <li id="login">
+                                            <a href="pages-login.html">Login</a>
+                                        </li>
+                                        <li id = "account" style="display:none">
+                                            <span>My Account</span>
+                                            <ul>
+                                                <li>
+                                                    <a href="locations-by-theme.html?date=01/12/2016&themeSelected=Business&guestesCount=All">Account Information</a>
+                                                </li>
+                                                <li>
+                                                    <a href="locations-by-theme.html?date=01/12/2016&themeSelected=Wedding&guestesCount=All">Orders</a>
+                                                </li>
+												<li>
+                                                    <a href="index.html?&login=0">Signout</a>
+                                                </li>
+                                            </ul>
                                         </li>
                                     </ul>
                                 </div>
@@ -160,8 +258,8 @@ location.href='locations-by-theme.html?date='+date+"&themeSelected="+themeSelect
                                 <h2>About Us</h2>
                                 <div class="row">
                                     <div class="col-md-6">
-                                        <p>We are students of San Jose State University who are pursuing our Master's Degree.</p>
-                                        <p>Event planning has been carried out from many years starting from home to professional companies. The major complaint most of our customers was that there was no one single portal to view event locations remotely from the comfort of our home, office, etc. So we have come up with a unique idea of giving you a sneak preview of all the locations we provide before you visit them. This would help you to decide if the locations are suitable to your needs and also get you prepared regarding all the facilities and amenities provided. Whether it is a wedding, birthday party, business conference, student symposiums we strive to make your event a beautiful and a successful one.</p>
+                                        <p style="text-align:justify">We are graduate students at San Jose State University pursuing our Master's Degree.</p>
+                                        <p style="text-align:justify">Event planning has been carried out from many years starting from home to professional companies. The major complaint most of our customers was that there was no one single portal to view event locations remotely from the comfort of our home, office, etc. So we have come up with a unique idea of giving you a sneak preview of all the locations we provide before you visit them. This would help you to decide if the locations are suitable to your needs and also get you prepared regarding all the facilities and amenities provided. Whether it is a wedding, birthday party, business conference, student symposiums we strive to make your event a beautiful and a successful one.</p>
                                         <ul class="icon-list list-unstyled">
                                             <li>
                                                 <i class="fa-check"></i>Beautiful locations.</li>
@@ -217,7 +315,7 @@ location.href='locations-by-theme.html?date='+date+"&themeSelected="+themeSelect
                                                 <h3>Divya
                                                     <small>- Programmer</small>
                                                 </h3>
-                                                <span>Nullam id dolor id nibh ultricies vehicula ut id elit. Vestibulum id ligula porta felis euismod semper.</span>
+                                                <span>Graduate Student<br>Computer Engineering Dept.<br>San Jose State University</span>
                                             </figcaption>
                                             <ul class="list-inline person-details-icons">
                                                 <li>
@@ -257,7 +355,7 @@ location.href='locations-by-theme.html?date='+date+"&themeSelected="+themeSelect
                                                 <h3>Pooja
                                                     <small>- Programmer</small>
                                                 </h3>
-                                                <span>Nullam id dolor id nibh ultricies vehicula ut id elit. Vestibulum id ligula porta felis euismod semper.</span>
+                                                <span>Graduate Student<br>Computer Engineering Dept.<br>San Jose State University</span>
                                             </figcaption>
                                             <ul class="list-inline person-details-icons">
                                                 <li>
@@ -297,7 +395,7 @@ location.href='locations-by-theme.html?date='+date+"&themeSelected="+themeSelect
                                                 <h3>Usha
                                                     <small>- Programmer</small>
                                                 </h3>
-                                                <span>Nullam id dolor id nibh ultricies vehicula ut id elit. Vestibulum id ligula porta felis euismod semper.</span>
+                                                <span>Graduate Student<br>Computer Engineering Dept.<br>San Jose State University</span>
                                             </figcaption>
                                             <ul class="list-inline person-details-icons">
                                                 <li>
@@ -337,7 +435,7 @@ location.href='locations-by-theme.html?date='+date+"&themeSelected="+themeSelect
                                                 <h3>Varsha
                                                     <small>- Programmer</small>
                                                 </h3>
-                                                <span>Nullam id dolor id nibh ultricies vehicula ut id elit. Vestibulum id ligula porta felis euismod semper.</span>
+                                                <span>Graduate Student<br>Computer Engineering Dept.<br>San Jose State University</span>
                                             </figcaption>
                                             <ul class="list-inline person-details-icons">
                                                 <li>
@@ -406,8 +504,8 @@ location.href='locations-by-theme.html?date='+date+"&themeSelected="+themeSelect
                                         </div>
                                     </div>
                                     <div class="col-md-6">
-                                        <p>We are team of four girls who aspire to become event planners. We love to give the best solution to our customers. Currently we are students of San Jose State University pursuing our Masters Degree in Computer Engineering.</p>
-                                        <p>We are adept at programming in many of the popular languages, scripting and designing. Currently for our web UI and design course, we are designing this website to provide a better event planning website with a unique of idea of giving virtual reality experience to our customers. Our main motivation is to help our customers to get a better feel of our services.</p>
+                                        <p style="text-align:justify">We are team of four girls who aspire to become event planners. We love to give the best solution to our customers. Currently we are students of San Jose State University pursuing our Masters Degree in Computer Engineering.</p>
+                                        <p style="text-align:justify">We are adept at programming in many of the popular languages, scripting and designing. Currently for our web UI and design course, we are designing this website to provide a better event planning website with a unique of idea of giving virtual reality experience to our customers. Our main motivation is to help our customers to get a better feel of our services.</p>
                                     </div>
                                 </div>
                                 <!-- End Our Skills -->
@@ -421,8 +519,8 @@ location.href='locations-by-theme.html?date='+date+"&themeSelected="+themeSelect
                             <!-- Disclaimer -->
                             <div class="col-md-6">
                                 <h3 class="margin-bottom-10">Disclaimer</h3>
-                                <p>All images on this website are for presentation/demonstartion purposes only for cmpe 280 course in San Jose State University, intended to represent a live site and are not have not been bought or solicitated.</p>
-                                <p>Most of the images used here are available from
+                                <p style="text-align:justify">All images on this website are for presentation/demonstartion purposes only for CMPE 280 course in San Jose State University, intended to represent a live site and are not have not been bought or solicitated.</p>
+                                <p style="text-align:justify">Most of the images used here are available from
                                     <a class="nobold" href="http://www.google.com/" target="_blank">google.com</a>. If you wish to purchase them from their copyright owners please visit the appropriate websites. We hold no responsibilty of the images or template or video.</p>
                                 <div class="clearfix"></div>
                             </div>
@@ -430,21 +528,21 @@ location.href='locations-by-theme.html?date='+date+"&themeSelected="+themeSelect
                             <!-- Contact Details -->
                             <div class="col-md-3">
                                 <h3 class="margin-bottom-10">Contact Details</h3>
-                                <p>1 Washington Sq,
-                                    <br />San Jose,
-                                    <br />CA 95192
+                                <p>One Washington Square,
+                                    <br />San Jose,CA
+                                    <br />95192
                                 </p>
                                 <p>Email:
-                                    <a href="mailto:info@website.com">info@website.com</a>
+                                    <a id="help">info@eclectic.com</a>
                                     <br />Website:
-                                    <a href="http://www.website.com">www.website.com</a>
+                                    <a id = "website" >www.eclectic.com</a>
                                 </p>
                             </div>
                             <!-- End Contact Details -->
             <div class="container padding-vert-30">
                 <div class="row">
                     <div id="copyright">
-                        <p>(c) 2014 Femme Fatale Copyright Info</p>
+                        <p>(c) 2016 Eclectic Copyright Info</p>
                     </div>
                 </div>
             </div>

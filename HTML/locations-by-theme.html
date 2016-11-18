@@ -6,7 +6,8 @@
 <html lang="en">
     <!--<![endif]-->
     <head>
-        <title>Femme Fetale - Event Planners.</title>
+		<link rel="icon" href="http://eclectic.com.s3-website-us-east-1.amazonaws.com/assets/img/Elogo.PNG" type="image/png">
+        <title>Eclectic - Event Planners.</title>
         <!-- Meta -->
         <meta http-equiv="content-type" content="text/html; charset=utf-8" />
         <meta name="description" content="">
@@ -27,6 +28,91 @@
     </head>
 	<script>
 	$(document).ready( function() {
+		
+		var login = getQueryVariable("login");
+		if(login.length > 0) {
+		if(login == "1") {
+			
+			document.getElementById("login").style.display = "none";
+			document.getElementById("account").style.display = "block";
+			var pages = document.getElementsByClassName("business-locations");
+			for(i = 0; i < pages.length; i ++) {
+				pages[i].setAttribute('href', 'locations-by-theme.html?date=01/12/2016&themeSelected=Business&guestesCount=All&login=1');
+			}
+			pages = document.getElementsByClassName("wedding-locations");
+			for(i = 0; i < pages.length; i ++) {
+				pages[i].setAttribute('href', 'locations-by-theme.html?date=01/12/2016&themeSelected=Wedding&guestesCount=All&login=1');
+			}
+			pages = document.getElementsByClassName("cultural-locations");
+			for(i = 0; i < pages.length; i ++) {
+				pages[i].setAttribute('href', 'locations-by-theme.html?date=01/12/2016&themeSelected=Cultural&guestesCount=All&login=1');
+			}
+			pages = document.getElementsByClassName("birthday-locations");
+			for(i = 0; i < pages.length; i ++) {
+				pages[i].setAttribute('href', 'locations-by-theme.html?date=01/12/2016&themeSelected=Birthday&guestesCount=All&login=1');
+			}
+			document.getElementById("home-index").setAttribute('href','index.html?login=1');
+			document.getElementById("philosophy").setAttribute('href','pages-about-us.html?login=1');
+			document.getElementById("team").setAttribute('href','pages-about-us.html#team?login=1');
+			document.getElementById("website").setAttribute('href','index.html?login=1');
+			document.getElementById("help").setAttribute('href','contact.html?login=1');
+			document.getElementById("contact").setAttribute('href','contact.html?login=1');
+			document.getElementById("services").setAttribute('href','services.html?login=1');
+			document.getElementById("image").setAttribute('href','index.html?login=1');
+		}
+		else {
+			var pages = document.getElementsByClassName("business-locations");
+			for(i = 0; i < pages.length; i ++) {
+				pages[i].setAttribute('href', 'locations-by-theme.html?date=01/12/2016&themeSelected=Business&guestesCount=All&login=0');
+			}
+			pages = document.getElementsByClassName("wedding-locations");
+			for(i = 0; i < pages.length; i ++) {
+				pages[i].setAttribute('href', 'locations-by-theme.html?date=01/12/2016&themeSelected=Wedding&guestesCount=All&login=0');
+			}
+			pages = document.getElementsByClassName("cultural-locations");
+			for(i = 0; i < pages.length; i ++) {
+				pages[i].setAttribute('href', 'locations-by-theme.html?date=01/12/2016&themeSelected=Cultural&guestesCount=All&login=0');
+			}
+			pages = document.getElementsByClassName("birthday-locations");
+			for(i = 0; i < pages.length; i ++) {
+				pages[i].setAttribute('href', 'locations-by-theme.html?date=01/12/2016&themeSelected=Birthday&guestesCount=All&login=0');
+			}
+			document.getElementById("home-index").setAttribute('href','index.html?login=0');
+			document.getElementById("philosophy").setAttribute('href','pages-about-us.html?login=0');
+			document.getElementById("team").setAttribute('href','pages-about-us.html#team?login=0');
+			document.getElementById("website").setAttribute('href','index.html?login=0');
+			document.getElementById("help").setAttribute('href','contact.html?login=0');
+			document.getElementById("contact").setAttribute('href','contact.html?login=0');
+			document.getElementById("services").setAttribute('href','services.html?login=0');
+			document.getElementById("image").setAttribute('href','index.html?login=0');
+		}
+		}
+		else {
+			var pages = document.getElementsByClassName("business-locations");
+			for(i = 0; i < pages.length; i ++) {
+				pages[i].setAttribute('href', 'locations-by-theme.html?date=01/12/2016&themeSelected=Business&guestesCount=All&login=0');
+			}
+			pages = document.getElementsByClassName("wedding-locations");
+			for(i = 0; i < pages.length; i ++) {
+				pages[i].setAttribute('href', 'locations-by-theme.html?date=01/12/2016&themeSelected=Wedding&guestesCount=All&login=0');
+			}
+			pages = document.getElementsByClassName("cultural-locations");
+			for(i = 0; i < pages.length; i ++) {
+				pages[i].setAttribute('href', 'locations-by-theme.html?date=01/12/2016&themeSelected=Cultural&guestesCount=All&login=0');
+			}
+			pages = document.getElementsByClassName("birthday-locations");
+			for(i = 0; i < pages.length; i ++) {
+				pages[i].setAttribute('href', 'locations-by-theme.html?date=01/12/2016&themeSelected=Birthday&guestesCount=All&login=0');
+			}
+			document.getElementById("home-index").setAttribute('href','index.html?login=0');
+			document.getElementById("philosophy").setAttribute('href','pages-about-us.html?login=0');
+			document.getElementById("team").setAttribute('href','pages-about-us.html#team?login=0');
+			document.getElementById("website").setAttribute('href','index.html?login=0');
+			document.getElementById("help").setAttribute('href','contact.html?login=0');
+			document.getElementById("contact").setAttribute('href','contact.html?login=0');
+			document.getElementById("services").setAttribute('href','services.html?login=0');
+			document.getElementById("image").setAttribute('href','index.html?login=0');
+		}
     var now = new Date();
     var day = ("0" + now.getDate()).slice(-2);
     var month = ("0" + (now.getMonth() + 1)).slice(-2);
@@ -53,17 +139,14 @@ location.href='locations-by-theme.html?date='+date+"&themeSelected="+themeSelect
                     <div class="col-md-12 margin-top-15">
                         <!-- Header Social Icons -->
                         <ul class="social-icons circle pull-right">
-                            <li class="social-rss">
-                                <a href="#" target="_blank" title="RSS"></a>
-                            </li>
                             <li class="social-twitter">
-                                <a href="#" target="_blank" title="Twitter"></a>
+                                <a href="https://twitter.com/" target="_blank" title="Twitter"></a>
                             </li>
                             <li class="social-facebook">
-                                <a href="#" target="_blank" title="Facebook"></a>
+                                <a href="https://www.facebook.com/" target="_blank" title="Facebook"></a>
                             </li>
                             <li class="social-googleplus">
-                                <a href="#" target="_blank" title="GooglePlus"></a>
+                            	<a href="https://plus.google.com/" target="_blank" title="GooglePlus"></a>
                             </li>
                         </ul>
                         <!-- End Header Social Icons -->
@@ -82,7 +165,7 @@ location.href='locations-by-theme.html?date='+date+"&themeSelected="+themeSelect
                     <div id="container_hornav" class="container no-padding">
                         <!-- Logo -->
                         <div class="logo">
-                            <a href="index.html">
+                            <a id = "image">
                                 <img src="assets/img/logo1.png" alt="Logo" />
                             </a>
                         </div>
@@ -96,17 +179,17 @@ location.href='locations-by-theme.html?date='+date+"&themeSelected="+themeSelect
                                 <div id="hornav" class="pull-right">
                                     <ul id="hornavmenu" class="nav navbar-nav">
                                         <li>
-                                            <a href="index.html">Home</a>
+                                            <a id= "home-index">Home</a>
                                         </li>
                         
                                         <li>
                                             <span>About</span>
                                             <ul>
                                                 <li>
-                                                    <a href="pages-about-us.html">Philosophy</a>
+                                                    <a id = "philosophy">Philosophy</a>
                                                 </li>
                                                 <li>
-                                                    <a href="pages-about-us.html#team">The Team</a>
+                                                    <a id = "team">The Team</a>
                                                 </li>
                                             </ul>
                                         </li>
@@ -114,16 +197,16 @@ location.href='locations-by-theme.html?date='+date+"&themeSelected="+themeSelect
                                             <span>Event Locations</span>
                                             <ul>
                                                 <li>
-                                                    <a href="locations-by-theme.html?date=01/12/2016&themeSelected=Business&guestesCount=All">Business</a>
+                                                    <a class = "business-locations">Business</a>
                                                 </li>
                                                 <li>
-                                                    <a href="locations-by-theme.html?date=01/12/2016&themeSelected=Wedding&guestesCount=All">Wedding</a>
+                                                    <a class = "wedding-locations">Wedding</a>
                                                 </li>
 												<li>
-                                                    <a href="locations-by-theme.html?date=01/12/2016&themeSelected=Cultural&guestesCount=All">Cultural</a>
+                                                    <a class = "cultural-locations">Cultural</a>
                                                 </li>
 												<li>
-                                                    <a href="locations-by-theme.html?date=01/12/2016&themeSelected=Birthday&guestesCount=All">Birthday</a>
+                                                    <a class = "birthday-locations">Birthday</a>
                                                 </li>
                                             </ul>
                                         </li>
@@ -137,14 +220,26 @@ location.href='locations-by-theme.html?date='+date+"&themeSelected="+themeSelect
                                              <a href="music.html">Live Music</a>
                                              </li>
                                              </ul> -->
-                                            <a href="services.html">Services</a>
+                                            <a id ="services">Services</a>
                                         </li>
                                         <li>
-                                            <a href="contact.html">Contact</a>
+                                            <a id ="contact">Contact</a>
                                         </li>
-                                        <li>
-                                            <a href="pages-login.html">SignIn</a>
+                                        <li id="login">
+                                            <a href="pages-login.html">Login</a>
                                         </li>
+                                        <li id = "account" style="display:none">
+                                            <span>My Account</span>
+                                            <ul>
+                                                <li>
+                                                    <a href="locations-by-theme.html?date=01/12/2016&themeSelected=Business&guestesCount=All">Account Information</a>
+                                                </li>
+                                                <li>
+                                                    <a href="locations-by-theme.html?date=01/12/2016&themeSelected=Wedding&guestesCount=All">Orders</a>
+                                                </li>
+												<li>
+                                                    <a href="index.html?login=0">Signout</a>
+                                                </li>
                                     </ul>
                                 </div>
                             </div>
@@ -189,8 +284,8 @@ location.href='locations-by-theme.html?date='+date+"&themeSelected="+themeSelect
                             <!-- Disclaimer -->
                             <div class="col-md-6">
                                 <h3 class="margin-bottom-10">Disclaimer</h3>
-                                <p>All images on this website are for presentation/demonstartion purposes only for cmpe 280 course in San Jose State University, intended to represent a live site and are not have not been bought or solicitated.</p>
-                                <p>Most of the images used here are available from
+                                <p style="text-align:justify">All images on this website are for presentation/demonstartion purposes only for CMPE 280 course in San Jose State University, intended to represent a live site and are not have not been bought or solicitated.</p>
+                                <p style="text-align:justify">Most of the images used here are available from
                                 <a class="nobold" href="http://www.google.com/" target="_blank">google.com</a>. If you wish to purchase them from their copyright owners please visit the appropriate websites. We hold no responsibilty of the images or template or video.</p>
                                 <div class="clearfix"></div>
                             </div>
@@ -198,21 +293,21 @@ location.href='locations-by-theme.html?date='+date+"&themeSelected="+themeSelect
                             <!-- Contact Details -->
                             <div class="col-md-3">
                                 <h3 class="margin-bottom-10">Contact Details</h3>
-                                <p>1 Washington Sq,
-                                <br />San Jose,
-                                <br />CA 95192
+                                <p>One Washington Square,
+                                <br />San Jose, CA
+                                <br />95192
                                 </p>
                                 <p>Email:
-                                <a href="mailto:info@website.com">info@website.com</a>
+                                <a id ="help">info@eclectic.com</a>
                                 <br />Website:
-                                <a href="http://www.website.com">www.website.com</a>
+                                <a id ="website">www.eclectic.com</a>
                                 </p>
                             </div>
                             <!-- End Contact Details -->
                             <div class="container padding-vert-30">
                                 <div class="row">
                                     <div id="copyright">
-                                        <p>(c) 2014 Femme Fatale Copyright Info</p>
+                                        <p>(c) 2016 Eclectic Copyright Info</p>
                                     </div>
                                 </div>
                             </div>
@@ -227,6 +322,9 @@ location.href='locations-by-theme.html?date='+date+"&themeSelected="+themeSelect
 		var date= getQueryVariable("date");
 		var theme= getQueryVariable("themeSelected");
 		var capacity= decodeURIComponent(getQueryVariable("guestesCount"));
+		var login = getQueryVariable("login");
+		if(login==null)
+		login = "0";
 		
 		function getQueryVariable(variable) {
 				var query = window.location.search.substring(1);
@@ -236,7 +334,7 @@ location.href='locations-by-theme.html?date='+date+"&themeSelected="+themeSelect
                		if(pair[0] == variable){return pair[1];}
        			}
        			return(false);
-			}
+		}
 			
 			function initMap() {
 			var image="";
@@ -255,6 +353,7 @@ location.href='locations-by-theme.html?date='+date+"&themeSelected="+themeSelect
 					var type = json.location[i].type;
 					var cap = json.location[i].capacity;
 					
+					
 					if(theme=="All")
 					{
 					
@@ -264,22 +363,22 @@ location.href='locations-by-theme.html?date='+date+"&themeSelected="+themeSelect
 								case "Business":
 									image = 'assets/img/maps/Business.png';
 									title = "Business";
-									locType = locType + '<a href="locationDetails.html?id='+json.location[i].id+'"><li class="locationList" style="border-left:5px solid blue;"><span></span>' +" "+json.location[i].name+"</br>"+json.location[i].address+"</br></br></li></a>";
+									locType = locType + '<a href="locationDetails.html?id='+json.location[i].id+'&login='+login+'"><li class="locationList" style="border-left:5px solid blue;"><span></span>' +" "+json.location[i].name+"</br>"+json.location[i].address+"</br></br></li></a>";
 									break;
 								case "Wedding":
 									image = 'assets/img/maps/Wedding.png';
 									title = "Wedding";
-									locType = locType + '<a href="locationDetails.html?id='+json.location[i].id+'"><li class="locationList" style="border-left:5px solid red;"><span></span>' +" "+json.location[i].name+"</br>"+json.location[i].address+"</br></br></li></a>";
+									locType = locType + '<a href="locationDetails.html?id='+json.location[i].id+'&login='+login+'"><li class="locationList" style="border-left:5px solid red;"><span></span>' +" "+json.location[i].name+"</br>"+json.location[i].address+"</br></br></li></a>";
 									break;
 								case "Cultural":
 									image = 'assets/img/maps/Cultural.png';
 									title = "Cultural";
-									locType = locType + '<a href="locationDetails.html?id='+json.location[i].id+'"><li class="locationList" style="border-left:5px solid yellow;"><span></span>' +" "+json.location[i].name+"</br>"+json.location[i].address+"</br></br></li></a>";
+									locType = locType + '<a href="locationDetails.html?id='+json.location[i].id+'&login='+login+'"><li class="locationList" style="border-left:5px solid yellow;"><span></span>' +" "+json.location[i].name+"</br>"+json.location[i].address+"</br></br></li></a>";
 									break;
 								case "Birthday":
 									image = 'assets/img/maps/Birthday.png';
 									title = "Birthday";
-									locType = locType + '<a href="locationDetails.html?id='+json.location[i].id+'"><li class="locationList" style="border-left:5px solid green;"><span></span>' +" "+json.location[i].name+"</br>"+json.location[i].address+"</br></br></li></a>";
+									locType = locType + '<a href="locationDetails.html?id='+json.location[i].id+'&login='+login+'"><li class="locationList" style="border-left:5px solid green;"><span></span>' +" "+json.location[i].name+"</br>"+json.location[i].address+"</br></br></li></a>";
 									break;
 							}
 						
@@ -306,7 +405,7 @@ location.href='locations-by-theme.html?date='+date+"&themeSelected="+themeSelect
 							if (capacity == "All" || (capacity == "Less than 100" && cap <= 100) || (capacity == "100 to 500" && cap > 100 && cap <=500) || (capacity == "500 to 1000" && cap > 500 && cap <= 1000) || (capacity == "More than 1000" && cap > 1000)) {
 								image = "assets/img/maps/"+theme+".png";
 								title = theme;
-								locType = locType + '<a href="locationDetails.html?id='+json.location[i].id+'"><li class="locationList" style="border-left:5px solid '+col+'"><span></span>' +" "+json.location[i].name+"</br>"+json.location[i].address+"</br></br></li></a>";
+								locType = locType + '<a href="locationDetails.html?id='+json.location[i].id+'&login='+login+'"><li class="locationList" style="border-left:5px solid '+col+'"><span></span>' +" "+json.location[i].name+"</br>"+json.location[i].address+"</br></br></li></a>";
 								var marker = new google.maps.Marker({position: point,
 															 icon: image,
 															 map: map,				  
