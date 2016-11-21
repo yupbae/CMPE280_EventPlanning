@@ -25,44 +25,8 @@
         <link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Open Sans:300,400" />
         <link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Source Sans Pro:300,400" />
 		<script type ="text/javascript" src= "https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js" ></script>
+		<script type ="text/javascript" src = "./assets/js/login.js"> </script>
     </head>
-	<script>
-	$(document).ready( function() {
-    var now = new Date();
-    var day = ("0" + now.getDate()).slice(-2);
-    var month = ("0" + (now.getMonth() + 1)).slice(-2);
-    var today = now.getFullYear()+"-"+(month)+"-"+(day) ;
-    $('#eventdate').val(today);
-     
-    
-});
-function loginAction() {
-		var name = $("#username").val();
-		var password = $("#password").val();
-		var dataString = 'userid=' + name + '&password1=' + password;
-		$.ajax({
-			url: "check.php",
-			type: 'POST',
-			data: dataString,
-			success: function(response){
-				if(response != "failed") {
-					location.href = "index.html?login=1&userid="+response;
-				}
-				else {
-					alert("UserId and Password do not match!");
-				}
-			}
-		});
-}
-function loadTheme(){
-
-var date=$('#eventdate').val();
-var themeSelected=$("#theme option:selected").text();
-var guestesCount=$("#capacity option:selected").text();;
-location.href='locations-by-theme.html?date='+date+"&themeSelected="+themeSelected+"&guestesCount="+guestesCount;
-}
-	
-	</script>
     <body>
         <div id="body_bg">
             <div id="container_header" class="container">
@@ -195,9 +159,15 @@ location.href='locations-by-theme.html?date='+date+"&themeSelected="+themeSelect
                                                     <input type="checkbox" >Stay signed in</label>
                                             </div>
                                             <div class="col-md-6">
-                                                <input class="btn btn-primary pull-right" type="button" onClick="loginAction()" value ="Login">
+                                                <input class="btn btn-primary pull-right" type="button" onClick="loginAction()" value ="Login" id="loginBtn" disabled>
                                             </div>
                                         </div>
+										<p>&nbsp;</p>
+										<div class="row">
+                                            <div class="col-md-4 col-md-offset-2">
+												<div id="validate"></div>
+											</div>
+										</div>
                                         <hr>
                                         <h4>Don't have an account? <a class="color-green" href="pages-sign-up.html">Sign Up</a></h4>                                       <h4>Forgot your Password ?</h4>
                                     </form>
@@ -242,6 +212,7 @@ location.href='locations-by-theme.html?date='+date+"&themeSelected="+themeSelect
             </div>
         </div>
         <!-- JS -->
+		<script src="https://www.google.com/recaptcha/api.js?onload=onloadCallback&render=explicit" async defer></script>
         <script type="text/javascript" src="assets/js/jquery.min.js" type="text/javascript"></script>
         <script type="text/javascript" src="assets/js/bootstrap.min.js" type="text/javascript"></script>
         <script type="text/javascript" src="assets/js/scripts.js"></script>
