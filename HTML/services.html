@@ -25,6 +25,90 @@
         <link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Open Sans:300,400" />
         <link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Source Sans Pro:300,400" />
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+        <script>
+		var login = getQueryVariable("login");
+		var user =  getQueryVariable("userid");
+		if(login == false || login == null)
+		login = "0";
+		 function getQueryVariable(variable) {
+				var query = window.location.search.substring(1);
+				var vars = query.split("&");
+       			for (var i=0; i<vars.length; i++) {
+					var pair = vars[i].split("=");
+               		if(pair[0] == variable){return pair[1];}
+       			}
+       			return(false);
+          }
+		function renderIndexPage() {
+		  if(login == "1")
+		  location.href = "index.html?login=1&userid="+user;
+		  else
+		  location.href = "index.html?login=0";
+	    }
+		function renderContactPage() {
+		  if(login == "1")
+		  location.href = "contact.html?login=1&userid="+user;
+		  else
+		  location.href = "contact.html?login=0";
+	    }
+		function renderAboutPage() {
+		  if(login == "1")
+		  location.href = "pages-about-us.html?login=1&userid="+user;
+		  else
+		  location.href = "pages-about-us.html?login=0";
+	    }
+		function renderTeamPage() {
+		  if(login == "1")
+		  location.href = "pages-about-us.html?login=1&userid="+user;
+		  else
+		  location.href = "pages-about-us.html?login=0";
+	    }
+		function renderBusinessLocations() {
+		  if(login == "1")
+		  location.href = "locations-by-theme.html?date=01/12/2016&themeSelected=Business&guestesCount=All&login=1&userid="+user;
+		  else
+		  location.href = "locations-by-theme.html?date=01/12/2016&themeSelected=Business&guestesCount=All&login=0";
+	    }
+		function renderWeddingLocations() {
+		  if(login == "1")
+		  location.href = "locations-by-theme.html?date=01/12/2016&themeSelected=Wedding&guestesCount=All&login=1&userid="+user;
+		  else
+		  location.href = "locations-by-theme.html?date=01/12/2016&themeSelected=Wedding&guestesCount=All&login=0";
+	    }
+		function renderCulturalLocations() {
+		  if(login == "1")
+		  location.href = "locations-by-theme.html?date=01/12/2016&themeSelected=Cultural&guestesCount=All&login=1&userid="+user;
+		  else
+		  location.href = "locations-by-theme.html?date=01/12/2016&themeSelected=Cultural&guestesCount=All&login=0";
+	    }
+		function renderBirthdayLocations() {
+		  if(login == "1")
+		  location.href = "locations-by-theme.html?date=01/12/2016&themeSelected=Birthday&guestesCount=All&login=1&userid="+user;
+		  else
+		  location.href = "locations-by-theme.html?date=01/12/2016&themeSelected=Birthday&guestesCount=All&login=0";
+	    }
+		function renderServices() {
+		  if(login == "1")
+		  location.href = "services.html?login=1&userid="+user;
+		  else
+		  location.href = "services.html?login=0";
+	    }
+
+	function loadTheme(){	
+	    if(login == "1") {
+		var date=$('#eventdate').val();
+		var themeSelected=$("#theme option:selected").text();
+		var guestesCount=$("#capacity option:selected").text();;
+		location.href='locations-by-theme.html?date='+date+"&themeSelected="+themeSelected+"&guestesCount="+guestesCount + "&login=1&userid="+user;
+		}
+		else {
+		var date = $('#eventdate').val();
+		var themeSelected=$("#theme option:selected").text();
+		var guestesCount=$("#capacity option:selected").text();;
+		location.href='locations-by-theme.html?date='+date+"&themeSelected="+themeSelected+"&guestesCount="+guestesCount + "&login=0";
+		}
+	}
+		</script>
     </head>
     <body>
         <div id="body_bg">
@@ -60,7 +144,7 @@
                     <div id="container_hornav" class="container no-padding">
                         <!-- Logo -->
                         <div class="logo">
-                            <a href="index.html">
+                            <a href="index.html" onClick="renderIndexPage()">
                                 <img src="assets/img/logo1.png" alt="Logo" />
                             </a>
                         </div>
@@ -74,17 +158,17 @@
                                 <div id="hornav" class="pull-right">
                                     <ul id="hornavmenu" class="nav navbar-nav">
                                         <li>
-                                            <a href="index.html">Home</a>
+                                            <a onClick="renderIndexPage()">Home</a>
                                         </li>
                                         
                                         <li>
                                             <span>About</span>
                                             <ul>
                                                 <li>
-                                                    <a href="pages-about-us.html">Philosophy</a>
+                                                    <a onClick="renderAboutPage()">Philosophy</a>
                                                 </li>
                                                 <li>
-                                                    <a href="pages-about-us.html#team">The Team</a>
+                                                    <a onClick="renderTeamPage()">The Team</a>
                                                 </li>
                                             </ul>
                                         </li>
@@ -92,16 +176,16 @@
                                             <span>Event Locations</span>
                                             <ul>
                                                 <li>
-                                                    <a href="locations-by-theme.html?date=01/12/2016&themeSelected=Business&guestesCount=All">Business</a>
+                                                    <a onClick="renderBusinessLocations()">Business</a>
                                                 </li>
                                                 <li>
-                                                    <a href="locations-by-theme.html?date=01/12/2016&themeSelected=Wedding&guestesCount=All">Wedding</a>
+                                                    <a onClick="renderWeddingLocations()">Wedding</a>
                                                 </li>
                                                 <li>
-                                                    <a href="locations-by-theme.html?date=01/12/2016&themeSelected=Cultural&guestesCount=All">Cultural</a>
+                                                    <a onClick="renderCulturalLocations()">Cultural</a>
                                                 </li>
                                                 <li>
-                                                    <a href="locations-by-theme.html?date=01/12/2016&themeSelected=Birthday&guestesCount=All">Birthday</a>
+                                                    <a onClick="renderBirthdayLocations()">Birthday</a>
                                                 </li>
                                             </ul>
                                         </li>
@@ -115,12 +199,23 @@
                                              <a href="music.html">Live Music</a>
                                              </li>
                                              </ul> -->
-                                            <a href="services.html">Services</a> 
+                                            <a onClick="renderServices()">Services</a> 
                                         <li>
-                                            <a href="contact.html">Contact</a>
+                                            <a onClick="renderContactPage()">Contact</a>
                                         </li>
                                         <li>
-                                            <a href="pages-login.html">Login</a>
+                                            <a id = "login" href="pages-login.html">Login</a>
+                                        </li>
+                                         <li id = "account" style="display:none">
+                                            <span id = "name">My Account</span>
+                                            <ul>
+                                                <li>
+                                                    <a onClick="renderWeddingLocations()">Recently Viewed</a>
+                                                </li>
+												<li>
+                                                    <a href="index.html?&login=0">Signout</a>
+                                                </li>
+                                            </ul>
                                         </li>
                                     </ul>
                                 </div>
@@ -187,8 +282,8 @@
                             <!-- Disclaimer -->
                             <div class="col-md-6">
                                 <h3 class="margin-bottom-10">Disclaimer</h3>
-                                <p>All images on this website are for presentation/demonstartion purposes only for cmpe 280 course in San Jose State University, intended to represent a live site and are not have not been bought or solicitated.</p>
-                                <p>Most of the images used here are available from
+                                <p style="text-align:justify">All images on this website are for presentation/demonstartion purposes only for CMPE 280 course in San Jose State University, intended to represent a live site and are not have not been bought or solicitated.</p>
+                                <p style="text-align:justify">Most of the images used here are available from
                                     <a class="nobold" href="http://www.google.com/" target="_blank">google.com</a>. If you wish to purchase them from their copyright owners please visit the appropriate websites. We hold no responsibilty of the images or template or video.</p>
                                 <div class="clearfix"></div>
                             </div>
@@ -196,21 +291,21 @@
                             <!-- Contact Details -->
                             <div class="col-md-3">
                                 <h3 class="margin-bottom-10">Contact Details</h3>
-                                <p>1 Washington Sq,
-                                    <br />San Jose,
-                                    <br />CA 95192
+                                <p>One Washington Square,
+                                    <br />San Jose, CA
+                                    <br />95192
                                 </p>
                                 <p>Email:
-                                    <a href="mailto:info@website.com">info@website.com</a>
+                                    <a onClick = "renderContactPage()">info@website.com</a>
                                     <br />Website:
-                                    <a href="http://www.website.com">www.website.com</a>
+                                    <a onClick = "renderIndexPage()">www.website.com</a>
                                 </p>
                             </div>
                             <!-- End Contact Details -->
 							<div class="container padding-vert-30">
 								<div class="row">
 									<div id="copyright">
-										<p>(c) 2014 Eclectic Fatale Copyright Info</p>
+										<p>(c) 2016 Eclectic Copyright Info</p>
 									</div>
 								</div>
 							</div>
@@ -226,6 +321,14 @@
 		<!-- Isotope - Portfolio Sorting -->
 		<script type="text/javascript" src="assets/js/jquery.isotope.js" type="text/javascript"></script>
 		<!-- Mobile Menu - Slicknav -->
+         <script>
+		 var user =  getQueryVariable("userid");
+		   if(login == "1") {
+	    	$("#login").hide();
+			$("#account").show();
+			$("#name").html(user);
+	    }
+        </script>
 		<script type="text/javascript" src="assets/js/jquery.slicknav.js" type="text/javascript"></script>
 		<!-- Animate on Scroll-->
 		<script type="text/javascript" src="assets/js/jquery.visible.js" charset="utf-8"></script>

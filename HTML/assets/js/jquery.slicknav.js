@@ -49,10 +49,10 @@
 		if (settings.duplicate) {
 			jQuerythis.mobileNav = menu.clone();
 			//remove ids from clone to prevent css issues
-			jQuerythis.mobileNav.removeAttr('id');
-			jQuerythis.mobileNav.find('*').each(function(i,e){
-				jQuery(e).removeAttr('id');
-			});
+			//jQuerythis.mobileNav.removeAttr('id');
+			//jQuerythis.mobileNav.find('*').each(function(i,e){
+			//	jQuery(e).removeAttr('id');
+			//});
 		}
 		else
 			jQuerythis.mobileNav = menu;

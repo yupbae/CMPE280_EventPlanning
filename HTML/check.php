@@ -14,10 +14,10 @@
       // If result matched $myusername and $mypassword, table row must be 1 row
 		
       if($count > 0) {
-         echo "ok";
+         echo $userid;
          $_SESSION['id'] = $userid;
       }else {
-         $error = "Your Login Name or Password is invalid";
+         echo "failed";
       }
    }
 ?>

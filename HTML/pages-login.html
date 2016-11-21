@@ -45,11 +45,11 @@ function loginAction() {
 			type: 'POST',
 			data: dataString,
 			success: function(response){
-				if(response == "ok") {
-					location.href = "index.html?login=1";
+				if(response != "failed") {
+					location.href = "index.html?login=1&userid="+response;
 				}
 				else {
-					alert("userid and password do not match!");
+					alert("UserId and Password do not match!");
 				}
 			}
 		});
