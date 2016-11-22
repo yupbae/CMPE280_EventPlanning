@@ -137,7 +137,7 @@
                             <div class="row margin-vert-30">
                                 <!-- Login Box -->
                                 <div class="col-md-6 col-md-offset-3 col-sm-offset-3">
-                                    <form class="login-page" method="post" action="">
+                                    <form class="login-page" method="post">
                                         <div class="login-header margin-bottom-30">
                                             <h2>Login to your account</h2>
                                         </div>
@@ -145,13 +145,13 @@
                                             <span class="input-group-addon">
                                                 <i class="fa fa-user"></i>
                                             </span>
-                                            <input placeholder="Username" class="form-control" type="text" id ="username">
+                                            <input placeholder="Username" class="form-control" type="text" id ="email1" name = "email1">
                                         </div>
                                         <div class="input-group margin-bottom-20">
                                             <span class="input-group-addon">
                                                 <i class="fa fa-lock"></i>
                                             </span>
-                                            <input placeholder="Password" class="form-control" type="password" id ="password">
+                                            <input placeholder="Password" class="form-control" type="password" id ="password1" name = "password1">
                                         </div>
                                         <div class="row">
                                             <div class="col-md-6">
@@ -159,7 +159,7 @@
                                                     <input type="checkbox" >Stay signed in</label>
                                             </div>
                                             <div class="col-md-6">
-                                                <input class="btn btn-primary pull-right" type="button" onClick="loginAction()" value ="Login" id="loginBtn" disabled>
+                                                <input class="btn btn-primary pull-right" type="button" onClick="loginAction()" value ="Login" id="loginBtn">
                                             </div>
                                         </div>
 										<p>&nbsp;</p>
@@ -213,7 +213,6 @@
             </div>
         </div>
         <!-- JS -->
-		<script src="https://www.google.com/recaptcha/api.js?onload=onloadCallback&render=explicit" async defer></script>
         <script type="text/javascript" src="assets/js/jquery.min.js" type="text/javascript"></script>
         <script type="text/javascript" src="assets/js/bootstrap.min.js" type="text/javascript"></script>
         <script type="text/javascript" src="assets/js/scripts.js"></script>
