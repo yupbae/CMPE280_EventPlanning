@@ -5931,6 +5931,13 @@ button.close {
 @-ms-viewport {
   width: device-width;
 }
+
+.vcenter {
+    display: inline-block;
+    vertical-align: middle;
+    float: none;
+}
+
 .visible-xs,
 .visible-sm,
 .visible-md,
