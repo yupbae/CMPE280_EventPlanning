@@ -299,6 +299,7 @@ function renderIndexPage() {
 											<div style="padding:25px;">
 												<h2>Details</h2>
 												<p id="details"></p>
+                                                <h3>Click <a href = "#" id = "vr" target="_blank" onClick="renderVR()" >here</a> to get a virtual tour of this location.</h3>
 												
 											</div>
 											<hr>
@@ -363,7 +364,7 @@ function renderIndexPage() {
 		var name = "", type = "", address = "", locInfo = "", point = "", amenities = "", details = "", capacity = 0, price = 0;
 					
 		var json = JSON.parse(locations);
-		for(i=0; i<json.location.length; i++) {
+		for(i=0; i <= json.location.length; i++) {
 			locId = json.location[i].id;
 			if (locId == id) {
 				name = json.location[i].name;
@@ -411,7 +412,9 @@ function renderIndexPage() {
 			$('#amenities').html(amenities);
 			$('#details').html(details);
 		}
-
+        function renderVR() {
+			document.getElementById("vr").setAttribute('href', "pages-VR.html?id="+id);
+		}
 		function initMap() {
 			var map = new google.maps.Map(document.getElementById('map'), {
 				zoom: 9,
