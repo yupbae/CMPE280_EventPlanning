@@ -346,7 +346,7 @@ function getQueryVariable(variable) {
 				});
 				var i;
 				var locType="";
-				for(i=0; i<json.location.length; i++) {
+				for(i=0; i <= json.location.length; i++) {
 					$('#list').html(locType);
 					var point = {lat: json.location[i].latitude, lng: json.location[i].longitude};
 					var type = json.location[i].type;
