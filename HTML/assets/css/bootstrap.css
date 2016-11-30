@@ -6156,3 +6156,9 @@ button.close {
 	cursor:hand;
 	min-height:50px;
 }
+
+.imgThumbnail
+{
+	width:50px;
+	border-radius:50%;
+}

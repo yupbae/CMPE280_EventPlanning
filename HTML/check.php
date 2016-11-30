@@ -5,6 +5,7 @@
         header("content-type: application/json");
         
         $jsonobj->operation = null;
+		session_start();
 
         $dbhost = 'localhost';
         $dbuser = 'id232855_eclectic';
@@ -26,8 +27,15 @@
       // If result matched $myusername and $mypassword, table row must be 1 row
 		
       if($count > 0) {
-         $jsonobj->userid= $email;
+		 $sql = "select firstname from registration where email = '$email'";
+		 $result = $conn->query($sql);
+		 $row = $result->fetch_assoc();
+		 $fname = $row["firstname"];
+         $jsonobj->userid= $fname;
          $jsonobj->operation = 'Ok';
+		
+		 $_SESSION["username"] = $fname;
+		 echo $fname;
       }else {
          $jsonobj->userid= null;
          $jsonobj->operation = 'Error';

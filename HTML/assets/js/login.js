@@ -32,7 +32,9 @@ function loginAction() {
 		}
 		else {
 			var dataString = 'email1='+name+'&password1='+password;
+			alert(dataString);
 			var url = 'https://eclectic.000webhostapp.com/check.php';
+			//var url = 'http://localhost/280/check.php';
 					var oReq = CreateXMLHttpRequest();
 				    oReq.open("POST",url,true);
 					if(oReq!=null){

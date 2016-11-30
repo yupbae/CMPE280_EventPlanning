@@ -6,7 +6,6 @@
 <html lang="en">
     <!--<![endif]-->
     <head>
-		<link rel="icon" href="../assets/img/Elogo.PNG" type="image/png">
         <title>Eclectic - Event Planners.</title>		
         <!-- Meta -->
         <meta http-equiv="content-type" content="text/html; charset=utf-8" />
@@ -27,6 +26,8 @@
         <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Source Sans Pro:300,400" />
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
 		<script src="./assets/js/bootstrap-datepicker.js"></script>
+
+		
     </head>
     <body>
         <div id="body_bg">
@@ -128,7 +129,7 @@
                                             <span id = "name">My Account</span>
                                             <ul>
                                                 <li>
-                                                    <a href= "#" onClick="renderWeddingLocations()">Recently Viewed</a>
+                                                    <a href= "#" class = "account-details" onClick="renderAccountDetails()">My Account</a>
                                                 </li>
 												<li>
                                                     <a href="index.html?login=0" id = "signout">Signout</a>
@@ -185,73 +186,32 @@
                             </div>
                             <!-- End Carousel Slideshow -->
 							<!-- Selection to Book -->
-							<div class="container">
-								<div class="col-md-12 margin-top-30">
-										 <div class="row vcenter text-center " align="center">
-											<div class="col-xs-6 col-sm-6 col-md-6 col-lg-2">
-												<label >Date</label>
-												<div class="input-group input-append date" id="datePicker">
-													<input type="text" class="form-control" name="eventdate" />
-													<span class="input-group-addon add-on"><span class="glyphicon glyphicon-calendar"></span></span>
-												</div>
-											</div>
-										
-											<div class="col-xs-6 col-sm-6 col-md-6 col-lg-2">
-												<label>Theme:</label>
-											  <select id="theme" class="selectpicker form-control">
-												<option  selected value="All">All</option>
-												<option value="business">Business</option>
-												<option value="wedding">Wedding</option>
-												<option value="cultural">Cultural</option>
-												<option value="birthday">Birthday</option>
-											  </select>
-											</div>
-											
-											<div class="col-xs-6 col-sm-6 col-md-6 col-lg-2" >
-												<label>Number of guests</label>
-											  <select id="capacity" class="selectpicker form-control">
-												<option selected value="all">All</option>
-												<option value="less">Less than 100</option>
-												<option value="ok">100 to 500</option>
-												<option value="medium">500 to 1000</option>
-												<option value="more">More than 1000</option>
-											  </select>
-											</div>
-											<div class="col-xs-6 col-sm-6 col-md-6 col-lg-2" style="padding-top:15px;">
-												<input type="button" style="background-color:#3c3343;width:150px;height:50px"  id="book" class="btn btn-primary btn-lg" onclick="loadTheme();" value="Book Now">
-											</div>
-										</div>
-										<p>&nbsp;</p>
-								</div>
-							</div>
+							 <table style="width:100%;">
+                                 <tr class="customrow">
+                                     
+                                     <td class="customcol" style="width:33%;" ><b>Theme:</b>&nbsp;
+                                         <select id="theme" class="data" style="height:25px">
+                                             <option  selected value="All">All</option>
+                                             <option value="business">Business</option>
+                                             <option value="wedding">Wedding</option>
+                                             <option value="cultural">Cultural</option>
+                                             <option value="birthday">Birthday</option>
+                                         </select>
+                                     </td>
+                                     <td class="customcol" style="width:33%;" ><b>Number of guests:</b>&nbsp;
+                                         <select id="capacity" class="data" style="height:25px">
+                                             <option selected value="all">All</option>
+                                             <option value="less">Less than 100</option>
+                                             <option value="ok">100 to 500</option>
+                                             <option value="medium">500 to 1000</option>
+                                             <option value="more">More than 1000</option>
+                                             </td>
+                                     <td style="width:33%;"><input type="button" style="background-color:#3c3343"  id="book" class="data" onclick="loadTheme();" value="Book Now"></td>
+                                 </tr>
+                             </table>
 							<!-- Selection to Book -->
                             <!-- Tabs -->
-                            <div class="tabs-dark" style="padding:0;">
-                                <!-- Tab Navigation -->
-                                <ul class="nav nav-tabs">
-                                    <li class="active">
-                                        <a href="#home" data-toggle="tab">Home</a>
-                                    </li>
-                                    <li>
-                                        <a href="#messages" data-toggle="tab">Reviews</a>
-                                    </li>
-                                </ul>
-                                <!-- End Tab Navigation -->
-                                <!-- Tab Panes -->
-                                <div class="tab-content">
-                                    <div class="tab-pane fade in active" id="home">
-                                        <img style="float: left; margin-right: 25px; margin-bottom: 10px;" src="assets/img/portfolio/filler.jpg" alt="filler image">
-                                        <h3>Tour your venue</h3>
-                                        <p style="text-align:justify">From the comfort of your house, you can tour the venue which you choose. This helps in knowing your venue better before you come here. It also gives you a chance to undrestand the layout of the room, the exits which are present and other facilities. It gives you accessibility information to plan your visit beforehand which will give you more time to carry out your work efficiently.</p>
-                                    </div>
-                                    <div class="tab-pane fade" id="messages">
-                                        <img style="float: left; margin-right: 25px; margin-bottom: 10px;" src="assets/img/portfolio/filler3.jpg" alt="filler image">
-                                        <h3>Find what our customers are saying.</h3>
-                                        <p><i>Eclectic Event Planners are indeed the best event planners in the world -- Pooja, San Jose State University.</i></p>
-                                    </div>
-                                </div>
-                                <!-- End Tab Panes -->
-                            </div>
+                            
                             <!-- End Tabs -->
                         </div>
                     </div>
@@ -263,17 +223,56 @@
                                     Virtual Reality Tour
                                 </h2>
                                 <p style="text-align:justify">
-                                <iframe width="420" height="315"
-                                    src="https://www.youtube.com/embed/H9kZk1DdF6c?autoplay=1" align="right">
-                                </iframe>You can tour all the venues right here, right now! We provide high definition virtual reality three dimensional videos of our locations. Here you can move from one room to another, turn your view and walk between the rooms using mouse-pad and keypad. All you have to do now, sit down, relax and let us take you on a tour of our most favorite location of all. Enjoy! </p>
+                                You can tour all the venues right here, right now! We provide high definition virtual reality three dimensional videos of our locations. Here you can move from one room to another, turn your view and walk between the rooms using mouse-pad and keypad. All you have to do now, sit down, relax and let us take you on a tour of our most favorite location of all. Enjoy! </p>
+								<p>
+									From the comfort of your house, you can tour the venue which you choose. This helps in knowing your venue better before you come here. It also gives you a chance to undrestand the layout of the room, the exits which are present and other facilities. It gives you accessibility information to plan your visit beforehand which will give you more time to carry out your work efficiently.
+								</p>
+								<table>
+									<tr><td style="width:600px;border:1px solid grey;">
+									
+										<marquee style="height:312px;"  scrollamount="2" direction="up" loop="true">
+										  <ul id="reviews">
+										  </ul>
+										  </marquee>
+									</td>
+									<td style="width:600px">
+									<iframe width="420" height="315"
+										src="https://www.youtube.com/embed/H9kZk1DdF6c?autoplay=1" align="right">
+									</iframe></td></tr>
+								</table>
                             </div>
+
                             <div class="clearfix"></div>
                             <!-- End Main Article -->
                         </div>
                     </div>
-                    <div class="container no-padding gridgallery">
+                    
+					
+					
+					<div class="container no-padding gridgallery">
                         <!-- Portfolio Header Text -->
                         <div class="row">
+						<div class="tabs-dark" style="padding:0;display:none;">
+                                <!-- Tab Panes -->
+                                <div class="tab-content">
+                                    <div class="tab-pane fade in active" id="home" style="display:none;">
+                                        <img style="float: left; margin-right: 25px; margin-bottom: 10px;" src="assets/img/portfolio/filler.jpg" alt="filler image">
+                                        <h3>Tour your venue</h3>
+                                        <p style="text-align:justify">From the comfort of your house, you can tour the venue which you choose. This helps in knowing your venue better before you come here. It also gives you a chance to undrestand the layout of the room, the exits which are present and other facilities. It gives you accessibility information to plan your visit beforehand which will give you more time to carry out your work efficiently.</p>
+                                    </div>
+                                    <div class="tab-pane fade" id="messages" style="display:none;">
+                                        <img style="float: left; margin-right: 25px; margin-bottom: 10px;" src="assets/img/portfolio/filler3.jpg" alt="filler image">
+                                        <h3>Find what our customers are saying.</h3>
+                                        <p><i>Eclectic Event Planners are indeed the best event planners in the world -- Pooja, San Jose State University.</i></p>
+                                    </div>
+									
+									
+
+									
+                                </div>
+                                <!-- End Tab Panes -->
+                            </div>
+							
                             <div class="col-md-12 padding-vert-30">
                                 <h2 class="subtitle text-center">Preview of our locations</h2>
                                 <h3 class="subtitle text-center">Beautiful indoor and outdoor locations for your event in heart of Silicon Valley, San Jose.</h3>
@@ -285,7 +284,7 @@
                             <!-- Portfolio Item -->
                             <div class="portfolio-item col-md-3 col-sm-6 col-xs-6 animate fadeInUp">
                                 <div class="image-hover">
-                                    <a class = "business-locations">
+                                    <a class = "business-locations" href="locations-by-theme.html?themeSelected=Business&guestesCount=All">
                                         <figure>
                                             <img src="assets/img/portfolio/image1.jpg" alt="image1">
                                             <figcaption>
@@ -300,7 +299,7 @@
                             <!-- Portfolio Item -->
                             <div class="portfolio-item col-md-3 col-sm-6 col-xs-6 animate fadeInUp">
                                 <div class="image-hover">
-                                    <a  class = "wedding-locations">
+                                    <a  class = "wedding-locations" href="locations-by-theme.html?themeSelected=Wedding&guestesCount=All">
                                         <figure>
                                             <img src="assets/img/portfolio/image2.jpg" alt="image2">
                                             <figcaption>
@@ -315,7 +314,7 @@
                             <!-- Portfolio Item -->
                             <div class="portfolio-item col-md-3 col-sm-6 col-xs-6 animate fadeInUp">
                                 <div class="image-hover">
-                                    <a class = "cultural-locations">
+                                    <a class = "cultural-locations" href="locations-by-theme.html?themeSelected=Cultural&guestesCount=All">
                                         <figure>
                                             <img src="assets/img/portfolio/image3.jpg" alt="image3">
                                             <figcaption>
@@ -330,7 +329,7 @@
                             <!-- Portfolio Item -->
                             <div class="portfolio-item col-md-3 col-sm-6 col-xs-6 animate fadeInUp">
                                 <div class="image-hover">
-                                    <a class = "birthday-locations">
+                                    <a class = "birthday-locations" href="locations-by-theme.html?themeSelected=Birthday&guestesCount=All">
                                         <figure>
                                             <img src="assets/img/portfolio/image4.jpg" alt="image4">
                                             <figcaption>
@@ -404,6 +403,22 @@
         <script type="text/javascript" src="assets/js/jquery.visible.js" charset="utf-8"></script>
         <!-- Modernizr -->
         <script src="assets/js/modernizr.custom.js" type="text/javascript"></script>
+		<script>
+			$(document).ready( function() {
+			
+				getReviews();
+			});
+				/*var curdate = new Date();
+				var dd = curdate.getDate();
+				var mm = curdate.getMonth();
+				var yy = curdate.getYear();
+				var eventdate = yy + "-" + mm + "-" + dd;
+				$('#eventdate').val(eventdate);
+				$('#eventdate').attr("min",eventdate);
+				$('#eventdate').attr("max", (eventdate.getMonth()+1)%12 + 1);
+			});​*/
+		</script>
+		
         <!-- End JS -->
     </body>
 </html>
