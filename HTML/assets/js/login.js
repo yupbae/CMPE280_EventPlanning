@@ -44,6 +44,7 @@ function loginAction() {
 						    	var json = JSON.parse(oReq.responseText);
 								var op = json.operation;
 								var userid = json.userid;
+								alert(oReq.responseText);
 								if(op === "Ok"){
 									window.document.location.href = 'index.html?login=1&userid='+userid;
 								}

@@ -26,28 +26,8 @@
         <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Source Sans Pro:300,400" />
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
 		<script src="./assets/js/bootstrap-datepicker.js"></script>
-<<<<<<< HEAD
 
 		
-=======
-        <script type="text/javascript">
-            var datefield=document.createElement("input")
-            datefield.setAttribute("type", "date")
-            if (datefield.type!="date"){ //if browser doesn't support input type="date", load files for jQuery UI Date Picker
-                document.write('<link href="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8/themes/base/jquery-ui.css" rel="stylesheet" type="text/css" />\n')
-                document.write('<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.4/jquery.min.js"><\/script>\n')
-                document.write('<script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8/jquery-ui.min.js"><\/script>\n')
-            }
-        </script>
-        
-        <script>
-            if (datefield.type!="date"){ //if browser doesn't support input type="date", initialize date picker widget:
-                jQuery(function($){ //on document.ready
-                       $('#eventdate').datepicker();
-                       })
-            }
-        </script>
->>>>>>> origin/master
     </head>
     <body>
         <div id="body_bg">
@@ -205,7 +185,6 @@
 								</div>
                             </div>
                             <!-- End Carousel Slideshow -->
-<<<<<<< HEAD
 							<!-- Selection to Book -->
 							 <table style="width:100%;">
                                  <tr class="customrow">
@@ -234,123 +213,6 @@
                             <!-- Tabs -->
                             
                             <!-- End Tabs -->
-=======
-                            <!-- Selection to Book -->
-                            <table>
-                                <tr class="customrow">
-                                    <td class="customcol" ><b>Date:</b>&nbsp;
-                                        <input type="date" id="eventdate" style="height:30px">
-                                            </td>
-                                    <td class="customcol" ><b>Theme:</b>&nbsp;
-                                        <select id="theme" class="data" style="height:25px">
-                                            <option  selected value="All">All</option>
-                                            <option value="business">Business</option>
-                                            <option value="wedding">Wedding</option>
-                                            <option value="cultural">Cultural</option>
-                                            <option value="birthday">Birthday</option>
-                                        </select>
-                                    </td>
-                                    <td class="customcol" ><b>Number of guests:</b>&nbsp;
-                                        <select id="capacity" class="data" style="height:25px">
-                                            <option selected value="all">All</option>
-                                            <option value="less">Less than 100</option>
-                                            <option value="ok">100 to 500</option>
-                                            <option value="medium">500 to 1000</option>
-                                            <option value="more">More than 1000</option>
-                                            </td>
-                                    <td><input type="button" style="background-color:#3c3343"  id="book" class="data" onclick="loadTheme();" value="Book Now"></td>
-                                </tr>
-                            </table>
-							<!-- Selection to Book -->
-                            <!-- Tabs -->
-                            <div class="tabs-dark" style="padding:0;">
-                                <!-- Tab Navigation -->
-                                <ul class="nav nav-tabs">
-                                    <li class="active">
-                                        <a href="#reviews" data-toggle="tab">Cheers</a>
-                                    </li>
-                                </ul>
-                                <!-- End Tab Navigation -->
-                                <!-- Tab Panes -->
-                                <div class="row">
-                                    <!-- Testimonials - Default Full Width -->
-                                    <div class="col-md-12">
-                                        <div class="carousel slide testimonials" id="testimonials1">
-                                            <ol class="carousel-indicators">
-                                                <li class="active" data-slide-to="0" data-target="#testimonials-rotate">
-                                                </li>
-                                                <li data-slide-to="1" data-target="#testimonials1">
-                                                </li>
-                                                <li data-slide-to="2" data-target="#testimonials1">
-                                                </li>
-                                            </ol>
-                                            <div class="carousel-inner">
-                                                <div class="item active">
-                                                    <div class="col-md-12">
-                                                        <p>
-                                                        Eclectic has been great event planners. We were able to view the venue beforehand which helped me in finding all accessibility options. It was of great help!!
-                                                        </p>
-                                                        <div class="testimonial-info">
-                                                            <img alt="" src="assets/img/profiles/53.jpg" class="img-circle img-responsive" />
-                                                            <span class="testimonial-author">
-                                                                Cristina Hall
-                                                                <em>
-                                                                    Human Resource Manager, Business Inc.
-                                                                </em>
-                                                            </span>
-                                                        </div>
-                                                    </div>
-                                                    <div class="clearfix"></div>
-                                                </div>
-                                                <div class="item">
-                                                    <div class="col-md-12">
-                                                        <p>
-                                                        Our wedding was wonderfully planned with the help of Eclectic. The services provided by Eclectic helped us in arranging our wedding peacefully.
-                                                        </p>
-                                                        <div class="testimonial-info">
-                                                            <img alt="" src="assets/img/profiles/99.jpg" class="img-circle img-responsive" />
-                                                            <span class="testimonial-author">
-                                                                Anthony Watkins
-                                                                <em>
-                                                                    Newly married Husband.
-                                                                </em>
-                                                            </span>
-                                                        </div>
-                                                    </div>
-                                                    <div class="clearfix"></div>
-                                                </div>
-                                                <div class="item">
-                                                    <div class="col-md-12">
-                                                        <p>
-                                                        Our daughter loved the arrangements for her fifth birthday party! We could view the venue from our house using the virtual reality options and could decide on decorations and others beforehand!!
-                                                        </p>
-                                                        <div class="testimonial-info">
-                                                            <img alt="" src="assets/img/profiles/78.jpg" class="img-circle img-responsive" />
-                                                            <span class="testimonial-author">
-                                                                Jonathan Baker
-                                                                <em>
-                                                                    Happy Father.
-                                                                </em>
-                                                            </span>
-                                                        </div>
-                                                    </div>
-                                                    <div class="clearfix"></div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="testimonials-arrows pull-right">
-                                            <a class="left" href="#testimonials1" data-slide="prev">
-                                                <span class="fa fa-arrow-left"></span>
-                                            </a>
-                                            <a class="right" href="#testimonials1" data-slide="next">
-                                                <span class="fa fa-arrow-right"></span>
-                                            </a>
-                                            <div class="clearfix"></div>
-                                        </div>
-                                    </div>
-                                    <!-- End Testimonials - default full width -->
-                                    <!-- End Tabs -->
->>>>>>> origin/master
                         </div>
                     </div>
                     <div class="container">
