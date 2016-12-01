@@ -90,4 +90,5 @@ location.href='locations-by-theme.html?date='+date+"&themeSelected="+themeSelect
 	 
 	 var expCallback = function() {
       grecaptcha.reset();
+	  document.getElementById("loginBtn").disabled = true;
    };

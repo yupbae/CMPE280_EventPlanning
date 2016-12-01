@@ -56,20 +56,28 @@ $(document).ready( function() {
 		function check() {
 			if(document.getElementById("email1").length == 0) {
 					document.getElementById("email1").focus();
+					grecaptcha.reset();
+					document.getElementById("regBtn").disabled = true;
 					alert("Email required!");
 					return false;
 			}
 			if(document.getElementById("password1").length == 0) {
 					document.getElementById("password1").focus();
+					grecaptcha.reset();
+					document.getElementById("regBtn").disabled = true;
 					alert("Password required!");
 					return false;
 			}
 			if($("#password1").val() != $("#confirm").val()) {
+					grecaptcha.reset();
+					document.getElementById("regBtn").disabled = true;
 					alert("Password do not match!");
 					document.getElementById("confirm").focus();
 					return false;
 			}
 			if(!document.getElementById("checkb").checked) {
+				grecaptcha.reset();
+				document.getElementById("regBtn").disabled = true;
 				alert("You can regsiter only if you agree to the terms and conditions!");
 				document.getElementById("checkb").focus();
 			}
@@ -115,8 +123,11 @@ $(document).ready( function() {
 								if(SQLInsertStat === "DUPLICATEError"){
 									document.getElementById("email1").innerHTML = "Error: Email ID Record Already Exists. Try with a new one...";
 					                console.log("SQl Duplicate insert");
-									
+									document.getElementById("regBtn").disabled = true;
+									grecaptcha.reset();
 								}else if(op === "success" && SQLInsertStat === "Success"  ){
+									grecaptcha.reset();
+									document.getElementById("regBtn").disabled = true;
 									window.document.location.href = 'index.html?login=1&userid='+userid;
 								}
 								else {
@@ -137,6 +148,12 @@ $(document).ready( function() {
         captchaContainer = grecaptcha.render('validate', {
           'sitekey' : '6Le2mw0UAAAAAD2iL3lFRiAyzTTiRpzkszk2GATg',
 		  'callback' : enableBtn,
+		  'expired-callback': expCallback,
 		  'theme': 'dark'
         });
     };
+	
+	var expCallback = function() {
+      grecaptcha.reset();
+	  document.getElementById("regBtn").disabled = true;
+   };
