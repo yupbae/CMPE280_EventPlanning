@@ -51,6 +51,7 @@ function CreateXMLHttpRequest() {
 
 	var login = getQueryVariable("login");
 	var user = getQueryVariable("userid");
+	
 	if(login == false || login == null)
 	login = "0";
 
@@ -93,6 +94,7 @@ function getReviews() {
        			return(false);
    }
    function renderIndexPage() {
+	   
 		  if(login == "1")
 		  location.href = "index.html?login=1&userid="+user;
 		  else

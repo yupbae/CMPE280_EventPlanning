@@ -36,7 +36,6 @@ function sbtReview()
 	var book_id = $('#btnReviewSubmit').attr("bkID");
 	var review = $('#txtReview').val();
 	review = review.replace(/'/g, '"');
-	alert(book_id +" : " + review);
 	var dataString = 'book_id='+book_id+'&review='+review;
 	var url = 'https://eclectic.000webhostapp.com/insert_review.php';
 	var oReq = CreateXMLHttpRequest();
@@ -45,7 +44,6 @@ function sbtReview()
 		oReq.setRequestHeader('Content-type', 'application/x-www-form-urlencoded');
 		oReq.onreadystatechange = function() {
 		    if(oReq.readyState == 4 && oReq.status == 200) {
-				alert(oReq.responseText);
 		    	var json = JSON.parse(oReq.responseText);
 				var op = json.operation;
 				var info = json.sqlUPDATEstatus;
@@ -64,7 +62,7 @@ function sbtReview()
 }
 
 function displayInfo(info) {
-	var display_bookings = "<tr><th>Location Name</th><th>Event Date</th><th>Review</th></tr>";
+	var display_bookings = "<tr><th style='width:30%'>Location Name</th><th style='width:10%'>Event Date</th><th style='width:60%'>Review</th></tr>";
 	for(i=0; i< info.length; i++) {
 		book_id = info[i]["booking_id"];
 		loc_id = info[i]["location_id"];
@@ -74,7 +72,7 @@ function displayInfo(info) {
 		for(j=0; j<json.location.length; j++) {
 			locId = json.location[j].id;
 			if (locId == loc_id) {
-				loc_name = json.location[i].name;
+				loc_name = json.location[j].name;
 				display_locname = "<td class='locname'>"+ loc_name +"</td>";
 				display_date = "<td class='eventdate'>"+ eventdate +"</td>";
 				if (review)
@@ -88,18 +86,22 @@ function displayInfo(info) {
 	$('#bookings').html(display_bookings);
 }
 
-function displayRecent(recent) {
+function displayRecent(recent,user) {
+	var login = getQueryVariable("login");
 	var recent_array = recent.split(',');
 	for (i=0; i<recent_array.length; i++){
 		loc_id = recent_array[i];
 		var json = JSON.parse(locations);
+		
 		for(j=0; j<json.location.length; j++) {
+			
 			locId = json.location[j].id;
 			if (locId == loc_id) {
-				loc_name = json.location[i].name;
+				loc_name = json.location[j].name;
 				loc_img = "assets/img/locations/" + loc_id + "_1.jpg";
-				$('#locname'+i).html(loc_name);
-				$('#img'+i).attr("src",loc_img);
+				$('#rimg'+i).attr("src",loc_img);
+				locType = "<a href='locationDetails.html?id="+loc_id+"&login="+login+"&userid="+user+"'><h5>"+loc_name+"</h5></a>";
+				$('#list'+i).html(locType);
 			}
 		}
 	}
@@ -142,9 +144,9 @@ function recentInfo(user) {
 						    if(oReq.readyState == 4 && oReq.status == 200) {
 						    	var json = JSON.parse(oReq.responseText);
 								var op = json.operation;
-								var recent = json.recent;
+								var recent = json.recent;								
 								if(op === "Ok"){
-									displayRecent(recent);
+									displayRecent(recent,user);
 								}
 								else if(op === "Error") {
 									alert("No bookings recorded");

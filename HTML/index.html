@@ -26,7 +26,10 @@
         <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Source Sans Pro:300,400" />
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
 		<script src="./assets/js/bootstrap-datepicker.js"></script>
+<script type="text/javascript" src="assets/js/scripts.js"></script>
+<script>
 
+</script>
 		
     </head>
     <body>
@@ -394,7 +397,7 @@
         <!-- JS -->
         <script type="text/javascript" src="assets/js/jquery.min.js" type="text/javascript"></script>
         <script type="text/javascript" src="assets/js/bootstrap.min.js" type="text/javascript"></script>
-        <script type="text/javascript" src="assets/js/scripts.js"></script>
+        
         <!-- Isotope - Portfolio Sorting -->
         <script type="text/javascript" src="assets/js/jquery.isotope.js" type="text/javascript"></script>
         <!-- Mobile Menu - Slicknav -->
@@ -405,7 +408,22 @@
         <script src="assets/js/modernizr.custom.js" type="text/javascript"></script>
 		<script>
 			$(document).ready( function() {
-			
+			var login = getQueryVariable("login");
+	var user = getQueryVariable("userid");
+		if(login == false || login == null)
+		login = "0";
+		
+		if(login == "1") {
+		
+					$("#login-btn").hide();
+					$("#account-btn").show();
+					var user = getQueryVariable("userid");
+					
+					$("#name").html(user);
+					
+					$("#login-btn").hide();
+				}
+
 				getReviews();
 			});
 				/*var curdate = new Date();

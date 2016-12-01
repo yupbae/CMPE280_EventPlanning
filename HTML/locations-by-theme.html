@@ -221,7 +221,7 @@ function getQueryVariable(variable) {
                                             <a href="pages-login.html">Login</a>
                                         </li>
                                         <li id = "account" style="display:none">
-                                            <span id = "namevb">My Account</span>
+                                            <span id = "name">My Account</span>
                                             <ul>
                                                 <li>
                                                     <a href = "#" class = "account-details" onClick="renderAccountDetails()">My Account</a>
@@ -336,7 +336,7 @@ function getQueryVariable(variable) {
 				});
 				var i;
 				var locType="";
-				for(i=0; i<json.location.length; i++) {
+				for(i=0; i < json.location.length; i++) {
 					$('#list').html(locType);
 					var point = {lat: json.location[i].latitude, lng: json.location[i].longitude};
 					var type = json.location[i].type;

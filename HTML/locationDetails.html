@@ -45,17 +45,17 @@
          </script>
     </head>
 	<script>
-	var login = getQueryVariable("login");
-	var user = getQueryVariable("userid");
-		if(login == false || login == null)
-		login = "0";
+	
+		
 	$(document).ready( function() {
+	
     var now = new Date();
     var day = ("0" + now.getDate()).slice(-2);
     var month = ("0" + (now.getMonth() + 1)).slice(-2);
     var today = now.getFullYear()+"-"+(month)+"-"+(day) ;
     $('#eventdate').val(today);
-     
+	
+	 
     
 });
 
@@ -221,10 +221,10 @@ function renderIndexPage() {
                                         <li>
                                             <a href = "#" id ="contact" onClick="renderContactPage()">Contact</a>
                                         </li>
-                                        <li id="login">
+                                        <li id="login-btn">
                                             <a href="pages-login.html">Login</a>
                                         </li>
-                                        <li id = "account" style="display:none">
+                                        <li id = "account-btn" style="display:none">
                                             <span id = "name">My Account</span>
                                             <ul>
                                                 <li>
@@ -385,7 +385,9 @@ function renderIndexPage() {
 		var name = "", type = "", address = "", locInfo = "", point = "", amenities = "", details = "", capacity = 0, price = 0, lat = "", lng = "";
 					
 		var json = JSON.parse(locations);
-		for(i=0; i <= json.location.length; i++) {
+		
+		for(i=0; i < json.location.length; i++) {
+		
 			locId = json.location[i].id;
 			if (locId == id) {
 				name = json.location[i].name;
@@ -464,14 +466,24 @@ function renderIndexPage() {
 				var today = now.getFullYear()+"-"+(month)+"-"+(day) ;
 				$('#eventdate').val(today); 
 				
-				if(login == "1") {
-					$("#login-btn").hide();
-					$("#account-btn").show();
-					var user = getQueryVariable("userid");
-					$("#name").html(user);
-				}
-				var loc_id = getQueryVariable("id");
+				var login = getQueryVariable("login");
 				var user = getQueryVariable("userid");
+					if(login == false || login == null)
+					login = "0";
+					
+					if(login == "1") {
+					
+								$("#login-btn").hide();
+								$("#account-btn").show();
+								var user = getQueryVariable("userid");
+								
+								$("#name").html(user);
+							}
+    
+				
+				
+				var loc_id = getQueryVariable("id");
+				 user = getQueryVariable("userid"); // user variable is already declared in the aove statements
 				var dataString = 'user='+user+'&loc_id='+loc_id;
 				var url = 'https://eclectic.000webhostapp.com/update_recent.php';
 				var oReq = CreateXMLHttpRequest();
@@ -480,7 +492,6 @@ function renderIndexPage() {
 					oReq.setRequestHeader('Content-type', 'application/x-www-form-urlencoded');
 					oReq.onreadystatechange = function() {
 						if(oReq.readyState == 4 && oReq.status == 200) {
-							alert(oReq.responseText);
 							var json = JSON.parse(oReq.responseText);
 							var op = json.operation;
 						}
