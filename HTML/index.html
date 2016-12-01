@@ -27,9 +27,7 @@
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
 		<script src="./assets/js/bootstrap-datepicker.js"></script>
 <script type="text/javascript" src="assets/js/scripts.js"></script>
-<script>
 
-</script>
 		
     </head>
     <body>
@@ -161,7 +159,7 @@
 										</ol>
 										<!-- End Carousel Indicators -->
 										<!-- Carousel Images -->
-										<div class="carousel-inner" style="height:400px;">
+										<div class="carousel-inner" >
 											<div class="item active">
 												<img src="assets/img/slideshow/slide1.jpg">
 											</div>
@@ -189,10 +187,10 @@
                             </div>
                             <!-- End Carousel Slideshow -->
 							<!-- Selection to Book -->
-							 <table style="width:100%;">
-                                 <tr class="customrow">
-                                     
-                                     <td class="customcol" style="width:33%;" ><b>Theme:</b>&nbsp;
+							<hr>
+							<div class="row">
+                                     <div class="col-sm-4">
+                                     <b>Theme:</b>&nbsp;
                                          <select id="theme" class="data" style="height:25px">
                                              <option  selected value="All">All</option>
                                              <option value="business">Business</option>
@@ -200,18 +198,21 @@
                                              <option value="cultural">Cultural</option>
                                              <option value="birthday">Birthday</option>
                                          </select>
-                                     </td>
-                                     <td class="customcol" style="width:33%;" ><b>Number of guests:</b>&nbsp;
+									 </div>
+									 <div class="col-sm-4">
+									 <b>Number of guests:</b>&nbsp;
                                          <select id="capacity" class="data" style="height:25px">
                                              <option selected value="all">All</option>
                                              <option value="less">Less than 100</option>
                                              <option value="ok">100 to 500</option>
                                              <option value="medium">500 to 1000</option>
                                              <option value="more">More than 1000</option>
-                                             </td>
-                                     <td style="width:33%;"><input type="button" style="background-color:#3c3343"  id="book" class="data" onclick="loadTheme();" value="Book Now"></td>
-                                 </tr>
-                             </table>
+										</select>
+									</div>
+									<div class="col-sm-4">
+                                     <input type="button" style="background-color:#008000;height:25px"  id="book" class="data" onclick="loadTheme();" value="Book Now">
+									 </div>
+							</div>
 							<!-- Selection to Book -->
                             <!-- Tabs -->
                             
@@ -230,19 +231,18 @@
 								<p>
 									From the comfort of your house, you can tour the venue which you choose. This helps in knowing your venue better before you come here. It also gives you a chance to undrestand the layout of the room, the exits which are present and other facilities. It gives you accessibility information to plan your visit beforehand which will give you more time to carry out your work efficiently.
 								</p>
-								<table>
-									<tr><td style="width:600px;border:1px solid grey;">
-									
-										<marquee style="height:312px;"  scrollamount="2" direction="up" loop="true">
-										  <ul id="reviews">
-										  </ul>
-										  </marquee>
-									</td>
-									<td style="width:600px">
-									<iframe width="420" height="315"
-										src="https://www.youtube.com/embed/H9kZk1DdF6c?autoplay=1" align="right">
-									</iframe></td></tr>
-								</table>
+								<div class="row">
+								<div class="col-sm-7" style="border:1px solid grey;border-radius:2px;background:#648880;background:linear-gradient(to right,#f6f1d3,#648880 85%,#293f50);">
+									<marquee style="height:306px;"  scrollamount="2" direction="up" loop="true">
+										<ul id="reviews">
+										</ul>
+									</marquee>
+								</div>
+								<div class="col-sm-5" >
+									<embed  width="380" height="315" src="https://www.youtube.com/embed/H9kZk1DdF6c">
+									</embed >
+								</div>
+								</div>
                             </div>
 
                             <div class="clearfix"></div>
@@ -255,27 +255,6 @@
 					<div class="container no-padding gridgallery">
                         <!-- Portfolio Header Text -->
                         <div class="row">
-						<div class="tabs-dark" style="padding:0;display:none;">
-                                <!-- Tab Panes -->
-                                <div class="tab-content">
-                                    <div class="tab-pane fade in active" id="home" style="display:none;">
-                                        <img style="float: left; margin-right: 25px; margin-bottom: 10px;" src="assets/img/portfolio/filler.jpg" alt="filler image">
-                                        <h3>Tour your venue</h3>
-                                        <p style="text-align:justify">From the comfort of your house, you can tour the venue which you choose. This helps in knowing your venue better before you come here. It also gives you a chance to undrestand the layout of the room, the exits which are present and other facilities. It gives you accessibility information to plan your visit beforehand which will give you more time to carry out your work efficiently.</p>
-                                    </div>
-                                    <div class="tab-pane fade" id="messages" style="display:none;">
-                                        <img style="float: left; margin-right: 25px; margin-bottom: 10px;" src="assets/img/portfolio/filler3.jpg" alt="filler image">
-                                        <h3>Find what our customers are saying.</h3>
-                                        <p><i>Eclectic Event Planners are indeed the best event planners in the world -- Pooja, San Jose State University.</i></p>
-                                    </div>
-									
-									
-
-									
-                                </div>
-                                <!-- End Tab Panes -->
-                            </div>
-							
                             <div class="col-md-12 padding-vert-30">
                                 <h2 class="subtitle text-center">Preview of our locations</h2>
                                 <h3 class="subtitle text-center">Beautiful indoor and outdoor locations for your event in heart of Silicon Valley, San Jose.</h3>
@@ -426,15 +405,6 @@
 
 				getReviews();
 			});
-				/*var curdate = new Date();
-				var dd = curdate.getDate();
-				var mm = curdate.getMonth();
-				var yy = curdate.getYear();
-				var eventdate = yy + "-" + mm + "-" + dd;
-				$('#eventdate').val(eventdate);
-				$('#eventdate').attr("min",eventdate);
-				$('#eventdate').attr("max", (eventdate.getMonth()+1)%12 + 1);
-			});​*/
 		</script>
 		
         <!-- End JS -->

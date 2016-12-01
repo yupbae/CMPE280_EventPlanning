@@ -74,7 +74,7 @@ function getReviews() {
 						eventdate = reviews[i]["eventdate"];
 						userid = reviews[i]["username"];
 		//displayReviews + = "<table><tr><td><img src=''/></td><td>&nbsp;</td></tr><tr><td>"+review+"</td><td>"+user+" on "+eventdate+"</td></tr></table>";
-						displayReviews += "<li class='locationList' style='border-left:5px solid blue'><img class='imgThumbnail' src='assets/img/theteam/"+userid+".jpg'/> &nbsp;"+review+"</li><li><i>Posted by </i><b>"+userid+"</b> on "+eventdate+"</li><br>";
+						displayReviews += "<li class='locationList' style='border-left:5px solid blue;'><img class='imgThumbnail' src='assets/img/theteam/"+userid+".jpg'/> &nbsp;"+review+"</li><li><i>Posted by </i><b>"+userid+"</b> on "+eventdate+"</li><br>";
 					}
 					$('#reviews').html(displayReviews);
 				}
