@@ -114,7 +114,7 @@ function getReviews() {
 	    }
 		function renderTeamPage() {
 		  if(login == "1")
-		  location.href = "pages-about-us.html?login=1&userid="+user;
+		  location.href = "pages-about-us.html?login=1&userid="+user;	  
 		  else
 		  location.href = "pages-about-us.html?login=0";
 	    }
