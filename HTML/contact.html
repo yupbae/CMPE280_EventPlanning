@@ -39,6 +39,27 @@
     $('#eventdate').val(today);     
 });
 
+function sendMessage() {
+	oForm = document.forms[0];
+	
+	if(oForm.elements[0].value.length == 0) {
+		alert("* Fields are Required!");
+		document.getElementById("name").focus();		
+	}
+	else if(oForm.elements[1].value.length == 0) {
+		alert("* Fields are Required!");
+		document.getElementById("email").focus();
+	}
+	else if(oForm.elements[2].value.length == 0) {
+		alert("* Fields are Required!");
+		document.getElementById("msg").focus();
+	}
+	else {
+		alert("Thank you for your interest in Eclectic.We'll get back to you very soon!!");
+	}
+	
+}
+
 function getQueryVariable(variable) {
 				var query = window.location.search.substring(1);
 				var vars = query.split("&");
@@ -248,9 +269,10 @@ function getQueryVariable(variable) {
                                 <!-- Contact Form -->
                                 <form>
                                     <label>Name</label>
+                                    <span class="color-red">*</span>
                                     <div class="row margin-bottom-20">
                                         <div class="col-md-6 col-md-offset-0">
-                                            <input class="form-control" type="text">
+                                            <input class="form-control" type="text" id = "name">
                                         </div>
                                     </div>
                                     <label>Email
@@ -258,17 +280,18 @@ function getQueryVariable(variable) {
                                     </label>
                                     <div class="row margin-bottom-20">
                                         <div class="col-md-6 col-md-offset-0">
-                                            <input class="form-control" type="text">
+                                            <input class="form-control" type="text" id = "email">
                                         </div>
                                     </div>
                                     <label>Message</label>
+                                    <span class="color-red">*</span>
                                     <div class="row margin-bottom-20">
                                         <div class="col-md-8 col-md-offset-0">
-                                            <textarea rows="8" class="form-control"></textarea>
+                                            <textarea rows="8" class="form-control" id = "msg"></textarea>
                                         </div>
                                     </div>
                                     <p>
-                                        <button type="submit" class="btn btn-primary">Send Message</button>
+                                        <button type="submit" class="btn btn-primary" onClick="sendMessage()">Send Message</button>
                                     </p>
                                 </form>
                                 <!-- End Contact Form -->
