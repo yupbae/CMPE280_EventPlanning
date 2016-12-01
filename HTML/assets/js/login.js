@@ -24,11 +24,16 @@ function loginAction() {
 		var password = $("#password1").val();
 		if(name.length == 0 ){
 			document.getElementById("email1").focus()
+			grecaptcha.reset();
 			alert("UserID required!!");
+			document.getElementById("loginBtn").disabled = true;
+			
 		}
 		else if (password.length == 0) {
 			document.getElementById("password1").focus();
+			grecaptcha.reset();
 			alert("Password required!!");
+			document.getElementById("loginBtn").disabled = true;
 		}
 		else {
 			var dataString = 'email1='+name+'&password1='+password;
@@ -44,8 +49,9 @@ function loginAction() {
 						    	var json = JSON.parse(oReq.responseText);
 								var op = json.operation;
 								var userid = json.userid;
-								alert(oReq.responseText);
+								//alert(oReq.responseText);
 								if(op === "Ok"){
+									grecaptcha.reset();
 									window.document.location.href = 'index.html?login=1&userid='+userid;
 								}
 								else if(op === "Error") {
@@ -69,14 +75,19 @@ location.href='locations-by-theme.html?date='+date+"&themeSelected="+themeSelect
 
 }
 
-/*enableBtn = function() {
+	enableBtn = function() {
 		document.getElementById("loginBtn").disabled = false;
-	};*/
+	};
 	
-	/*var onloadCallback = function() {
+	var onloadCallback = function() {
         captchaContainer = grecaptcha.render('validate', {
-          'sitekey' : '6LeUggwUAAAAAIFRIvc19-4jIpAp4RqbEfPmWqzJ',
+          'sitekey' : '6Le2mw0UAAAAAD2iL3lFRiAyzTTiRpzkszk2GATg',
 		  'callback' : enableBtn,
+		  'expired-callback': expCallback,
 		  'theme': 'dark'
         });
-      };*/
+      };
+	 
+	 var expCallback = function() {
+      grecaptcha.reset();
+   };
