@@ -129,14 +129,14 @@ $(document).ready( function() {
 					}
 			}
 	
-	/*enableBtn = function() {
+	enableBtn = function() {
 		document.getElementById("regBtn").disabled = false;
 	};
 	
 	var onloadCallback = function() {
         captchaContainer = grecaptcha.render('validate', {
-          'sitekey' : '6LeUggwUAAAAAIFRIvc19-4jIpAp4RqbEfPmWqzJ',
+          'sitekey' : '6Le2mw0UAAAAAD2iL3lFRiAyzTTiRpzkszk2GATg',
 		  'callback' : enableBtn,
 		  'theme': 'dark'
         });
-    };*/
+    };
