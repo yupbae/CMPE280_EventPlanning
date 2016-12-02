@@ -3,7 +3,7 @@
 <!--[if IE 8]> <html lang="en" class="ie8"> <![endif]-->
 <!--[if IE 9]> <html lang="en" class="ie9"> <![endif]-->
 <!--[if !IE]><!-->
-<html lang="en">
+<html lang="ch">
     <!--<![endif]-->
     <head>
         <title>Eclectic - Event Planners.</title>
@@ -253,12 +253,11 @@ function renderIndexPage() {
                                 <div class="col-md-12">
                                    <div class="panel panel-default">
                                        <div class="panel-heading">
-                                           <td class="customcol"><b>Date:</b>&nbsp;&nbsp;
+                                           <td class="customcol"><b>Date:</b>
                                                 <input type="date" id="eventdate" style="height:30px">
-                                            </td>
-                                            <td>
                                                 <input type="button" class="btn btn-success" value="Reserve Venue" onclick="reserveVenue()" style="float: right; border-radius: 0px;background-color:#8270a4; border-color:#8270a4">
                                             </td>
+                                           
                                         </div>
                                     </div>
                                     <div class="row margin-vert-20">
@@ -452,7 +451,7 @@ function renderIndexPage() {
 			$('#img2').attr("src","assets/img/locations/" + id + "_2.jpg");
 			$('#amenities').html(amenities);
 			$('#details').html(details);
-			src = "http://forecast.io/embed/#lat=" + lat + "&lon=" + lng;
+			src = "https://forecast.io/embed/#lat=" + lat + "&lon=" + lng;
 			$('#forecast_embed').attr("src",src);
 		}
         
@@ -547,8 +546,9 @@ function renderIndexPage() {
 			var eventdate = $('#eventdate').val();
 			var loc_id = getQueryVariable("id");
 			var user = getQueryVariable("userid");
+            var login = getQueryVariable("login");
 			var dataString = 'eventdate='+eventdate+"&loc_id="+loc_id+"&user="+user;
-			var url = 'http://ec2-54-183-40-122.us-west-1.compute.amazonaws.com/php/insert_booking.php';
+			var url = 'https://eclectic.000webhostapp.com/insert_booking.php';
 				var oReq = CreateXMLHttpRequest();
 				oReq.open("POST",url,true);
 				if(oReq!=null){
@@ -566,7 +566,12 @@ function renderIndexPage() {
 					}
 				oReq.send(dataString);
 				}
-			alert("Venue reserved successfully");
+                if(login == "0") {
+                    location.href="pages-login.html";
+                }
+                else {
+                    alert("Venue reserved successfully");
+                }
 		}
         </script>
         <!-- Animate on Scroll-->
