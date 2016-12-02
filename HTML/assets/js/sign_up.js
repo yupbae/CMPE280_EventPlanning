@@ -54,24 +54,46 @@ $(document).ready( function() {
 	function validate() {
 		
 		function check() {
-			if(document.getElementById("email1").length == 0) {
+			oForm = document.forms[0];
+			if(oForm.elements[0].value.length == 0) {
+					document.getElementById("fname").focus();
+					grecaptcha.reset();
+					document.getElementById("regBtn").disabled = true;
+					alert("* Fields are required!");
+					return false;
+			}
+			if(oForm.elements[1].value.length == 0) {
+					document.getElementById("lname").focus();
+					grecaptcha.reset();
+					document.getElementById("regBtn").disabled = true;
+					alert("* Fields are required!");
+					return false;
+			}
+			if(oForm.elements[2].value.length == 0) {
 					document.getElementById("email1").focus();
 					grecaptcha.reset();
 					document.getElementById("regBtn").disabled = true;
-					alert("Email required!");
+					alert("* Fields are required!");
 					return false;
 			}
-			if(document.getElementById("password1").length == 0) {
+			if(oForm.elements[3].value.length == 0) {
 					document.getElementById("password1").focus();
 					grecaptcha.reset();
 					document.getElementById("regBtn").disabled = true;
-					alert("Password required!");
+					alert("* Fields are required!");
+					return false;
+			}
+			if(oForm.elements[4].value.length == 0) {
+					document.getElementById("confirm").focus();
+					grecaptcha.reset();
+					document.getElementById("regBtn").disabled = true;
+					alert("* Fields are required!");
 					return false;
 			}
 			if($("#password1").val() != $("#confirm").val()) {
 					grecaptcha.reset();
 					document.getElementById("regBtn").disabled = true;
-					alert("Password do not match!");
+					alert("Passwords do not match!");
 					document.getElementById("confirm").focus();
 					return false;
 			}
@@ -80,6 +102,12 @@ $(document).ready( function() {
 				document.getElementById("regBtn").disabled = true;
 				alert("You can regsiter only if you agree to the terms and conditions!");
 				document.getElementById("checkb").focus();
+				return false;
+			}
+			if(!$("#password1").val().match(/\w{4}\d+[!,#,$,%]{1}/) && !($("#password1").val().length >= 7 && $("#password1").val().length <= 20)) {
+				document.getElementById("password1").focus();
+				alert("Password does not meet requirements!!");
+				return false;
 			}
 			else {
 				return true;
@@ -99,11 +127,11 @@ $(document).ready( function() {
 			return new ActiveXObject("Microsoft.XMLHTTP");
 		}
 		else {
-			throw new Error("XMLHttpRequestnot supported");
+			throw new Error("XMLHttpRequest not supported");
 		}
 	}
 	function submitdata() {
-		
+		    alert("submit");
 			var firstname = $("#fname").val();
 			var lastname = $("#lname").val();
 			var email = $("#email1").val();
@@ -131,7 +159,7 @@ $(document).ready( function() {
 									window.document.location.href = 'index.html?login=1&userid='+userid;
 								}
 								else {
-									alert("Registration failed!!");
+									alert("Registration failed.Please Try Again!!");
 									window.document.location.href = 'pages-sign-up.html';
 								}
 						    }
