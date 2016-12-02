@@ -33,9 +33,6 @@
 		 $fname = $row["firstname"];
          $jsonobj->userid= $fname;
          $jsonobj->operation = 'Ok';
-		
-		 $_SESSION["username"] = $fname;
-		 echo $fname;
       }else {
          $jsonobj->userid= null;
          $jsonobj->operation = 'Error';
