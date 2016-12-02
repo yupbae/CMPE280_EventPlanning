@@ -174,7 +174,7 @@ $(document).ready( function() {
 	
 	var onloadCallback = function() {
         captchaContainer = grecaptcha.render('validate', {
-          'sitekey' : '6Le2mw0UAAAAAD2iL3lFRiAyzTTiRpzkszk2GATg',
+          'sitekey' : '6LeUggwUAAAAAIFRIvc19-4jIpAp4RqbEfPmWqzJ',
 		  'callback' : enableBtn,
 		  'expired-callback': expCallback,
 		  'theme': 'dark'
