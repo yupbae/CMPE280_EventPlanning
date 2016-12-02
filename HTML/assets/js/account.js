@@ -37,7 +37,7 @@ function sbtReview()
 	var review = $('#txtReview').val();
 	review = review.replace(/'/g, '"');
 	var dataString = 'book_id='+book_id+'&review='+review;
-	var url = 'https://eclectic.000webhostapp.com/insert_review.php';
+	var url = 'http://ec2-54-183-40-122.us-west-1.compute.amazonaws.com/php/insert_review.php';
 	var oReq = CreateXMLHttpRequest();
 	oReq.open("POST",url,true);
 	if(oReq!=null){
@@ -110,7 +110,7 @@ function displayRecent(recent,user) {
 function accountInfo(user) {
 		
 			var dataString = 'user='+user;
-			var url = 'https://eclectic.000webhostapp.com/get_bookings.php';
+			var url = 'http://ec2-54-183-40-122.us-west-1.compute.amazonaws.com/php/get_bookings.php';
 					var oReq = CreateXMLHttpRequest();
 				    oReq.open("POST",url,true);
 					if(oReq!=null){
@@ -135,7 +135,7 @@ function accountInfo(user) {
 function recentInfo(user) {
 		
 			var dataString = 'user='+user;
-			var url = 'https://eclectic.000webhostapp.com/get_recent.php';
+			var url = 'http://ec2-54-183-40-122.us-west-1.compute.amazonaws.com/php/get_recent.php';
 					var oReq = CreateXMLHttpRequest();
 				    oReq.open("POST",url,true);
 					if(oReq!=null){

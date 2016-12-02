@@ -137,7 +137,7 @@ $(document).ready( function() {
 			var email = $("#email1").val();
 			var password = $("#password1").val();
 			var dataString = 'fname=' + firstname + '&lname=' + lastname + '&email1=' + email +'&password1=' + password;
-			var url = 'https://eclectic.000webhostapp.com/server.php';
+			var url = 'http://ec2-54-183-40-122.us-west-1.compute.amazonaws.com/php/server.php';
 					var oReq = CreateXMLHttpRequest();
 				    oReq.open("POST",url,true);
 					if(oReq!=null){
@@ -174,7 +174,7 @@ $(document).ready( function() {
 	
 	var onloadCallback = function() {
         captchaContainer = grecaptcha.render('validate', {
-          'sitekey' : '6LeUggwUAAAAAIFRIvc19-4jIpAp4RqbEfPmWqzJ',
+          'sitekey' : '6LdtuA0UAAAAAJfL-3gD-sT-x8I6bKy2bQJ9kBV4',
 		  'callback' : enableBtn,
 		  'expired-callback': expCallback,
 		  'theme': 'dark'

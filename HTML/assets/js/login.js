@@ -38,8 +38,7 @@ function loginAction() {
 		else {
 			var dataString = 'email1='+name+'&password1='+password;
 			
-			var url = 'https://eclectic.000webhostapp.com/check.php';
-			//var url = 'http://localhost/280/check.php';
+			var url = 'http://ec2-54-183-40-122.us-west-1.compute.amazonaws.com/php/check.php';
 					var oReq = CreateXMLHttpRequest();
 				    oReq.open("POST",url,true);
 					if(oReq!=null){
@@ -81,7 +80,7 @@ location.href='locations-by-theme.html?date='+date+"&themeSelected="+themeSelect
 	
 	var onloadCallback = function() {
         captchaContainer = grecaptcha.render('validate', {
-          'sitekey' : '6LeUggwUAAAAAIFRIvc19-4jIpAp4RqbEfPmWqzJ',
+          'sitekey' : '6LdtuA0UAAAAAJfL-3gD-sT-x8I6bKy2bQJ9kBV4',
 		  'callback' : enableBtn,
 		  'expired-callback': expCallback,
 		  'theme': 'dark'
