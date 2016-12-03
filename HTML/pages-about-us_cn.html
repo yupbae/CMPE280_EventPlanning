@@ -1,0 +1,557 @@
+<!-- === BEGIN HEADER === -->
+<!DOCTYPE html>
+<!--[if IE 8]> <html lang="en" class="ie8"> <![endif]-->
+<!--[if IE 9]> <html lang="en" class="ie9"> <![endif]-->
+<!--[if !IE]><!-->
+<html lang="en">
+   <!--<![endif]-->
+<head>
+<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=utf-8" />
+
+		<link rel="icon" href="../assets/img/Elogo.PNG" type="image/png">
+<title>折衷主义-活动策划者。 </title>
+       <!-- Meta -->
+
+<meta name="description" content="">
+<meta name="author" content="">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+       <!-- Bootstrap Core CSS -->
+<link rel="stylesheet" href="assets/css/bootstrap.css" rel="stylesheet">
+       <!-- Template CSS -->
+<link rel="stylesheet" href="assets/css/animate.css" rel="stylesheet">
+<link rel="stylesheet" href="assets/css/font-awesome.css" rel="stylesheet">
+<link rel="stylesheet" href="assets/css/nexus.css" rel="stylesheet">
+<link rel="stylesheet" href="assets/css/responsive.css" rel="stylesheet">
+<link rel="stylesheet" href="assets/css/custom.css" rel="stylesheet">
+       <!-- Google Fonts-->
+<link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Open Sans:300,400" />
+<link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Source Sans Pro:300,400" />
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></SCRIPT>
+</head>
+	<script>
+	var login = getQueryVariable("login");
+	var user =  getQueryVariable("userid");
+		if(login == false || login == null)
+		login = "0";
+
+	$(document).ready( function() {
+    var now = new Date();
+    var day = ("0" + now.getDate()).slice(-2);
+    var month = ("0" + (now.getMonth() + 1)).slice(-2);
+    var today = now.getFullYear()+"-"+(month)+"-"+(day) ;
+    $('#eventdate').val(today);
+});
+ function getQueryVariable(variable) {
+				var query = window.location.search.substring(1);
+				var vars = query.split("&");
+       			for (var i=0; i<vars.length; i++) {
+					var pair = vars[i].split("=");
+               		if(pair[0] == variable){return pair[1];}
+       			}
+       			return(false);
+}
+function renderIndexPage() {
+		  if(login == "1")
+		  location.href = "index.html?login=1&userid="+user;
+		  else
+		  location.href = "index.html?login=0";
+	    }
+		function renderContactPage() {
+		  if(login == "1")
+		  location.href = "contact.html?login=1&userid="+user;
+		  else
+		  location.href = "contact.html?login=0";
+	    }
+		function renderAboutPage() {
+		  if(login == "1")
+		  location.href = "pages-about-us.html?login=1&userid="+user;
+		  else
+		  location.href = "pages-about-us.html?login=0";
+	    }
+		function renderTeamPage() {
+		  if(login == "1")
+		  location.href = "pages-about-us.html?login=1&userid="+user;
+		  else
+		  location.href = "pages-about-us.html?login=0";
+	    }
+		function renderBusinessLocations() {
+		  if(login == "1")
+		  location.href = "locations-by-theme.html?date=01/12/2016&themeSelected=Business&guestesCount=All&login=1&userid="+user;
+		  else
+		  location.href = "locations-by-theme.html?date=01/12/2016&themeSelected=Business&guestesCount=All&login=0";
+	    }
+		function renderWeddingLocations() {
+		  if(login == "1")
+		  location.href = "locations-by-theme.html?date=01/12/2016&themeSelected=Wedding&guestesCount=All&login=1&userid="+user;
+		  else
+		  location.href = "locations-by-theme.html?date=01/12/2016&themeSelected=Wedding&guestesCount=All&login=0";
+	    }
+		function renderCulturalLocations() {
+		  if(login == "1")
+		  location.href = "locations-by-theme.html?date=01/12/2016&themeSelected=Cultural&guestesCount=All&login=1&userid="+user;
+		  else
+		  location.href = "locations-by-theme.html?date=01/12/2016&themeSelected=Cultural&guestesCount=All&login=0";
+	    }
+		function renderBirthdayLocations() {
+		  if(login == "1")
+		  location.href = "locations-by-theme.html?date=01/12/2016&themeSelected=Birthday&guestesCount=All&login=1&userid="+user;
+		  else
+		  location.href = "locations-by-theme.html?date=01/12/2016&themeSelected=Birthday&guestesCount=All&login=0";
+	    }
+		function renderServices() {
+		  if(login == "1")
+		  location.href = "services.html?login=1&userid="+user;
+		  else
+		  location.href = "services.html?login=0";
+	    }
+
+	function loadTheme(){	
+	    if(login == "1") {
+		var date=$('#eventdate').val();
+		var themeSelected=$("#theme option:selected").text();
+		var guestesCount=$("#capacity option:selected").text();;
+		location.href='locations-by-theme.html?date='+date+"&themeSelected="+themeSelected+"&guestesCount="+guestesCount + "&login=1&userid="+user;
+		}
+		else {
+		var date = $('#eventdate').val();
+		var themeSelected=$("#theme option:selected").text();
+		var guestesCount=$("#capacity option:selected").text();;
+		location.href='locations-by-theme.html?date='+date+"&themeSelected="+themeSelected+"&guestesCount="+guestesCount + "&login=0";
+		}
+	}
+
+function loadTheme(){
+
+var date=$('#eventdate').val();
+var themeSelected=$("#theme option:selected").text();
+var guestesCount=$("#capacity option:selected").text();;
+location.href='locations-by-theme.html?date='+date+"&themeSelected="+themeSelected+"&guestesCount="+guestesCount;
+}
+	
+	</SCRIPT>
+<body>
+<div id="body_bg">
+<div id="container_header" class="container">
+<div id="header" class="row">
+<div class="col-md-12 margin-top-15">
+                       <!-- Header Social Icons -->
+<ul class="social-icons circle pull-right">
+<li class="social-twitter">
+                               <a href="https://twitter.com/" target="_blank" title="Twitter"></a>
+</li>
+<li class="social-facebook">
+                               <a href="https://www.facebook.com/" target="_blank" title="Facebook"></a>
+</li>
+<li class="social-googleplus">
+                               <a href="https://plus.google.com/" target="_blank" title="GooglePlus"></a>
+</li>
+</ul>
+                       <!-- End Header Social Icons -->
+</div>
+<div class="clear"></div>
+</div>
+</div>
+<div class="primary-container-group">
+               <!-- Background -->
+<div class="primary-container-background">
+<div class="primary-container"></div>
+<div class="clearfix"></div>
+</div>
+               <!--End Background -->
+<div class="primary-container">
+<div id="container_hornav" class="container no-padding">
+                       <!-- Logo -->
+<div class="logo">
+                           <a id ="image" onClick="renderIndexPage()">
+<img src="assets/img/logo1.png" alt="Logo" />
+                           </a>
+</div>
+                       <!-- End Logo -->
+                       <!-- Slogan -->
+<p class="site-slogan">活动策划 </p>
+                       <!-- End Slogan -->
+                       <!-- Top Menu -->
+<div class="row">
+<div class="hornav-block">
+<div id="hornav" class="pull-right">
+<ul id="hornavmenu" class="nav navbar-nav">
+<li>
+                                           <a id = "home-index" onClick="renderIndexPage_CN()">主页</a>
+</li>
+
+<li>
+<span>关于 </span>
+<ul>
+<li>
+                                                   <a href = "#" id ="philosophy" onClick="renderAboutPage_CN()">经营理念</a>
+</li>
+<li>
+                                                   <a href = "#" id ="team" onClick="renderTeamPage()">团队</a>
+</li>
+</ul>
+</li>
+<li>
+<span>事件地点 </span>
+<ul>
+<li>
+                                                   <a href = "#" class = "business-locations" onClick="renderBusinessLocations()">业务</a>
+</li>
+<li>
+                                                   <a href = "#" class = "wedding-locations" onClick="renderWeddingLocations()">婚礼</a>
+</li>
+												<li>
+                                                   <a href = "#" class = "cultural-locations" onClick="renderCulturalLocations()">文化</a>
+</li>
+												<li>
+                                                   <a href = "#" class = "birthday-locations" onClick="renderBirthdayLocations()">生日</a>
+</li>
+</ul>
+</li>
+<li>
+                                           <a href = "#" id="services" onClick="renderServices()">服务</a>
+</li>
+<li>
+                                           <a href = "#" id="contact" onClick="renderContactPage_CN()">联系人</a>
+</li>
+<li id="login">
+                                           <a href="pages-login.html">登录</a>
+</li>
+<li id = "account" style="display:none">
+<span id = "name">我的帐户 </span>
+<ul>
+<li>
+                                                   <a href = "#" class = "account-details" onClick="renderAccountDetails()">我的帐户</a>
+</li>
+												<li>
+                                                   <a href="index.html?&login=0">登录</a>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+<div class="clearfix"></div>
+</div>
+                       <!-- End Top Menu -->
+</div>
+<div class="container no-padding">
+                       <!-- === END HEADER === -->
+                       <!-- === BEGIN CONTENT === -->
+<div class="row margin-vert-30">
+<div class="col-md-12">
+<h2>关于我们 </h2>
+<div class="row">
+<div class="col-md-6">
+<p style="text-align:justify">我们的研究生在 San Jose State University 追求我们的硕士学位。 </p>
+<p style="text-align:justify">活动策划已经进行了多年的从首页到专业的公司。 主要的投诉我们的大多数客户是没有一种单一的门户网站以查看事件地点远程从舒适的家中、办公室、等。 因此, 我们想出了一种独特的想法, 让您抢先预览的所有位置我们提供在您访问它们。 这将帮助你决定, 如果位置是适合您的需要, 也可以让您编制的有关的所有设施和便利设施。 无论是婚礼、生日聚会、商务会议、学生座谈会, 我们努力使您的活动美丽的和成功的。 </p>
+<ul class="icon-list list-unstyled">
+<li>
+<i class="fa-check"></i>美丽的位置。 </li>
+<li>
+<i class="fa-check"></i>虚拟旅游的所有位置我们提供。 </li>
+<li>
+<i class="fa-check"></i>令人惊奇的设施和服务。 </li>
+<li>
+<i class="fa-check"></i>方便快捷的订房的位置。 </li>
+</ul>
+</div>
+<div class="col-md-6">
+                                       <!-- Carousel -->
+<div id="carousel-example-1" class="carousel slide" data-ride="carousel">
+                                           <!-- Indicators -->
+<ol class="carousel-indicators">
+<li data-target="#carousel-example-1" data-slide-to="0" class="active"></li>
+<li data-target="#carousel-example-1" data-slide-to="1"></li>
+<li data-target="#carousel-example-1" data-slide-to="2"></li>
+</ol>
+                                           <!-- Wrapper for slides -->
+<div class="carousel-inner">
+<div class="item active">
+<img src="assets/img/portfolio/image1.jpg">
+</div>
+<div class="item">
+<img src="assets/img/portfolio/image2.jpg">
+</div>
+<div class="item">
+<img src="assets/img/portfolio/image3.jpg">
+</div>
+</div>
+                                           <!-- Controls -->
+                                           <a class="left carousel-control" href="#carousel-example-1" data-slide="prev">
+<span class="glyphicon glyphicon-chevron-left"></span>
+                                           </a>
+                                           <a class="right carousel-control" href="#carousel-example-1" data-slide="next">
+<span class="glyphicon glyphicon-chevron-right"></span>
+                                           </a>
+</div>
+                                       <!-- End Carousel -->
+</div>
+</div>
+<hr class="margin-vert-40">
+                               <!-- Meet the Team -->
+<h2 class="margin-vert-20">团队介绍 </h2>
+<div class="row margin-bottom-30">
+                                   <!-- Person Details -->
+<div class="col-sm-3 person-details">
+<figure>
+<img src="assets/img/theteam/divya.jpg" alt="image1">
+<figcaption>
+<h3>Divya
+<small> -程序员 </small>
+</h3>
+<span>研究生 <br>计算机工程系 <br>San Jose State University </span>
+</figcaption>
+<ul class="list-inline person-details-icons">
+<li>
+                                                   <a href="#">
+<i class="fa-lg fa-twitter"></i>
+                                                   </a>
+</li>
+<li>
+                                                   <a href="#">
+<i class="fa-lg fa-linkedin"></i>
+                                                   </a>
+</li>
+<li>
+                                                   <a href="#">
+<i class="fa-lg fa-facebook"></i>
+                                                   </a>
+</li>
+<li>
+                                                   <a href="#">
+<i class="fa-lg fa-dribbble"></i>
+                                                   </a>
+</li>
+<li>
+                                                   <a href="#">
+<i class="fa-lg fa-google-plus"></i>
+                                                   </a>
+</li>
+</ul>
+</figure>
+</div>
+                                   <!-- //Portfolio Item// -->
+                                   <!-- Person Details -->
+<div class="col-sm-3 person-details">
+<figure>
+<img src="assets/img/theteam/pooja.jpg" alt="image2">
+<figcaption>
+<h3>Pooja
+<small> -程序员 </small>
+</h3>
+<span>研究生 <br>计算机工程系 <br>San Jose State University </span>
+</figcaption>
+<ul class="list-inline person-details-icons">
+<li>
+                                                   <a href="#">
+<i class="fa-lg fa-twitter"></i>
+                                                   </a>
+</li>
+<li>
+                                                   <a href="#">
+<i class="fa-lg fa-linkedin"></i>
+                                                   </a>
+</li>
+<li>
+                                                   <a href="#">
+<i class="fa-lg fa-facebook"></i>
+                                                   </a>
+</li>
+<li>
+                                                   <a href="#">
+<i class="fa-lg fa-dribbble"></i>
+                                                   </a>
+</li>
+<li>
+                                                   <a href="#">
+<i class="fa-lg fa-google-plus"></i>
+                                                   </a>
+</li>
+</ul>
+</figure>
+</div>
+                                   <!-- //Portfolio Item// -->
+                                   <!-- Person Details -->
+<div class="col-sm-3 person-details">
+<figure>
+<img src="assets/img/theteam/usha.jpg" alt="image3">
+<figcaption>
+<h3>乌沙
+<small>-程序员 </small>
+</h3>
+<span>研究生 <br>计算机工程系 <br>San Jose State University </span>
+</figcaption>
+<ul class="list-inline person-details-icons">
+<li>
+                                                   <a href="#">
+<i class="fa-lg fa-twitter"></i>
+                                                   </a>
+</li>
+<li>
+                                                   <a href="#">
+<i class="fa-lg fa-linkedin"></i>
+                                                   </a>
+</li>
+<li>
+                                                   <a href="#">
+<i class="fa-lg fa-facebook"></i>
+                                                   </a>
+</li>
+<li>
+                                                   <a href="#">
+<i class="fa-lg fa-dribbble"></i>
+                                                   </a>
+</li>
+<li>
+                                                   <a href="#">
+<i class="fa-lg fa-google-plus"></i>
+                                                   </a>
+</li>
+</ul>
+</figure>
+</div>
+                                   <!-- //Portfolio Item// -->
+                                   <!-- Person Details -->
+<div id = "team" class="col-sm-3 person-details">
+<figure>
+<img src="assets/img/theteam/varsha.jpg" alt="image4">
+<figcaption>
+<h3>集团
+<small>-程序员 </small>
+</h3>
+<span>研究生 <br>计算机工程系 <br>San Jose State University </span>
+</figcaption>
+<ul class="list-inline person-details-icons">
+<li>
+                                                   <a href="#">
+<i class="fa-lg fa-twitter"></i>
+                                                   </a>
+</li>
+<li>
+                                                   <a href="#">
+<i class="fa-lg fa-linkedin"></i>
+                                                   </a>
+</li>
+<li>
+                                                   <a href="#">
+<i class="fa-lg fa-facebook"></i>
+                                                   </a>
+</li>
+<li>
+                                                   <a href="#">
+<i class="fa-lg fa-dribbble"></i>
+                                                   </a>
+</li>
+<li>
+                                                   <a href="#">
+<i class="fa-lg fa-google-plus"></i>
+                                                   </a>
+</li>
+</ul>
+</figure>
+</div>
+                                   <!-- //Portfolio Item// -->
+</div>
+<hr class="margin-vert-60">
+                               <!-- End Meet the Team -->
+                               <!-- Our Skills -->
+<h2>我们的技能 </h2>
+<div class="row">
+<div class="col-md-6">
+<h3 class="progress-label">图形设计
+<span class="pull-right"> 42% </span>
+</h3>
+<div class="progress progress-sm">
+<div class="progress-bar progress-bar-primary" role="progressbar" aria-valuenow="90" aria-valuemin="0" aria-valuemax="100" style="width: 90%">
+</div>
+</div>
+<h3 class="progress-label">研究
+<span class="pull-right"> 82% </span>
+</h3>
+<div class="progress progress-sm">
+<div class="progress-bar progress-bar-primary" role="progressbar" aria-valuenow="82" aria-valuemin="0" aria-valuemax="100" style="width: 82%">
+</div>
+</div>
+<h3 class="progress-label">需求收集
+<span class="pull-right"> 74% </span>
+</h3>
+<div class="progress progress-sm">
+<div class="progress-bar progress-bar-primary" role="progressbar" aria-valuenow="74" aria-valuemin="0" aria-valuemax="100" style="width: 74%">
+</div>
+</div>
+<h3 class="progress-label">编程
+<span class="pull-right"> 92% </span>
+</h3>
+<div class="progress progress-sm">
+<div class="progress-bar progress-bar-primary" role="progressbar" aria-valuenow="78" aria-valuemin="0" aria-valuemax="100" style="width: 78%">
+</div>
+</div>
+</div>
+<div class="col-md-6">
+<p style="text-align:justify">我们小组的 4 个女孩都渴望成为事件的策划者。 我们的爱以提供最佳的解决方案我们的客户。 目前我们学生的圣荷西州立大学寻求我们的计算机工程硕士学位。 </p>
+<p style="text-align:justify">我们擅长编程的许多流行的语言、脚本编写和设计。 目前对于我们的 web UI 和设计的时候, 我们在设计这个网站能够提供更好的活动策划网站具有独特的想法, 让虚拟现实的经验提供给我们的客户。 我们的主要动机是帮助我们的客户以更好地感受到我们的服务。 </p>
+</div>
+</div>
+                               <!-- End Our Skills -->
+</div>
+</div>
+                       <!-- === END CONTENT === -->
+                       <!-- === BEGIN FOOTER === -->
+</div>
+<div id="base" class="container padding-vert-30">
+<div class="row">
+                           <!-- Disclaimer -->
+<div class="col-md-6">
+<h3 class="margin-bottom-10">免责声明 </h3>
+<p style="text-align:justify">所有图像在本网站上的演示文稿/MC9S08AW60 系列演示的目的只为 CMPE 280 当然, San Jose State University, 目的是代表一种实时网站和未未购买或 solicitated。 </p>
+<p style="text-align:justify">大部分的图像用于此处可以从
+                                   <a class="nobold" href="https://www.google.com/" target="_blank">google.com。</a>如果您想要购买他们从他们的版权所有者请访问相应的网站。 我们不勇于承担责任的图像或模板或视频。 </p>
+<div class="clearfix"></div>
+</div>
+                           <!-- End Disclaimer -->
+                           <!-- Contact Details -->
+<div class="col-md-3">
+<h3 class="margin-bottom-10">联系人详细信息 </h3>
+<p>一华盛顿广场,
+<br />San Jose, CA
+<br />95192
+</p>
+<p>电子邮件:
+                                   <a id="help"  href = "#"    onClick="renderContactPage()">info@eclectic.com</a>
+<br />网站:
+                                   <a id = "website" href = "#" onClick="renderIndexPage()" >www.eclectic.com</a>
+</p>
+</div>
+                           <!-- End Contact Details -->
+<div class="container padding-vert-30">
+<div class="row">
+<div id="copyright">
+<p>(三)折衷主义 2016 版权信息 </p>
+</div>
+</div>
+</div>
+</div>
+       <!-- JS -->
+<script type="text/javascript" src="assets/js/jquery.min.js" type="text/javascript"></SCRIPT>
+<script type="text/javascript" src="assets/js/bootstrap.min.js" type="text/javascript"></SCRIPT>
+<script type="text/javascript" src="assets/js/scripts.js"></SCRIPT>
+       <!-- Isotope - Portfolio Sorting -->
+<script type="text/javascript" src="assets/js/jquery.isotope.js" type="text/javascript"></SCRIPT>
+       <!-- Mobile Menu - Slicknav -->
+<script>
+		 var user =  getQueryVariable("userid");
+		   if(login == "1") {
+	    	$("#login").hide();
+			$("#account").show();
+			$("#name").html(user);
+	    }
+        </SCRIPT>
+<script type="text/javascript" src="assets/js/jquery.slicknav.js" type="text/javascript"></SCRIPT>
+       <!-- Animate on Scroll-->
+<script type="text/javascript" src="assets/js/jquery.visible.js" charset="utf-8"></SCRIPT>
+       <!-- Modernizr -->
+<script src="assets/js/modernizr.custom.js" type="text/javascript"></SCRIPT>
+       <!-- End JS -->
+</body>
+</html>
+<!-- === END FOOTER === -->
