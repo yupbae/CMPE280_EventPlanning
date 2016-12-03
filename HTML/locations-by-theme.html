@@ -23,8 +23,44 @@
         <!-- Google Fonts-->
         <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Open Sans:300,400" />
         <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Source Sans Pro:300,400" />
-		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+		<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script> 
+<script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.11.2/jquery-ui.min.js"></script>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+
     </head>
+	<style type="text/css">
+
+.paging-nav {
+  text-align: right;
+  padding-top: 2px;
+}
+
+.paging-nav a {
+  margin: auto 1px;
+  text-decoration: none;
+  display: inline-block;
+  padding: 1px 7px;
+  background: #6e5f7c;
+  color: white;
+  
+  font-weight:bold;
+}
+
+.paging-nav .selected-page {
+  color: #3c3343;
+background-color: #d1d1d1;
+border-color: #dddddd;
+font-weight:bold;
+}
+
+.paging-nav,
+#tableData {
+  margin: 0 auto;
+  font-family: Arial, sans-serif;
+}
+</style>
 	<script>
 	var login = getQueryVariable("login");
 	var user = getQueryVariable("userid");
@@ -37,6 +73,7 @@
     var month = ("0" + (now.getMonth() + 1)).slice(-2);
     var today = now.getFullYear()+"-"+(month)+"-"+(day) ;
     $('#eventdate').val(today);    
+	
 });
 function getQueryVariable(variable) {
 				var query = window.location.search.substring(1);
@@ -240,30 +277,20 @@ function getQueryVariable(variable) {
                         <!-- === END HEADER === -->
                         <!-- === BEGIN CONTENT === -->
                         <div class="row">
-                            <div class="col-md-6">
+                            <div class="col-md-12">
+							
                                 <h2>Locations available</h2>
-                                <div class="row">
-                                    <table style="width:100%">
-                                        <tr>
-                                            <td style="vertical-align:top;width:300px;">
-                                                <ul id="list" style="padding:25px;border-top-left-radius:5px;border-bottom-left-radius:5px; list-style: none; overflow-y: scroll; height: 600px; border: 5px solid #6e5f7c;"></ul>
-                                                <table style="width:100%;font-weight:bold;">
-                                                    <!-- <tr> -->
-                                                    <!-- <td style="background-color:blue;padding:5px;">Business</td> -->
-                                                    <!-- <td style="background-color:red;padding:5px;">Wedding</td> -->
-                                                    <!-- </tr> -->
-                                                    <!-- <tr> -->
-                                                    <!-- <td style="background-color:yellow;padding:5px;">Cultural</td> -->
-                                                    <!-- <td style="background-color:green;padding:5px;">Birthday</td> -->
-                                                    <!-- </tr> -->
-                                                </table>
-                                            </td>
-                                        </tr>
-                                    </table>
-                                </div>
+								<div class="row margin-vert-30">
+								<div class="col-md-12">
+								
+								<table id="newloc" class="table table-hover" style="background-color:#fff">
+								
+								</table>
+								</div>
+								</div>
                             </div>
                             <br><br>
-                            <div class="col-md-6">
+                            <div class="col-md-12">
                                 <td><div id="map"></div></td>
                             </div>
                         </div>
@@ -305,10 +332,12 @@ function getQueryVariable(variable) {
                         </div>
 
         <!-- JS -->
-		<script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.1.1.min.js"></script>
+		
 		<script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAPrFaqptBZTrKq9psSASrZc9-jwrmndoY&callback=initMap"></script>
 		<script type="text/javascript" src="assets/json/eventlocations.js"></script>
+		<script type="text/javascript" src="assets/js/paging.js"></script> 
 		<script>
+		var rowDATA="";
 		var date= getQueryVariable("date");
 		var theme= getQueryVariable("themeSelected");
 		var capacity= decodeURIComponent(getQueryVariable("guestesCount"));
@@ -316,6 +345,11 @@ function getQueryVariable(variable) {
 		var user = getQueryVariable("userid");
 		if(login==null || login == false)
 		login = "0";
+		
+		//form paging
+		var y=0;
+		var trdata="<tr><th>ID</th></tr>";
+		var jsonY = JSON.parse(locations);
 	
 		function getQueryVariable(variable) {
 				var query = window.location.search.substring(1);
@@ -338,14 +372,21 @@ function getQueryVariable(variable) {
 				});
 				var i;
 				var locType="";
+				
+				var trtdOpen="<tr style='height:80px'><td style='vertical-align: middle;'>";
+				var tdCtdO="</td><td style='vertical-align: middle;'>";
+				var tdtrclose="</td></tr>";
+				
+				
 				for(i=0; i < json.location.length; i++) {
 					$('#list').html(locType);
 					var point = {lat: json.location[i].latitude, lng: json.location[i].longitude};
 					var type = json.location[i].type;
 					var cap = json.location[i].capacity;
+					var linkbutton="<a class='btn-success' href='locationDetails.html?id="+json.location[i].id+"&login="+login+"&userid="+user+"' style='padding: 5px;border-radius: 5px;' >View</a>";
 					
 					
-					if(theme=="All")
+					if(theme=="All") // All
 					{
 					
 						if (capacity == "All" || (capacity == " Less than 100" && cap <= 100) || (capacity == "100 to 500" && cap > 100 && cap <=500) || (capacity == "500 to 1000" && cap > 500 && cap <= 1000) || (capacity == "More than 1000" && cap > 1000)) {
@@ -354,22 +395,27 @@ function getQueryVariable(variable) {
 								case "Business":
 									image = 'assets/img/maps/Business.png';
 									title = "Business";
-									locType = locType + '<a href="locationDetails.html?id='+json.location[i].id+'&login='+login+'&userid='+user+'"><li class="locationList" style="border-left:5px solid blue;"><span></span>' +" "+json.location[i].name+"</br>"+json.location[i].address+"</br></br></li></a>";
+									//locType = locType + '<a href="locationDetails.html?id='+json.location[i].id+'&login='+login+'&userid='+user+'"><li class="locationList" style="border-left:5px solid blue;"><span></span>' +" "+json.location[i].name+"</br>"+json.location[i].address+"</br></br></li></a>";
+									rowDATA = rowDATA + trtdOpen + "<img style='width:95px;' src='assets/img/locations/"+json.location[i].id+"_1.jpg'/>"+ tdCtdO  + json.location[i].name + tdCtdO + json.location[i].address + tdCtdO + json.location[i].type +tdCtdO + linkbutton +tdtrclose;
+									
 									break;
 								case "Wedding":
 									image = 'assets/img/maps/Wedding.png';
 									title = "Wedding";
-									locType = locType + '<a href="locationDetails.html?id='+json.location[i].id+'&login='+login+'&userid='+user+'"><li class="locationList" style="border-left:5px solid red;"><span></span>' +" "+json.location[i].name+"</br>"+json.location[i].address+"</br></br></li></a>";
+									//locType = locType + '<a href="locationDetails.html?id='+json.location[i].id+'&login='+login+'&userid='+user+'"><li class="locationList" style="border-left:5px solid red;"><span></span>' +" "+json.location[i].name+"</br>"+json.location[i].address+"</br></br></li></a>";
+									rowDATA = rowDATA + trtdOpen + "<img style='width:95px;' src='assets/img/locations/"+json.location[i].id+"_1.jpg'/>"+ tdCtdO  + json.location[i].name + tdCtdO + json.location[i].address + tdCtdO + json.location[i].type +tdCtdO + linkbutton +tdtrclose;
 									break;
 								case "Cultural":
 									image = 'assets/img/maps/Cultural.png';
 									title = "Cultural";
-									locType = locType + '<a href="locationDetails.html?id='+json.location[i].id+'&login='+login+'&userid='+user+'"><li class="locationList" style="border-left:5px solid yellow;"><span></span>' +" "+json.location[i].name+"</br>"+json.location[i].address+"</br></br></li></a>";
+									//locType = locType + '<a href="locationDetails.html?id='+json.location[i].id+'&login='+login+'&userid='+user+'"><li class="locationList" style="border-left:5px solid yellow;"><span></span>' +" "+json.location[i].name+"</br>"+json.location[i].address+"</br></br></li></a>";
+									rowDATA = rowDATA + trtdOpen + "<img style='width:95px;' src='assets/img/locations/"+json.location[i].id+"_1.jpg'/>"+ tdCtdO  + json.location[i].name + tdCtdO + json.location[i].address + tdCtdO + json.location[i].type +tdCtdO + linkbutton +tdtrclose;
 									break;
 								case "Birthday":
 									image = 'assets/img/maps/Birthday.png';
 									title = "Birthday";
-									locType = locType + '<a href="locationDetails.html?id='+json.location[i].id+'&login='+login+'&userid='+user+'"><li class="locationList" style="border-left:5px solid green;"><span></span>' +" "+json.location[i].name+"</br>"+json.location[i].address+"</br></br></li></a>";
+									//locType = locType + '<a href="locationDetails.html?id='+json.location[i].id+'&login='+login+'&userid='+user+'"><li class="locationList" style="border-left:5px solid green;"><span></span>' +" "+json.location[i].name+"</br>"+json.location[i].address+"</br></br></li></a>";
+									rowDATA = rowDATA + trtdOpen + "<img style='width:95px;' src='assets/img/locations/"+json.location[i].id+"_1.jpg'/>"+ tdCtdO  + json.location[i].name + tdCtdO + json.location[i].address + tdCtdO + json.location[i].type +tdCtdO + linkbutton +tdtrclose;
 									break;
 							}
 						
@@ -380,7 +426,7 @@ function getQueryVariable(variable) {
 															});
 						}
 					} else {
-						if(theme==type)
+						if(theme==type)//type
 						{
 							var col;
 							switch(theme) {
@@ -396,7 +442,8 @@ function getQueryVariable(variable) {
 							if (capacity == "All" || (capacity == "Less than 100" && cap <= 100) || (capacity == "100 to 500" && cap > 100 && cap <=500) || (capacity == "500 to 1000" && cap > 500 && cap <= 1000) || (capacity == "More than 1000" && cap > 1000)) {
 								image = "assets/img/maps/"+theme+".png";
 								title = theme;
-								locType = locType + '<a href="locationDetails.html?id='+json.location[i].id+'&login='+login+'&userid='+user+'"><li class="locationList" style="border-left:5px solid '+col+'"><span></span>' +" "+json.location[i].name+"</br>"+json.location[i].address+"</br></br></li></a>";
+								//locType = locType + '<a href="locationDetails.html?id='+json.location[i].id+'&login='+login+'&userid='+user+'"><li class="locationList" style="border-left:5px solid '+col+'"><span></span>' +" "+json.location[i].name+"</br>"+json.location[i].address+"</br></br></li></a>";
+								rowDATA = rowDATA + trtdOpen + "<img style='width:95px;' src='assets/img/locations/"+json.location[i].id+"_1.jpg'/>"+ tdCtdO  + json.location[i].name + tdCtdO + json.location[i].address + tdCtdO + json.location[i].type +tdCtdO + linkbutton +tdtrclose;
 								var marker = new google.maps.Marker({position: point,
 															 icon: image,
 															 map: map,				  
@@ -406,9 +453,20 @@ function getQueryVariable(variable) {
 						}
 					}
 				}
+				
+				$('#newloc').html(rowDATA);
+		
+		$(document).ready(function() {
+                $('#newloc').paging({limit:5});
+            });
 			}
 		</script>
-        <script type="text/javascript" src="assets/js/jquery.min.js" type="text/javascript"></script>
+		
+        <!-- <script type="text/javascript" src="assets/js/jquery.min.js" type="text/javascript"></script> -->
+        <script type="text/javascript" src="assets/js/bootstrap.min.js" type="text/javascript"></script>
+        <script type="text/javascript" src="assets/js/bootstrap.min.js" type="text/javascript"></script>
+        <script type="text/javascript" src="assets/js/bootstrap.min.js" type="text/javascript"></script>
+        <script type="text/javascript" src="assets/js/bootstrap.min.js" type="text/javascript"></script>
         <script type="text/javascript" src="assets/js/bootstrap.min.js" type="text/javascript"></script>
         <script type="text/javascript" src="assets/js/scripts.js"></script>
         <!-- Isotope - Portfolio Sorting -->

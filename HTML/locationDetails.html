@@ -257,7 +257,7 @@ function renderIndexPage() {
                                                 <input type="date" id="eventdate" style="height:30px">
                                             </td>
                                             <td>
-                                                <input type="button" class="btn btn-success" value="Reserve Venue" onclick="reserveVenue()" style="float: right; border-radius: 0px;background-color:#8270a4; border-color:#8270a4">
+                                                <input type="button" class="btn btn-success" value="Reserve" onclick="reserveVenue()" style="float: right; border-radius: 0px;background-color:#8270a4; border-color:#8270a4">
                                             </td>
                                         </div>
                                     </div>
@@ -515,7 +515,7 @@ function renderIndexPage() {
 				var loc_id = getQueryVariable("id");
 				 user = getQueryVariable("userid"); // user variable is already declared in the aove statements
 				var dataString = 'user='+user+'&loc_id='+loc_id;
-				var url = 'https://eclectic.000webhostapp.com/update_recent.php';
+				var url = 'http://ec2-54-183-40-122.us-west-1.compute.amazonaws.com/php/update_recent.php';
 				var oReq = CreateXMLHttpRequest();
 				oReq.open("POST",url,true);
 				if(oReq!=null){

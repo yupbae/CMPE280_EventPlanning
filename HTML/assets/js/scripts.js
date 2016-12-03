@@ -21,7 +21,6 @@ function CreateXMLHttpRequest() {
 	login = "0";
 
 function getReviews() {
-	var dataString = 'user='+user;
 	var url = 'http://ec2-54-183-40-122.us-west-1.compute.amazonaws.com/php/get_reviews.php';
 	var oReq = CreateXMLHttpRequest();
 	oReq.open("POST",url,true);
@@ -29,22 +28,25 @@ function getReviews() {
 		oReq.setRequestHeader('Content-type', 'application/x-www-form-urlencoded');
 		oReq.onreadystatechange = function() {
 		    if(oReq.readyState == 4 && oReq.status == 200) {
+				alert(oReq.responseText);
 		    	var json = JSON.parse(oReq.responseText);
 				var op = json.operation;
 				var reviews = json.Review;
 				if(op === "Ok"){
 					var displayReviews = "";
-					for (i=0; i<10; i++) {
+					for (i=0; i<10 && i<reviews.length; i++) {
 						review = reviews[i]["review"];
+						if(review) {
 						eventdate = reviews[i]["eventdate"];
 						userid = reviews[i]["username"];
 						displayReviews += "<li class='locationList' style='border-left:5px solid blue;'><img class='imgThumbnail' src='assets/img/theteam/"+userid.toLowerCase()+".jpg'/> &nbsp;"+review+"</li><li><i>Posted by </i><b>"+userid+"</b> on "+eventdate+"</li><br>";
+						}
 					}
 					$('#reviews').html(displayReviews);
 				}
 		    }
 		}
-		oReq.send(dataString);
+		oReq.send();
 	}
 }
 	
