@@ -131,8 +131,7 @@ $(document).ready( function() {
 		}
 	}
 	function submitdata() {
-		    alert("submit");
-			var firstname = $("#fname").val();
+		    		var firstname = $("#fname").val();
 			var lastname = $("#lname").val();
 			var email = $("#email1").val();
 			var password = $("#password1").val();
