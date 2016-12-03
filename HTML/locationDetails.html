@@ -514,7 +514,7 @@ function renderIndexPage() {
 				var loc_id = getQueryVariable("id");
 				 user = getQueryVariable("userid"); // user variable is already declared in the aove statements
 				var dataString = 'user='+user+'&loc_id='+loc_id;
-				var url = 'https://eclectic.000webhostapp.com/update_recent.php';
+				var url = 'http://ec2-54-183-40-122.us-west-1.compute.amazonaws.com/php/update_recent.php';
 				var oReq = CreateXMLHttpRequest();
 				oReq.open("POST",url,true);
 				if(oReq!=null){
@@ -548,7 +548,7 @@ function renderIndexPage() {
 			var user = getQueryVariable("userid");
             var login = getQueryVariable("login");
 			var dataString = 'eventdate='+eventdate+"&loc_id="+loc_id+"&user="+user;
-			var url = 'https://eclectic.000webhostapp.com/insert_booking.php';
+			var url = 'http://ec2-54-183-40-122.us-west-1.compute.amazonaws.com/php/insert_booking.php';
 				var oReq = CreateXMLHttpRequest();
 				oReq.open("POST",url,true);
 				if(oReq!=null){
