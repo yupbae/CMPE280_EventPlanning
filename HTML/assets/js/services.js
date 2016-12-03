@@ -317,9 +317,9 @@ var login = getQueryVariable("login");
 						$("#toggle-9").removeClass('glyphicon glyphicon-ok').addClass('glyphicon glyphicon-hand-right');
 					}
 				}else if(etype === "hotelMap"){
-					//8
+					//9
 					$('#mapSpace').attr('src', "https://www.google.com/maps/embed?pb=!1m16!1m12!1m3!1d30182.840290752898!2d-121.90253231642572!3d37.3287687498791!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!2m1!1shotels+near+san+jose!5e0!3m2!1sen!2sus!4v1479401249778");
-					$("#toggle-8").removeClass('glyphicon glyphicon-hand-right').addClass('glyphicon glyphicon-ok');
+					$("#toggle-9").removeClass('glyphicon glyphicon-hand-right').addClass('glyphicon glyphicon-ok');
 					
 					if($("#toggle-1").hasClass('glyphicon glyphicon-ok')){
 						$("#toggle-1").removeClass('glyphicon glyphicon-ok').addClass('glyphicon glyphicon-hand-right');

@@ -28,7 +28,7 @@ function getReviews() {
 		oReq.setRequestHeader('Content-type', 'application/x-www-form-urlencoded');
 		oReq.onreadystatechange = function() {
 		    if(oReq.readyState == 4 && oReq.status == 200) {
-				alert(oReq.responseText);
+				//alert(oReq.responseText);
 		    	var json = JSON.parse(oReq.responseText);
 				var op = json.operation;
 				var reviews = json.Review;
@@ -66,27 +66,6 @@ function getReviews() {
 		  else
 		  location.href = "index.html?login=0";
 	    }
-    function renderIndexPage_CN() {
-       
-          if(login == "1")
-              location.href = "index_cn.html?login=1&userid="+user;
-          else
-              location.href = "index_cn.html?login=0";
-    }
-function renderIndexPage_HB() {
-    
-    if(login == "1")
-        location.href = "index_hb.html?login=1&userid="+user;
-    else
-        location.href = "index_hb.html?login=0";
-}
-function renderIndexPage_JP() {
-    
-    if(login == "1")
-        location.href = "index_jp.html?login=1&userid="+user;
-    else
-        location.href = "index_jp.html?login=0";
-}
 		function renderContactPage() {
 		  if(login == "1")
 		  location.href = "contact.html?login=1&userid="+user;
@@ -139,46 +118,8 @@ function renderIndexPage_JP() {
 			if(login == "1")
 				location.href = "account-details.html?login=1&userid="+user;
 		}
-        function renderContactPage_CN() {
-            if(login == "1")
-                location.href = "contact_cn.html?login=1&userid="+user;
-            else
-                location.href = "contact_cn.html?login=0";
-        }
-        function renderContactPage_HB() {
-            if(login == "1")
-                location.href = "contact_hb.html?login=1&userid="+user;
-            else
-                location.href = "contact_hb.html?login=0";
-        }
-        function renderContactPage_JP() {
-            if(login == "1")
-                location.href = "contact_jp.html?login=1&userid="+user;
-            else
-                location.href = "contact_jp.html?login=0";
-        }
-
-        function renderAboutPage_CN() {
-            if(login == "1")
-                location.href = "pages-about-us_cn.html?login=1&userid="+user;
-            else
-                location.href = "pages-about-us_cn.html?login=0";
-        }
-        function renderAboutPage_HB() {
-            if(login == "1")
-                location.href = "pages-about-us_hb.html?login=1&userid="+user;
-            else
-                location.href = "pages-about-us_hb.html?login=0";
-        }
-        function renderAboutPage_JP() {
-            if(login == "1")
-                location.href = "pages-about-us_jp.html?login=1&userid="+user;
-            else
-                location.href = "pages-about-us_jp.html?login=0";
-        }
-
-
-	function loadTheme(){
+	
+	function loadTheme(){	
 	    if(login == "1") {
 		var themeSelected=$("#theme option:selected").text();
 		var guestesCount=$("#capacity option:selected").text();;
