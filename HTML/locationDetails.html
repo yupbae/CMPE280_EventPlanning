@@ -253,12 +253,13 @@ function renderIndexPage() {
                                 <div class="col-md-12">
                                    <div class="panel panel-default">
                                        <div class="panel-heading">
-                                           <td class="customcol"><b>Date:</b>&nbsp;&nbsp;
+                                           <td class="customcol"><b>Date:</b>
                                                 <input type="date" id="eventdate" style="height:30px">
                                             </td>
                                             <td>
                                                 <input type="button" class="btn btn-success" value="Reserve" onclick="reserveVenue()" style="float: right; border-radius: 0px;background-color:#8270a4; border-color:#8270a4">
                                             </td>
+                                           
                                         </div>
                                     </div>
                                     <div class="row margin-vert-20">
@@ -309,7 +310,7 @@ function renderIndexPage() {
                                         </div>
                                     </div>
                                     <div class="location-container">
-                                        <iframe id="forecast_embed" type="text/html" frameborder="0" src="" width="400px" height="300px"> </iframe>
+                                        <iframe id="forecast_embed" type="text/html" frameborder="0" src="" width="500px" height="300px"> </iframe>
                                     </div>
                                     <div>
                                             <h2>Details</h2>
@@ -452,7 +453,7 @@ function renderIndexPage() {
 			$('#img2').attr("src","assets/img/locations/" + id + "_2.jpg");
 			$('#amenities').html(amenities);
 			$('#details').html(details);
-			src = "http://forecast.io/embed/#lat=" + lat + "&lon=" + lng;
+			src = "https://forecast.io/embed/#lat=" + lat + "&lon=" + lng;
 			$('#forecast_embed').attr("src",src);
 		}
         
@@ -547,6 +548,7 @@ function renderIndexPage() {
 			var eventdate = $('#eventdate').val();
 			var loc_id = getQueryVariable("id");
 			var user = getQueryVariable("userid");
+            var login = getQueryVariable("login");
 			var dataString = 'eventdate='+eventdate+"&loc_id="+loc_id+"&user="+user;
 			var url = 'http://ec2-54-183-40-122.us-west-1.compute.amazonaws.com/php/insert_booking.php';
 				var oReq = CreateXMLHttpRequest();
@@ -566,7 +568,12 @@ function renderIndexPage() {
 					}
 				oReq.send(dataString);
 				}
-			alert("Venue reserved successfully");
+                if(login == "0") {
+                    location.href="pages-login.html";
+                }
+                else {
+                    alert("Venue reserved successfully");
+                }
 		}
         </script>
         <!-- Animate on Scroll-->
