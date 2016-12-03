@@ -1,0 +1,413 @@
+<!-- === BEGIN HEADER === -->
+<!DOCTYPE html>
+<!--[if IE 8]> <html lang="en" class="ie8"> <![endif]-->
+<!--[if IE 9]> <html lang="en" class="ie9"> <![endif]-->
+<!--[if !IE]><!-->
+<html lang="en">
+   <!--<![endif]-->
+<head>
+<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=utf-8" />
+
+<title>Eclectic - Event Planners.</title>		
+       <!-- Meta -->
+
+<meta name="description" content="">
+<meta name="author" content="">
+<meta name="google-site-verification" content="googleef63d5d366b9aeb5">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+       <!-- Bootstrap Core CSS -->
+<link rel="stylesheet" href="assets/css/bootstrap.css" rel="stylesheet">
+       <!-- Template CSS -->
+<link rel="stylesheet" href="assets/css/animate.css" rel="stylesheet">
+<link rel="stylesheet" href="assets/css/font-awesome.css" rel="stylesheet">
+<link rel="stylesheet" href="assets/css/nexus.css" rel="stylesheet">
+<link rel="stylesheet" href="assets/css/responsive.css" rel="stylesheet">
+<link rel="stylesheet" href="assets/css/custom.css" rel="stylesheet">
+       <!-- Google Fonts-->
+<link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Open Sans:300,400" />
+<link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Source Sans Pro:300,400" />
+
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></SCRIPT>
+		<script src="./assets/js/bootstrap-datepicker.js"></SCRIPT>
+<script type="text/javascript" src="assets/js/scripts.js"></SCRIPT>
+</head>
+<body>
+<div id="body_bg">
+<div id="container_header" class="container">
+<div id="header" class="row">
+<div class="col-md-12 margin-top-15">
+                       <!-- Header Social Icons -->
+<ul class="social-icons circle pull-right">
+<li class="social-twitter">
+                               <a href="https://twitter.com/" target="_blank" title="Twitter"></a>
+</li>
+<li class="social-facebook">
+                               <a href="https://www.facebook.com/" target="_blank" title="Facebook"></a>
+</li>
+<li class="social-googleplus">
+                               <a href="https://plus.google.com/" target="_blank" title="GooglePlus"></a>
+</li>
+</ul>
+                       <!-- End Header Social Icons -->
+</div>
+<div class="clear"></div>
+</div>
+</div>
+<div class="primary-container-group">
+               <!-- Background -->
+<div class="primary-container-background">
+<div class="primary-container"></div>
+<div class="clearfix"></div>
+</div>
+               <!--End Background -->
+<div class="primary-container">
+<div id="container_hornav" class="container no-padding">
+                       <!-- Logo -->
+<div class="logo">
+                           <a id = "image" onClick="renderIndexPage()">
+<img src="assets/img/logo1.png" alt="Logo" />
+                           </a>
+</div>
+                       <!-- End Logo -->
+                       <!-- Slogan -->
+<p class="site-slogan">活動策劃工具 </p>
+                       <!-- End Slogan -->
+                       <!-- Top Menu -->
+
+<div class="row">
+<div class="hornav-block">
+<div id="hornav" class="pull-right">
+<ul id="hornavmenu" class="nav navbar-nav">
+<li>
+                                           <a id = "home" href= "#" onClick="renderIndexPage()">首頁</a>
+</li>
+
+<li>
+<span>關於 </span>
+<ul>
+<li>
+                                                   <a href= "#" id = "philosophy" onClick="renderAboutPage_CN()">理念</a>
+</li>
+</ul>
+</li>
+<li>
+<span>事件位置 </span>
+<ul>
+<li>
+                                                   <a href= "#" class = "business-locations" onClick="renderBusinessLocations()">企業</a>
+</li>
+<li>
+                                                   <a  href= "#" class = "wedding-locations" onClick="renderWeddingLocations()">婚禮</a>
+</li>
+												<li>
+                                                   <a href= "#" class = "cultural-locations" onClick="renderCulturalLocations()">文化</a>
+</li>
+												<li>
+                                                   <a href= "#" class = "birthday-locations" onClick="renderBirthdayLocations()">生日</a>
+</li>
+</ul>
+</li>
+<li>
+                                           <!-- <span>Services</span>
+                                             <ul>
+                                             <li>
+                                             <a href="food.html">Food</a>
+                                             </li>
+                                             <li>
+                                             <a href="music.html">Live Music</a>
+                                             </li>
+                                             </ul> -->
+                                           <a id = "services" onClick="renderServices_CN()" href = "#">服務</a>
+</li>
+<li>
+                                           <a id = "contact" onClick="renderContactPage_CN()" href = "#">連絡人</a>
+</li>
+<li id = "login-btn">
+                                       <a href="pages-login.html">登入</a>
+</li>
+<li id = "account-btn" style="display:none">
+<span id = "name">我的帳號 </span>
+<ul>
+<li>
+                                                   <a href= "#" class = "account-details" onClick="renderAccountDetails()">我的帳號</a>
+</li>
+												<li>
+                                                   <a href="index.html?login=0" id = "signout">不符</a>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+<div class="clearfix"></div>
+</div>
+                       <!-- End Top Menu -->
+<div id="google_translate_element"></div>
+</div>
+<div class="container no-padding">
+                       <!-- === END HEADER === -->
+                       <!-- === BEGIN CONTENT === -->
+<div class="row">
+                           <!-- Carousel Slideshow -->
+							<div class="col-md-12 margin-top-30">
+								<div id="carousel-example" class="carousel slide" data-ride="carousel">
+									<!-- Carousel Indicators -->
+										<ol class="carousel-indicators">
+											<li data-target="#carousel-example" data-slide-to="0" class="active"></li>
+											<li data-target="#carousel-example" data-slide-to="1"></li>
+											<li data-target="#carousel-example" data-slide-to="2"></li>
+										</ol>
+										<!-- End Carousel Indicators -->
+										<!-- Carousel Images -->
+										<div class="carousel-inner" >
+											<div class="item active">
+												<img src="assets/img/slideshow/slide1.jpg">
+											</div>
+											<div class="item">
+												<img src="assets/img/slideshow/slide2.jpg">
+											</div>
+											<div class="item">
+												<img src="assets/img/slideshow/slide3.jpg">
+											</div>
+											<div class="item">
+												<img src="assets/img/slideshow/slide4.jpg">
+											</div>
+										</div>
+										<!-- End Carousel Images -->
+										<!-- Carousel Controls -->
+										<a class="left carousel-control" href="#carousel-example" data-slide="prev">
+											<span class="glyphicon glyphicon-chevron-left"></span>
+										</a>
+										<a class="right carousel-control" href="#carousel-example" data-slide="next">
+											<span class="glyphicon glyphicon-chevron-right"></span>
+										</a>
+									<!-- End Carousel Controls -->
+									</div>
+								</div>
+</div>
+                           <!-- End Carousel Slideshow -->
+							<!-- Selection to Book -->
+							<hr>
+							<div class="row">
+<div class="col-sm-4">
+<b>主題 : </b>&nbsp;
+<select id="theme" class="data" style="height:25px">
+<option  selected value="All">所有 </option>
+<option value="business">企業 </option>
+<option value="wedding">婚禮 </option>
+<option value="cultural">文化 </option>
+<option value="birthday">生日 </option>
+</select>
+									</div>
+									<div class="col-sm-4">
+									<b>許多來賓 : </b>&nbsp;
+<select id="capacity" class="data" style="height:25px">
+<option selected value="all">所有 </option>
+<option value="less">少於 100 </option>
+<option value="ok">100 至 500 </option>
+<option value="medium">500 至 1000 </option>
+<option value="more">超過 1000 個 </option>
+										</select>
+									</div>
+									<div class="col-sm-4">
+<input type="button" style="background-color:#008000;height:25px"  id="book" class="data" onclick="loadTheme();" value="Book Now">
+									</div>
+							</div>
+							<!-- Selection to Book -->
+                           <!-- Tabs -->
+
+                           <!-- End Tabs -->
+</div>
+</div>
+<div class="container">
+<div class="row">
+                           <!-- Main Article -->
+<div class="col-md-12 margin-top-30">
+<h2 class="item-title">
+虛擬實境導覽
+</h2>
+<p style="text-align:justify">
+您可以瀏覽所有的場地就在這裡 , 用滑鼠右鍵 ! 我們提供高解析度虛擬實境三維立體影片我們的位置。 您可以在這裡將從某個房間 , 開啟您的檢視及健走在房間裡使用滑鼠墊及鍵盤。 所有您需要做的事現在、坐下、放鬆並讓我們帶領您的導覽我們最喜愛位置的全部。 享受 ! </p>
+								<p>
+									從舒適的房子 , 您可以通過巡迴賽的場地供您選擇。 這將有助於瞭解您的地點更好再來這裡。 它還可讓您有機會 undrestand 版面的房間、結束哪一種的存在及其他設施。 它可讓您存取資訊來計畫您的造訪而事先將讓您有更多的時間來完成您的工作更有效率。
+								</p>
+								<div class="row">
+								<div class="col-sm-7" style="">
+									<marquee style="height:315px;border:1px solid grey;border-radius:2px;background:#648880;background:linear-gradient(to right,#f6f1d3,#648880 85%,#293f50);"  scrollamount="2" direction="up" loop="true">
+										<ul id="reviews">
+										</ul>
+									</marquee>
+								</div>
+								<div class="col-sm-5" >
+									<embed  width="350" height="315" src="https://www.youtube.com/embed/H9kZk1DdF6c">
+									</embed >
+								</div>
+								</div>
+</div>
+
+<div class="clearfix"></div>
+                           <!-- End Main Article -->
+</div>
+</div>
+
+					
+					
+					<div class="container no-padding gridgallery">
+                       <!-- Portfolio Header Text -->
+<div class="row">
+<div class="col-md-12 padding-vert-30">
+<h2 class="subtitle text-center">預覽我們的位置 </h2>
+<h3 class="subtitle text-center">美麗室內和戶外位置的活動中心的矽谷 , 美國加州聖荷西。 </h3>
+</div>
+</div>
+                       <!-- End Portfolio Header Text -->
+                       <!-- Portfolio Images -->
+<div class="portfolio-group">
+                           <!-- Portfolio Item -->
+<div class="portfolio-item col-md-3 col-sm-6 col-xs-6 animate fadeInUp">
+<div class="image-hover">
+                                   <a class = "business-locations" href="locations-by-theme.html?themeSelected=Business&guestesCount=All">
+<figure>
+<img src="assets/img/portfolio/image1.jpg" alt="image1">
+<figcaption>
+<h3>企業 </h3>
+<span></span>
+</figcaption>
+</figure>
+                                   </a>
+</div>
+</div>
+                           <!-- //Portfolio Item// -->
+                           <!-- Portfolio Item -->
+<div class="portfolio-item col-md-3 col-sm-6 col-xs-6 animate fadeInUp">
+<div class="image-hover">
+                                   <a  class = "wedding-locations" href="locations-by-theme.html?themeSelected=Wedding&guestesCount=All">
+<figure>
+<img src="assets/img/portfolio/image2.jpg" alt="image2">
+<figcaption>
+<h3>婚禮 </h3>
+<span></span>
+</figcaption>
+</figure>
+                                   </a>
+</div>
+</div>
+                           <!-- //Portfolio Item// -->
+                           <!-- Portfolio Item -->
+<div class="portfolio-item col-md-3 col-sm-6 col-xs-6 animate fadeInUp">
+<div class="image-hover">
+                                   <a class = "cultural-locations" href="locations-by-theme.html?themeSelected=Cultural&guestesCount=All">
+<figure>
+<img src="assets/img/portfolio/image3.jpg" alt="image3">
+<figcaption>
+<h3>文化 </h3>
+<span></span>
+</figcaption>
+</figure>
+                                   </a>
+</div>
+</div>
+                           <!-- //Portfolio Item// -->
+                           <!-- Portfolio Item -->
+<div class="portfolio-item col-md-3 col-sm-6 col-xs-6 animate fadeInUp">
+<div class="image-hover">
+                                   <a class = "birthday-locations" href="locations-by-theme.html?themeSelected=Birthday&guestesCount=All">
+<figure>
+<img src="assets/img/portfolio/image4.jpg" alt="image4">
+<figcaption>
+<h3>生日 </h3>
+<span></span>
+</figcaption>
+</figure>
+                                   </a>
+</div>
+</div>
+                           <!-- //Portfolio Item// -->
+<div class="clearfix"></div>
+</div>
+
+                       <!-- End Portfolio Images -->
+                       <!-- Portfolio Footer Text -->
+<div class="row">
+<div class="col-12-md">
+<p class="text-center padding-bottom-30" style="max-width:690px; margin:0 auto;">目前我們迎合設施存在內部美國加州聖荷西州立大學。 我們打算要開啟服務在許多更多的位置在美國以外的地區。 敬請期待更多的位置和更多設施 ! </p>
+</div>
+</div>
+                       <!-- End Portfolio Footer Text -->
+                       <!-- === END CONTENT === -->
+                       <!-- === BEGIN FOOTER === -->
+</div>
+				</div>
+<div id="base" class="container padding-vert-30">
+<div class="row">
+                           <!-- Disclaimer -->
+<div class="col-md-6">
+<h3 class="margin-bottom-10">免責聲明 </h3>
+<p style="text-align:justify">所有的影像在本網站中的簡報 / 展示用途只適用於 CMPE 280 課程在美國加州聖荷西州立大學 , 旨為代表的實況網站並未有尚未購買或要求。 </p>
+<p style="text-align:justify">大部分的影像以下是可以從
+                                   <a class="nobold" href="https://www.google.com/" target="_blank">透過 Google.com 等</a>如果您想要購買它們的版權擁有者請造訪我們的適當的網站。 我們保留沒有使命的影像或範本或視訊。 </p>
+<div class="clearfix"></div>
+</div>
+                           <!-- End Disclaimer -->
+                           <!-- Contact Details -->
+<div class="col-md-3">
+<h3 class="margin-bottom-10">聯絡人詳細資料 </h3>
+<p>1 華盛頓方形 ,
+<br />美國加州聖荷西 , CA
+<br />95192
+</p>
+<p>電子郵件 :
+                                   <a href="#" onClick="renderContactPage()">info@eclectic.com</a>
+<br />網站 :
+                                   <a href="#" onClick="renderIndexPage()">www.eclectic.com</a>
+</p>
+</div>
+                           <!-- End Contact Details -->
+							<div class="container padding-vert-30">
+								<div class="row">
+									<div id="copyright">
+										<p>( c ) 2016 Ed Banger 唱片不拘一格版權資訊 </p>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+</div>
+       <!-- JS -->
+<script type="text/javascript" src="assets/js/jquery.min.js" type="text/javascript"></SCRIPT>
+<script type="text/javascript" src="assets/js/bootstrap.min.js" type="text/javascript"></SCRIPT>
+
+       <!-- Isotope - Portfolio Sorting -->
+<script type="text/javascript" src="assets/js/jquery.isotope.js" type="text/javascript"></SCRIPT>
+       <!-- Mobile Menu - Slicknav -->
+<script type="text/javascript" src="assets/js/jquery.slicknav.js" type="text/javascript"></SCRIPT>
+       <!-- Animate on Scroll-->
+<script type="text/javascript" src="assets/js/jquery.visible.js" charset="utf-8"></SCRIPT>
+       <!-- Modernizr -->
+<script src="assets/js/modernizr.custom.js" type="text/javascript"></SCRIPT>
+		<script>
+			$(document).ready( function() {
+			var login = getQueryVariable("login");
+	var user = getQueryVariable("userid");
+		if(login == false || login == null)
+		login = "0";
+		
+		if(login == "1") {
+		
+					$("#login-btn").hide();
+					$("#account-btn").show();
+					var user = getQueryVariable("userid");
+					
+					$("#name").html(user);
+					
+					$("#login-btn").hide();
+				}
+
+				getReviews();
+			});
+		</SCRIPT>
+		
+       <!-- End JS -->
+</body>
+</html>
+<!-- === END FOOTER === -->
