@@ -1,0 +1,413 @@
+<!-- === BEGIN HEADER === -->
+<!DOCTYPE html>
+<!--[if IE 8]> <html lang="en" class="ie8"> <![endif]-->
+<!--[if IE 9]> <html lang="en" class="ie9"> <![endif]-->
+<!--[if !IE]><!-->
+<html lang="en">
+   <!--<![endif]-->
+<head>
+<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=utf-8" />
+
+<title>Eclectic - Event Planners.</title>		
+       <!-- Meta -->
+
+<meta name="description" content="">
+<meta name="author" content="">
+<meta name="google-site-verification" content="googleef63d5d366b9aeb5">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+       <!-- Bootstrap Core CSS -->
+<link rel="stylesheet" href="assets/css/bootstrap.css" rel="stylesheet">
+       <!-- Template CSS -->
+<link rel="stylesheet" href="assets/css/animate.css" rel="stylesheet">
+<link rel="stylesheet" href="assets/css/font-awesome.css" rel="stylesheet">
+<link rel="stylesheet" href="assets/css/nexus.css" rel="stylesheet">
+<link rel="stylesheet" href="assets/css/responsive.css" rel="stylesheet">
+<link rel="stylesheet" href="assets/css/custom.css" rel="stylesheet">
+       <!-- Google Fonts-->
+<link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Open Sans:300,400" />
+<link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Source Sans Pro:300,400" />
+
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></SCRIPT>
+		<script src="./assets/js/bootstrap-datepicker.js"></SCRIPT>
+<script type="text/javascript" src="assets/js/scripts.js"></SCRIPT>
+</head>
+<body>
+<div id="body_bg">
+<div id="container_header" class="container">
+<div id="header" class="row">
+<div class="col-md-12 margin-top-15">
+                       <!-- Header Social Icons -->
+<ul class="social-icons circle pull-right">
+<li class="social-twitter">
+                               <a href="https://twitter.com/" target="_blank" title="Twitter"></a>
+</li>
+<li class="social-facebook">
+                               <a href="https://www.facebook.com/" target="_blank" title="Facebook"></a>
+</li>
+<li class="social-googleplus">
+                               <a href="https://plus.google.com/" target="_blank" title="GooglePlus"></a>
+</li>
+</ul>
+                       <!-- End Header Social Icons -->
+</div>
+<div class="clear"></div>
+</div>
+</div>
+<div class="primary-container-group">
+               <!-- Background -->
+<div class="primary-container-background">
+<div class="primary-container"></div>
+<div class="clearfix"></div>
+</div>
+               <!--End Background -->
+<div class="primary-container">
+<div id="container_hornav" class="container no-padding">
+                       <!-- Logo -->
+<div class="logo">
+                           <a id = "image" onClick="renderIndexPage()">
+<img src="assets/img/logo1.png" alt="Logo" />
+                           </a>
+</div>
+                       <!-- End Logo -->
+                       <!-- Slogan -->
+<p class="site-slogan">מתכננים אירוע </p>
+                       <!-- End Slogan -->
+                       <!-- Top Menu -->
+
+<div class="row">
+<div class="hornav-block">
+<div id="hornav" class="pull-right">
+<ul id="hornavmenu" class="nav navbar-nav">
+<li>
+                                           <a id = "home" href= "#" onClick="renderIndexPage_HB()">הביתה</a>
+</li>
+
+<li>
+<span>אודות </span>
+<ul>
+<li>
+                                                   <a href= "#" id = "philosophy" onClick="renderAboutPage_HB()">פילוסופיה</a>
+</li>
+</ul>
+</li>
+<li>
+<span>מיקומי אירוע </span>
+<ul>
+<li>
+                                                   <a href= "#" class = "business-locations" onClick="renderBusinessLocations()">עסקים</a>
+</li>
+<li>
+                                                   <a  href= "#" class = "wedding-locations" onClick="renderWeddingLocations()">חתונה</a>
+</li>
+												<li>
+                                                   <a href= "#" class = "cultural-locations" onClick="renderCulturalLocations()">תרבות</a>
+</li>
+												<li>
+                                                   <a href= "#" class = "birthday-locations" onClick="renderBirthdayLocations()">יום הולדת</a>
+</li>
+</ul>
+</li>
+<li>
+                                           <!-- <span>Services</span>
+                                             <ul>
+                                             <li>
+                                             <a href="food.html">Food</a>
+                                             </li>
+                                             <li>
+                                             <a href="music.html">Live Music</a>
+                                             </li>
+                                             </ul> -->
+                                           <a id = "services" onClick="renderServices()" href = "#">שירותים</a>
+</li>
+<li>
+                                           <a id = "contact" onClick="renderContactPage_HB()" href = "#">צור קשר</a>
+</li>
+<li id = "login-btn">
+                                       <a href="pages-login.html">כניסה</a>
+</li>
+<li id = "account-btn" style="display:none">
+<span id = "name">החשבון שלי </span>
+<ul>
+<li>
+                                                   <a href= "#" class = "account-details" onClick="renderAccountDetails()">החשבון שלי</a>
+</li>
+												<li>
+                                                   <a href="index.html?login=0" id = "signout">Signout</a>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+<div class="clearfix"></div>
+</div>
+                       <!-- End Top Menu -->
+<div id="google_translate_element"></div>
+</div>
+<div class="container no-padding">
+                       <!-- === END HEADER === -->
+                       <!-- === BEGIN CONTENT === -->
+<div class="row">
+                           <!-- Carousel Slideshow -->
+							<div class="col-md-12 margin-top-30">
+								<div id="carousel-example" class="carousel slide" data-ride="carousel">
+									<!-- Carousel Indicators -->
+										<ol class="carousel-indicators">
+											<li data-target="#carousel-example" data-slide-to="0" class="active"></li>
+											<li data-target="#carousel-example" data-slide-to="1"></li>
+											<li data-target="#carousel-example" data-slide-to="2"></li>
+										</ol>
+										<!-- End Carousel Indicators -->
+										<!-- Carousel Images -->
+										<div class="carousel-inner" >
+											<div class="item active">
+												<img src="assets/img/slideshow/slide1.jpg">
+											</div>
+											<div class="item">
+												<img src="assets/img/slideshow/slide2.jpg">
+											</div>
+											<div class="item">
+												<img src="assets/img/slideshow/slide3.jpg">
+											</div>
+											<div class="item">
+												<img src="assets/img/slideshow/slide4.jpg">
+											</div>
+										</div>
+										<!-- End Carousel Images -->
+										<!-- Carousel Controls -->
+										<a class="left carousel-control" href="#carousel-example" data-slide="prev">
+											<span class="glyphicon glyphicon-chevron-left"></span>
+										</a>
+										<a class="right carousel-control" href="#carousel-example" data-slide="next">
+											<span class="glyphicon glyphicon-chevron-right"></span>
+										</a>
+									<!-- End Carousel Controls -->
+									</div>
+								</div>
+</div>
+                           <!-- End Carousel Slideshow -->
+							<!-- Selection to Book -->
+							<hr>
+							<div class="row">
+<div class="col-sm-4">
+<b>נושא: </b>&nbsp;
+<select id="theme" class="data" style="height:25px">
+<option  selected value="All">כל </option>
+<option value="business">עסקים </option>
+<option value="wedding">חתונה </option>
+<option value="cultural">תרבות </option>
+<option value="birthday">יום הולדת </option>
+</select>
+									</div>
+									<div class="col-sm-4">
+									<b>מספר האורחים: </b>&nbsp;
+<select id="capacity" class="data" style="height:25px">
+<option selected value="all">כל </option>
+<option value="less">פחות ממאה </option>
+<option value="ok">100 500 </option>
+<option value="medium">1000 500 </option>
+<option value="more">יותר מ- 1000 </option>
+										</select>
+									</div>
+									<div class="col-sm-4">
+<input type="button" style="background-color:#008000;height:25px"  id="book" class="data" onclick="loadTheme();" value="Book Now">
+									</div>
+							</div>
+							<!-- Selection to Book -->
+                           <!-- Tabs -->
+
+                           <!-- End Tabs -->
+</div>
+</div>
+<div class="container">
+<div class="row">
+                           <!-- Main Article -->
+<div class="col-md-12 margin-top-30">
+<h2 class="item-title">
+סיור מציאות וירטואלית
+</h2>
+<p style="text-align:justify">
+באפשרותך הסיור את כל אתרי ממש כאן ממש עכשיו! אנו מספקים באיכות high definition מציאות וירטואלית תלת ממדית סרטוני וידאו של מיקומים שלנו. כאן באפשרותך לעבור בין חדר אחד לשני, הפעל את הצג הליכה בין החדרים באמצעות עכבר משטח המגע ללוח המקשים. כל שעליך לעשות כעת, לשבת, להירגע הרשו לנו לקחת אתכם לסיור של מיקום מועדף ביותר שלנו של כל. תיהנו! </p>
+								<p>
+									מתוך הנוחות של הבית שלך, תוכל הסיור את המקום שבו תבחר. דבר זה מסייע ב לדעת את מקום טוב יותר לפני בוא כמו כן הוא מעניק לכם את ההזדמנות undrestand את הפריסה של החדר, ממצב שבו הם הציגו ומתקנים אחרים. הוא מספק לך מידע נגישות כדי לתכנן את הביקור לפני ההדפסה אשר יעניק לכם זמן נוסף כדי לבצע את העבודה ביעילות.
+								</p>
+								<div class="row">
+								<div class="col-sm-7" style="">
+									<marquee style="height:315px;border:1px solid grey;border-radius:2px;background:#648880;background:linear-gradient(to right,#f6f1d3,#648880 85%,#293f50);"  scrollamount="2" direction="up" loop="true">
+										<ul id="reviews">
+										</ul>
+									</marquee>
+								</div>
+								<div class="col-sm-5" >
+									<embed  width="350" height="315" src="https://www.youtube.com/embed/H9kZk1DdF6c">
+									</embed >
+								</div>
+								</div>
+</div>
+
+<div class="clearfix"></div>
+                           <!-- End Main Article -->
+</div>
+</div>
+
+					
+					
+					<div class="container no-padding gridgallery">
+                       <!-- Portfolio Header Text -->
+<div class="row">
+<div class="col-md-12 padding-vert-30">
+<h2 class="subtitle text-center">תצוגה מקדימה של מיקומים שלנו </h2>
+<h3 class="subtitle text-center">חיצונית מקורה יפהפייה מיקומים של האירוע שלך בלב עמק הסיליקון, סן חוזה. </h3>
+</div>
+</div>
+                       <!-- End Portfolio Header Text -->
+                       <!-- Portfolio Images -->
+<div class="portfolio-group">
+                           <!-- Portfolio Item -->
+<div class="portfolio-item col-md-3 col-sm-6 col-xs-6 animate fadeInUp">
+<div class="image-hover">
+                                   <a class = "business-locations" href="locations-by-theme.html?themeSelected=Business&guestesCount=All">
+<figure>
+<img src="assets/img/portfolio/image1.jpg" alt="image1">
+<figcaption>
+<h3>עסקים </h3>
+<span></span>
+</figcaption>
+</figure>
+                                   </a>
+</div>
+</div>
+                           <!-- //Portfolio Item// -->
+                           <!-- Portfolio Item -->
+<div class="portfolio-item col-md-3 col-sm-6 col-xs-6 animate fadeInUp">
+<div class="image-hover">
+                                   <a  class = "wedding-locations" href="locations-by-theme.html?themeSelected=Wedding&guestesCount=All">
+<figure>
+<img src="assets/img/portfolio/image2.jpg" alt="image2">
+<figcaption>
+<h3>חתונה </h3>
+<span></span>
+</figcaption>
+</figure>
+                                   </a>
+</div>
+</div>
+                           <!-- //Portfolio Item// -->
+                           <!-- Portfolio Item -->
+<div class="portfolio-item col-md-3 col-sm-6 col-xs-6 animate fadeInUp">
+<div class="image-hover">
+                                   <a class = "cultural-locations" href="locations-by-theme.html?themeSelected=Cultural&guestesCount=All">
+<figure>
+<img src="assets/img/portfolio/image3.jpg" alt="image3">
+<figcaption>
+<h3>תרבות </h3>
+<span></span>
+</figcaption>
+</figure>
+                                   </a>
+</div>
+</div>
+                           <!-- //Portfolio Item// -->
+                           <!-- Portfolio Item -->
+<div class="portfolio-item col-md-3 col-sm-6 col-xs-6 animate fadeInUp">
+<div class="image-hover">
+                                   <a class = "birthday-locations" href="locations-by-theme.html?themeSelected=Birthday&guestesCount=All">
+<figure>
+<img src="assets/img/portfolio/image4.jpg" alt="image4">
+<figcaption>
+<h3>יום הולדת </h3>
+<span></span>
+</figcaption>
+</figure>
+                                   </a>
+</div>
+</div>
+                           <!-- //Portfolio Item// -->
+<div class="clearfix"></div>
+</div>
+
+                       <!-- End Portfolio Images -->
+                       <!-- Portfolio Footer Text -->
+<div class="row">
+<div class="col-12-md">
+<p class="text-center padding-bottom-30" style="max-width:690px; margin:0 auto;">כרגע אנו מתקנים שיענו על ההווה בתוך מאוניברסיטת סן חוזה. אנו מתכננים לפתוח שירותים רבים נוספים ברחבי ארצות הברית של אמריקה הישארו מעודכנים לקבלת מיקומים ועוד מתקנים! </p>
+</div>
+</div>
+                       <!-- End Portfolio Footer Text -->
+                       <!-- === END CONTENT === -->
+                       <!-- === BEGIN FOOTER === -->
+</div>
+				</div>
+<div id="base" class="container padding-vert-30">
+<div class="row">
+                           <!-- Disclaimer -->
+<div class="col-md-6">
+<h3 class="margin-bottom-10">כתב ויתור </h3>
+<p style="text-align:justify">כל התמונות באתר זה הם עבור מצגת למטרות הדגמה/רק עבור CMPE 280 קורס מאוניברסיטת סן חוזה, שנועדה מייצגים live באתר אינם לא רכש או חשופות יותר להטרדה. </p>
+<p style="text-align:justify">תמונות של שימוש ביותר כאן זמינים
+                                   <a class="nobold" href="https://www.google.com/" target="_blank">google.com.</a>אם ברצונך לרכוש אותם בעלים של זכויות יוצרים אנא בקר באתרי האינטרנט המתאים. אנו לא השימוש בהתאם של תמונות או תבנית או וידאו. </p>
+<div class="clearfix"></div>
+</div>
+                           <!-- End Disclaimer -->
+                           <!-- Contact Details -->
+<div class="col-md-3">
+<h3 class="margin-bottom-10">פרטים של איש קשר </h3>
+<p>כיכר וושינגטון, אחד
+<br />סן חוזה,CA
+<br />95192
+</p>
+<p>דוא"ל:
+                                   <a href="#" onClick="renderContactPage()">info@eclectic.com</a>
+<br />אתר:
+                                   <a href="#" onClick="renderIndexPage()">www.eclectic.com</a>
+</p>
+</div>
+                           <!-- End Contact Details -->
+							<div class="container padding-vert-30">
+								<div class="row">
+									<div id="copyright">
+										<p>(c) 2016 אקלקטי מידע זכויות יוצרים </p>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+</div>
+       <!-- JS -->
+<script type="text/javascript" src="assets/js/jquery.min.js" type="text/javascript"></SCRIPT>
+<script type="text/javascript" src="assets/js/bootstrap.min.js" type="text/javascript"></SCRIPT>
+
+       <!-- Isotope - Portfolio Sorting -->
+<script type="text/javascript" src="assets/js/jquery.isotope.js" type="text/javascript"></SCRIPT>
+       <!-- Mobile Menu - Slicknav -->
+<script type="text/javascript" src="assets/js/jquery.slicknav.js" type="text/javascript"></SCRIPT>
+       <!-- Animate on Scroll-->
+<script type="text/javascript" src="assets/js/jquery.visible.js" charset="utf-8"></SCRIPT>
+       <!-- Modernizr -->
+<script src="assets/js/modernizr.custom.js" type="text/javascript"></SCRIPT>
+		<script>
+			$(document).ready( function() {
+			var login = getQueryVariable("login");
+	var user = getQueryVariable("userid");
+		if(login == false || login == null)
+		login = "0";
+		
+		if(login == "1") {
+		
+					$("#login-btn").hide();
+					$("#account-btn").show();
+					var user = getQueryVariable("userid");
+					
+					$("#name").html(user);
+					
+					$("#login-btn").hide();
+				}
+
+				getReviews();
+			});
+		</SCRIPT>
+		
+       <!-- End JS -->
+</body>
+</html>
+<!-- === END FOOTER === -->
