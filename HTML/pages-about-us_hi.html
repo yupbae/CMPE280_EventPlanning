@@ -1,0 +1,456 @@
+<!-- === BEGIN HEADER === -->
+<!DOCTYPE html>
+<!--[if IE 8]> <html lang="en" class="ie8"> <![endif]-->
+<!--[if IE 9]> <html lang="en" class="ie9"> <![endif]-->
+<!--[if !IE]><!-->
+<html lang="en">
+   <!--<![endif]-->
+<head>
+<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=utf-8" />
+
+		<link rel="icon" href="./assets/img/icon.PNG" type="image/png">
+<title>वास्तव में-। </title>
+       <!-- Meta -->
+
+
+<meta name="description" content="We are graduate students at San Jose State University pursuing our Master's Degree.">
+<meta name="keyword" content="Eclectic, Event Planners, SJSU, CMPE 280,San Jose State University, Business,Wedding,Cultural,Birthday,Services,Graduate, Programmer">
+<meta name="author" content="Divya Nair,Pooja Prabhuswamy,Usha Boddeda,Varsha Kodali">
+<meta name="google-site-verification" content="googleef63d5d366b9aeb5">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+       <!-- Bootstrap Core CSS -->
+<link rel="stylesheet" href="./assets/css/bootstrap.css" rel="stylesheet">
+       <!-- Template CSS -->
+<link rel="stylesheet" href="./assets/css/animate.css" rel="stylesheet">
+<link rel="stylesheet" href="./assets/css/font-awesome.css" rel="stylesheet">
+<link rel="stylesheet" href="./assets/css/nexus.css" rel="stylesheet">
+<link rel="stylesheet" href="./assets/css/responsive.css" rel="stylesheet">
+<link rel="stylesheet" href="./css/custom.css" rel="stylesheet">
+       <!-- Google Fonts-->
+<link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Open Sans:300,400" />
+<link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Source Sans Pro:300,400" />
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></SCRIPT>
+</head>
+<body>
+<div id="body_bg">
+<div id="container_header" class="container">
+<div id="header" class="row">
+<div class="col-md-12 margin-top-15">
+                       <!-- Header Social Icons -->
+<ul class="social-icons circle pull-right">
+<li class="social-twitter">
+                               <a href="https://twitter.com/" target="_blank" title="Twitter"></a>
+</li>
+<li class="social-facebook">
+                               <a href="https://www.facebook.com/" target="_blank" title="Facebook"></a>
+</li>
+<li class="social-googleplus">
+                               <a href="https://plus.google.com/" target="_blank" title="GooglePlus"></a>
+</li>
+</ul>
+                       <!-- End Header Social Icons -->
+</div>
+<div class="clear"></div>
+</div>
+</div>
+<div class="primary-container-group">
+               <!-- Background -->
+<div class="primary-container-background">
+<div class="primary-container"></div>
+<div class="clearfix"></div>
+</div>
+               <!--End Background -->
+<div class="primary-container">
+<div id="container_hornav" class="container no-padding">
+                       <!-- Logo -->
+<div class="logo">
+                           <a id ="image" onClick="renderIndexPage_HI()">
+<img src="assets/img/logo1.png" alt="Eclectic Logo" />
+                           </a>
+</div>
+                       <!-- End Logo -->
+                       <!-- Slogan -->
+<p class="site-slogan">इवेंट निवेशिकों </p>
+                       <!-- End Slogan -->
+                       <!-- Top Menu -->
+<div class="row">
+<div class="hornav-block">
+<div id="hornav" class="pull-right">
+<ul id="hornavmenu" class="nav navbar-nav">
+<li>
+                                           <a id = "home-index" onClick="renderIndexPage_HI()">गृह</a>
+</li>
+
+<li>
+<span>के बारे में </span>
+<ul>
+<li>
+                                                   <a href = "#" id ="philosophy" onClick="renderAboutPage_HI()">दर्शन</a>
+</li>
+</ul>
+</li>
+<li>
+<span>इवेंट स्थानों </span>
+<ul>
+<li>
+                                                   <a href = "#" class = "business-locations" onClick="renderBusinessLocations()">व्यवसाय</a>
+</li>
+<li>
+                                                   <a href = "#" class = "wedding-locations" onClick="renderWeddingLocations()">ब् याह</a>
+</li>
+												<li>
+                                                   <a href = "#" class = "cultural-locations" onClick="renderCulturalLocations()">सांस्कृतिक</a>
+</li>
+												<li>
+                                                   <a href = "#" class = "birthday-locations" onClick="renderBirthdayLocations()">जन्मदिन</a>
+</li>
+</ul>
+</li>
+<li>
+                                           <a href = "#" id="services" onClick="renderServices()">सेवाओं के</a>
+</li>
+<li>
+                                           <a href = "#" id="contact" onClick="renderContactPage_HI()">संपर्क</a>
+</li>
+<li id="login">
+                                           <a href="pages-login.html">लॉग इन करें.</a>
+</li>
+<li id = "account" style="display:none">
+<span id = "name">मेरा ध्यान </span>
+<ul>
+<li>
+                                                   <a href = "#" class = "account-details" onClick="renderAccountDetails()">मेरा ध्यान</a>
+</li>
+												<li>
+                                                   <a href="index.html?&login=0">Signout</a>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+<div class="clearfix"></div>
+</div>
+                       <!-- End Top Menu -->
+</div>
+<div class="container no-padding">
+                       <!-- === END HEADER === -->
+                       <!-- === BEGIN CONTENT === -->
+<div class="row margin-vert-30">
+<div class="col-md-12">
+<h2>हमारे बारे में </h2>
+<div class="row">
+<div class="col-md-6">
+<p style="text-align:justify">हम अपने राज्य में स्नातकोत्तर छात्रों का सामनाकरने विश्वविद्यालय सेन जोस मास्टर डिग्री है। </p>
+<p style="text-align:justify">इस घटना से कई वर्षों से शुरू किया गया योजना को व्यावसायिक कंपनियां हैं। की प्रमुख शिकायत नहीं थी कि हमारी अधिकांश उपभोक्ताओं को देखने के लिए एक पोर्टल घटना से दूरस्थ स्थानों में आराम से हमारे गृह, कार्यालय इत्यादि के लिए आपको एक अद्वितीय देने के विचार से पहले आप पूर्वावलोकन घुसने के सभी स्थानों पर उपलब्ध है। इससे आप तय करने के लिए उपयुक्त स्थान तो आपकी आवश्यकताओं और भी आप सभी सुविधाएं प्रदान की गई है। और सुविधाओं को लेकर तैयार क्या यह शादी के जन्मदिन पर पार्टी, व्यावसायिक सम्मेलन, छात्र परिसंवाद हम अपने घटना में एक सुंदर और सफल बनाने का प्रयास है। </p>
+<ul class="icon-list list-unstyled">
+<li>
+<i class="fa-check"></i>सुंदर स्थानों </li>
+<li>
+<i class="fa-check"></i>हम सभी स्थानों पर वर्चुअल दौरे की पेशकश की है। </li>
+<li>
+<i class="fa-check"></i>आश्चर्य की सुविधाओं और सुविधाएं उपलब्ध हैं। </li>
+<li>
+<i class="fa-check"></i>आसान और तेजी से बुकिंग के स्थानों </li>
+</ul>
+</div>
+<div class="col-md-6">
+                                       <!-- Carousel -->
+<div id="carousel-example-1" class="carousel slide" data-ride="carousel">
+                                           <!-- Indicators -->
+<ol class="carousel-indicators">
+<li data-target="#carousel-example-1" data-slide-to="0" class="active"></li>
+<li data-target="#carousel-example-1" data-slide-to="1"></li>
+<li data-target="#carousel-example-1" data-slide-to="2"></li>
+</ol>
+                                           <!-- Wrapper for slides -->
+<div class="carousel-inner">
+<div class="item active">
+<img src="assets/img/portfolio/image1.jpg" alt="Cultural Event">
+</div>
+<div class="item">
+<img src="assets/img/portfolio/image2.jpg" alt="Wedding Event">
+</div>
+<div class="item">
+<img src="assets/img/portfolio/image3.jpg" alt="Business Event">
+</div>
+</div>
+                                           <!-- Controls -->
+                                           <a class="left carousel-control" href="#carousel-example-1" data-slide="prev">
+<span class="glyphicon glyphicon-chevron-left"></span>
+                                           </a>
+                                           <a class="right carousel-control" href="#carousel-example-1" data-slide="next">
+<span class="glyphicon glyphicon-chevron-right"></span>
+                                           </a>
+</div>
+                                       <!-- End Carousel -->
+</div>
+</div>
+<hr class="margin-vert-40">
+                               <!-- Meet the Team -->
+<h2 class="margin-vert-20">टीम के </h2>
+<div class="row margin-bottom-30">
+                                   <!-- Person Details -->
+<div class="col-sm-3 person-details">
+<figure>
+<img src="./assets/img/theteam/divya.jpg" alt="Divya">
+<figcaption>
+<h3>दिव्य
+<small> - प्रोग्रामर </small>
+</h3>
+<span>स्नातकोत्तर छात्र <br>कम्प्यूटर इनजीनियरिंग विभाग <br>सेन जोस राज्य विश्वविद्यालय </span>
+</figcaption>
+<ul class="list-inline person-details-icons">
+<li>
+                                                   <a href="#">
+<i class="fa-lg fa-twitter"></i>
+                                                   </a>
+</li>
+<li>
+                                                   <a href="#">
+<i class="fa-lg fa-linkedin"></i>
+                                                   </a>
+</li>
+<li>
+                                                   <a href="#">
+<i class="fa-lg fa-facebook"></i>
+                                                   </a>
+</li>
+<li>
+                                                   <a href="#">
+<i class="fa-lg fa-dribbble"></i>
+                                                   </a>
+</li>
+<li>
+                                                   <a href="#">
+<i class="fa-lg fa-google-plus"></i>
+                                                   </a>
+</li>
+</ul>
+</figure>
+</div>
+                                   <!-- //Portfolio Item// -->
+                                   <!-- Person Details -->
+<div class="col-sm-3 person-details">
+<figure>
+<img src="./assets/img/theteam/pooja.jpg" alt="Pooja">
+<figcaption>
+<h3>पूजा
+<small>-प्रोग्रामर </small>
+</h3>
+<span>स्नातकोत्तर छात्र <br>कम्प्यूटर इनजीनियरिंग विभाग <br>सेन जोस राज्य विश्वविद्यालय </span>
+</figcaption>
+<ul class="list-inline person-details-icons">
+<li>
+                                                   <a href="#">
+<i class="fa-lg fa-twitter"></i>
+                                                   </a>
+</li>
+<li>
+                                                   <a href="#">
+<i class="fa-lg fa-linkedin"></i>
+                                                   </a>
+</li>
+<li>
+                                                   <a href="#">
+<i class="fa-lg fa-facebook"></i>
+                                                   </a>
+</li>
+<li>
+                                                   <a href="#">
+<i class="fa-lg fa-dribbble"></i>
+                                                   </a>
+</li>
+<li>
+                                                   <a href="#">
+<i class="fa-lg fa-google-plus"></i>
+                                                   </a>
+</li>
+</ul>
+</figure>
+</div>
+                                   <!-- //Portfolio Item// -->
+                                   <!-- Person Details -->
+<div class="col-sm-3 person-details">
+<figure>
+<img src="./assets/img/theteam/usha.jpg" alt="Usha">
+<figcaption>
+<h3>
+<small>प्रोग्रामर उषा ----- </small>
+</h3>
+<span>स्नातकोत्तर छात्र <br>कम्प्यूटर इनजीनियरिंग विभाग <br>सेन जोस राज्य विश्वविद्यालय </span>
+</figcaption>
+<ul class="list-inline person-details-icons">
+<li>
+                                                   <a href="#">
+<i class="fa-lg fa-twitter"></i>
+                                                   </a>
+</li>
+<li>
+                                                   <a href="#">
+<i class="fa-lg fa-linkedin"></i>
+                                                   </a>
+</li>
+<li>
+                                                   <a href="#">
+<i class="fa-lg fa-facebook"></i>
+                                                   </a>
+</li>
+<li>
+                                                   <a href="#">
+<i class="fa-lg fa-dribbble"></i>
+                                                   </a>
+</li>
+<li>
+                                                   <a href="#">
+<i class="fa-lg fa-google-plus"></i>
+                                                   </a>
+</li>
+</ul>
+</figure>
+</div>
+                                   <!-- //Portfolio Item// -->
+                                   <!-- Person Details -->
+<div id = "team" class="col-sm-3 person-details">
+<figure>
+<img src="./assets/img/theteam/varsha.jpg" alt="Varsha">
+<figcaption>
+<h3>
+<small>प्रोग्रामर - तालमे </small>
+</h3>
+<span>स्नातकोत्तर छात्र <br>कम्प्यूटर इनजीनियरिंग विभाग <br>सेन जोस राज्य विश्वविद्यालय </span>
+</figcaption>
+<ul class="list-inline person-details-icons">
+<li>
+                                                   <a href="#">
+<i class="fa-lg fa-twitter"></i>
+                                                   </a>
+</li>
+<li>
+                                                   <a href="#">
+<i class="fa-lg fa-linkedin"></i>
+                                                   </a>
+</li>
+<li>
+                                                   <a href="#">
+<i class="fa-lg fa-facebook"></i>
+                                                   </a>
+</li>
+<li>
+                                                   <a href="#">
+<i class="fa-lg fa-dribbble"></i>
+                                                   </a>
+</li>
+<li>
+                                                   <a href="#">
+<i class="fa-lg fa-google-plus"></i>
+                                                   </a>
+</li>
+</ul>
+</figure>
+</div>
+                                   <!-- //Portfolio Item// -->
+</div>
+<hr class="margin-vert-60">
+                               <!-- End Meet the Team -->
+                               <!-- Our Skills -->
+<h2>हमारे कौशल </h2>
+<div class="row">
+<div class="col-md-6">
+<h3 class="progress-label">सुवणिऩत डिजाइन
+<span class="pull-right"> 42 प्रतिशत </span>
+</h3>
+<div class="progress progress-sm">
+<div class="progress-bar progress-bar-primary" role="progressbar" aria-valuenow="90" aria-valuemin="0" aria-valuemax="100" style="width: 90%">
+</div>
+</div>
+<h3 class="progress-label">अनुसंधान के लिए
+<span class="pull-right"> 82 प्रतिशत </span>
+</h3>
+<div class="progress progress-sm">
+<div class="progress-bar progress-bar-primary" role="progressbar" aria-valuenow="82" aria-valuemin="0" aria-valuemax="100" style="width: 82%">
+</div>
+</div>
+<h3 class="progress-label">
+<span class="pull-right">74 प्रतिशत एकत्रित करने की आवश्यकता </span>
+</h3>
+<div class="progress progress-sm">
+<div class="progress-bar progress-bar-primary" role="progressbar" aria-valuenow="74" aria-valuemin="0" aria-valuemax="100" style="width: 74%">
+</div>
+</div>
+<h3 class="progress-label">प्रुग्रामिंग
+<span class="pull-right"> 92 प्रतिशत </span>
+</h3>
+<div class="progress progress-sm">
+<div class="progress-bar progress-bar-primary" role="progressbar" aria-valuenow="78" aria-valuemin="0" aria-valuemax="100" style="width: 78%">
+</div>
+</div>
+</div>
+<div class="col-md-6">
+<p style="text-align:justify">हम उन लडकियों के चार टीमों की इस स्पर्धा बनने के आकांक्षा योजनाकारों है। हम अपने ग्राहकों के लिए सबसे अच्छा समाधान देना पसंद वर्तमान में हम अपनी विश्वविद्यालय के छात्र सेन जोस राज्य में मास्टर डिग्री कम्प्यूटर अभियांत्रिकी। </p>
+<p style="text-align:justify">प्रुग्रामिंग में माहिर हैं। हमने ९ई लो ९प्रिय भाषाएं, पटकथा लेखन और डिजाइन। वर्तमान में हमारे लिए वेब ड़िजाइनिंग, हम इस वेबसाइट डिजाइन और UI पाठ्यक्रम उपलब्ध कराने के लिए एक योजना तैयार की वेबसाइट से बेहतर स्थिति में एक विशिष्ट देने के विचार से हमारे ग्राहकों वर्चुअल वास्तविकता अनुभव हमारे मुख्य प्रेरणा हमारे ग्राहकों को सहायता प्राप्त करने के लिए एक अच्छा अनुभव हमारे सेवा है। </p>
+</div>
+</div>
+                               <!-- End Our Skills -->
+</div>
+</div>
+                       <!-- === END CONTENT === -->
+                       <!-- === BEGIN FOOTER === -->
+</div>
+<div id="base" class="container padding-vert-30">
+<div class="row">
+                           <!-- Disclaimer -->
+<div class="col-md-6">
+<h3 class="margin-bottom-10">अस्वीकृति </h3>
+<p style="text-align:justify">यह वेबसाइट पर छवियों को सभी प्रयोजनों के लिए केवल 280 पाठ्यक्रम के प्रस्तुतीकरण/प्रदर्शन संबंधीनया CMPE राज्य का प्रतिनिधित्व करने के उद्देश्य से, विश्वविद्यालय सेन जोस ९ नहीं हैं और स्थल रहते हैं या उन्में नहीं किया गया है। solicitated </p>
+<p style="text-align:justify">अधिकांश प्रतिमाएं उपलब्ध हैं यहां प्रयुक्त
+                                   <a class="nobold" href="https://www.google.com/" target="_blank">google.com.</a>अगर आप को खरीद से उनकी कॉपीराइट स्वामी कृपया निम्नोल्लिखित वेबसाइटों पर उचित है। हम जल्द ही अपात बैठक बुलाए गए चित्रों का कोई या वीडियो या टेम्पलेट </p>
+<div class="clearfix"></div>
+</div>
+                           <!-- End Disclaimer -->
+                           <!-- Contact Details -->
+<div class="col-md-3">
+<h3 class="margin-bottom-10">संपर्क विवरण </h3>
+<p>एक वर्गाकार, वाशिंगटन
+<br />सेन जोस,सकते।
+<br />95192
+</p>
+<p>ईमेल:
+                                   <a id="help"  href = "#"    onClick="renderContactPage_HI()">info@eclectic.com</a>
+<br />वैबसाईट
+                                   <a id = "website" href = "#" onClick="renderIndexPage_HI()" >www.eclectic.com</a>
+</p>
+</div>
+                           <!-- End Contact Details -->
+<div class="container padding-vert-30">
+<div class="row">
+<div id="copyright">
+<p>(ग) वर्ष 2016 तक वास्तव में कॉपीराइट सूचना </p>
+</div>
+</div>
+</div>
+</div>
+       <!-- JS -->
+<script type="text/javascript" src="./assets/js/jquery.min.js" type="text/javascript"></SCRIPT>
+<script type="text/javascript" src="./assets/js/bootstrap.min.js" type="text/javascript"></SCRIPT>
+<script type="text/javascript" src="./assets/js/scripts.js"></SCRIPT>
+       <!-- Isotope - Portfolio Sorting -->
+<script type="text/javascript" src="./assets/js/jquery.isotope.js" type="text/javascript"></SCRIPT>
+       <!-- Mobile Menu - Slicknav -->
+<script>
+		 var user =  getQueryVariable("userid");
+		   if(login == "1") {
+	    	$("#login").hide();
+			$("#account").show();
+			$("#name").html(user);
+	    }
+        </SCRIPT>
+<script type="text/javascript" src="./assets/js/jquery.slicknav.js" type="text/javascript"></SCRIPT>
+       <!-- Animate on Scroll-->
+<script type="text/javascript" src="./assets/js/jquery.visible.js" charset="utf-8"></SCRIPT>
+       <!-- Modernizr -->
+<script src="./assets/js/modernizr.custom.js" type="text/javascript"></SCRIPT>
+       <!-- End JS -->
+</body>
+</html>
+<!-- === END FOOTER === -->

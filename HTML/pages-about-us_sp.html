@@ -1,0 +1,456 @@
+<!-- === BEGIN HEADER === -->
+<!DOCTYPE html>
+<!--[if IE 8]> <html lang="en" class="ie8"> <![endif]-->
+<!--[if IE 9]> <html lang="en" class="ie9"> <![endif]-->
+<!--[if !IE]><!-->
+<html lang="en">
+   <!--<![endif]-->
+<head>
+<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=utf-8" />
+
+		<link rel="icon" href="./assets/img/icon.PNG" type="image/png">
+<title>- ecléctico. </title>
+       <!-- Meta -->
+
+
+<meta name="description" content="We are graduate students at San Jose State University pursuing our Master's Degree.">
+<meta name="keyword" content="Eclectic, Event Planners, SJSU, CMPE 280,San Jose State University, Business,Wedding,Cultural,Birthday,Services,Graduate, Programmer">
+<meta name="author" content="Divya Nair,Pooja Prabhuswamy,Usha Boddeda,Varsha Kodali">
+<meta name="google-site-verification" content="googleef63d5d366b9aeb5">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+       <!-- Bootstrap Core CSS -->
+<link rel="stylesheet" href="./assets/css/bootstrap.css" rel="stylesheet">
+       <!-- Template CSS -->
+<link rel="stylesheet" href="./assets/css/animate.css" rel="stylesheet">
+<link rel="stylesheet" href="./assets/css/font-awesome.css" rel="stylesheet">
+<link rel="stylesheet" href="./assets/css/nexus.css" rel="stylesheet">
+<link rel="stylesheet" href="./assets/css/responsive.css" rel="stylesheet">
+<link rel="stylesheet" href="./css/custom.css" rel="stylesheet">
+       <!-- Google Fonts-->
+<link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Open Sans:300,400" />
+<link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Source Sans Pro:300,400" />
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></SCRIPT>
+</head>
+<body>
+<div id="body_bg">
+<div id="container_header" class="container">
+<div id="header" class="row">
+<div class="col-md-12 margin-top-15">
+                       <!-- Header Social Icons -->
+<ul class="social-icons circle pull-right">
+<li class="social-twitter">
+                               <a href="https://twitter.com/" target="_blank" title="Twitter"></a>
+</li>
+<li class="social-facebook">
+                               <a href="https://www.facebook.com/" target="_blank" title="Facebook"></a>
+</li>
+<li class="social-googleplus">
+                               <a href="https://plus.google.com/" target="_blank" title="GooglePlus"></a>
+</li>
+</ul>
+                       <!-- End Header Social Icons -->
+</div>
+<div class="clear"></div>
+</div>
+</div>
+<div class="primary-container-group">
+               <!-- Background -->
+<div class="primary-container-background">
+<div class="primary-container"></div>
+<div class="clearfix"></div>
+</div>
+               <!--End Background -->
+<div class="primary-container">
+<div id="container_hornav" class="container no-padding">
+                       <!-- Logo -->
+<div class="logo">
+                           <a id ="image" onClick="renderIndexPage_SP()">
+<img src="assets/img/logo1.png" alt="Eclectic Logo" />
+                           </a>
+</div>
+                       <!-- End Logo -->
+                       <!-- Slogan -->
+<p class="site-slogan">Planificadores de Eventos </p>
+                       <!-- End Slogan -->
+                       <!-- Top Menu -->
+<div class="row">
+<div class="hornav-block">
+<div id="hornav" class="pull-right">
+<ul id="hornavmenu" class="nav navbar-nav">
+<li>
+                                           <a id = "home-index" onClick="renderIndexPage_SP()">Home</a>
+</li>
+
+<li>
+<span>Acerca de </span>
+<ul>
+<li>
+                                                   <a href = "#" id ="philosophy" onClick="renderAboutPage_SP()">Filosofía</a>
+</li>
+</ul>
+</li>
+<li>
+<span>Lugares de eventos </span>
+<ul>
+<li>
+                                                   <a href = "#" class = "business-locations" onClick="renderBusinessLocations()">Business</a>
+</li>
+<li>
+                                                   <a href = "#" class = "wedding-locations" onClick="renderWeddingLocations()">Boda</a>
+</li>
+												<li>
+                                                   <a href = "#" class = "cultural-locations" onClick="renderCulturalLocations()">Culturales</a>
+</li>
+												<li>
+                                                   <a href = "#" class = "birthday-locations" onClick="renderBirthdayLocations()">Cumpleaños</a>
+</li>
+</ul>
+</li>
+<li>
+                                           <a href = "#" id="services" onClick="renderServices()">Servicios</a>
+</li>
+<li>
+                                           <a href = "#" id="contact" onClick="renderContactPage_SP()">Contacto</a>
+</li>
+<li id="login">
+                                           <a href="pages-login.html">Login</a>
+</li>
+<li id = "account" style="display:none">
+<span id = "name">Mi cuenta </span>
+<ul>
+<li>
+                                                   <a href = "#" class = "account-details" onClick="renderAccountDetails()">Mi cuenta</a>
+</li>
+												<li>
+                                                   <a href="index.html?&login=0">Signout</a>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+<div class="clearfix"></div>
+</div>
+                       <!-- End Top Menu -->
+</div>
+<div class="container no-padding">
+                       <!-- === END HEADER === -->
+                       <!-- === BEGIN CONTENT === -->
+<div class="row margin-vert-30">
+<div class="col-md-12">
+<h2>Acerca de Nosotros </h2>
+<div class="row">
+<div class="col-md-6">
+<p style="text-align:justify">Somos estudiantes de posgrado en la Universidad del Estado de San José siguiendo nuestra maestría. </p>
+<p style="text-align:justify">La planificación del evento ha sido llevada a cabo desde hace muchos años a partir del inicio de las compañías profesionales. La queja más importante de nuestros clientes fue que no había un único portal para ver las localizaciones de forma remota desde la comodidad de nuestra casa, oficina, etc. Por lo tanto, hemos llegado a una idea única de darle un vistazo a todas las ubicaciones que proporcionamos antes de visitarlos. Esto le ayudará a decidir si los sitios son adecuados a sus necesidades y también le preparó respecto de todas las instalaciones y comodidades. Si se trata de una fiesta de cumpleaños, bodas, conferencias de negocios, estudiante simposios nos esforzamos para hacer de su evento un hermoso y un éxito. </p>
+<ul class="icon-list list-unstyled">
+<li>
+<i class="fa-check"></i>Bellos lugares. </li>
+<li>
+<i class="fa-check"></i>Tour Virtual de todos los lugares que ofrecemos. </li>
+<li>
+<i class="fa-check"></i>Increíbles comodidades e instalaciones. </li>
+<li>
+<i class="fa-check"></i>Fácil y rápido de reserva de localidades. </li>
+</ul>
+</div>
+<div class="col-md-6">
+                                       <!-- Carousel -->
+<div id="carousel-example-1" class="carousel slide" data-ride="carousel">
+                                           <!-- Indicators -->
+<ol class="carousel-indicators">
+<li data-target="#carousel-example-1" data-slide-to="0" class="active"></li>
+<li data-target="#carousel-example-1" data-slide-to="1"></li>
+<li data-target="#carousel-example-1" data-slide-to="2"></li>
+</ol>
+                                           <!-- Wrapper for slides -->
+<div class="carousel-inner">
+<div class="item active">
+<img src="assets/img/portfolio/image1.jpg" alt="Cultural Event">
+</div>
+<div class="item">
+<img src="assets/img/portfolio/image2.jpg" alt="Wedding Event">
+</div>
+<div class="item">
+<img src="assets/img/portfolio/image3.jpg" alt="Business Event">
+</div>
+</div>
+                                           <!-- Controls -->
+                                           <a class="left carousel-control" href="#carousel-example-1" data-slide="prev">
+<span class="glyphicon glyphicon-chevron-left"></span>
+                                           </a>
+                                           <a class="right carousel-control" href="#carousel-example-1" data-slide="next">
+<span class="glyphicon glyphicon-chevron-right"></span>
+                                           </a>
+</div>
+                                       <!-- End Carousel -->
+</div>
+</div>
+<hr class="margin-vert-40">
+                               <!-- Meet the Team -->
+<h2 class="margin-vert-20">Conozca al equipo. </h2>
+<div class="row margin-bottom-30">
+                                   <!-- Person Details -->
+<div class="col-sm-3 person-details">
+<figure>
+<img src="./assets/img/theteam/divya.jpg" alt="Divya">
+<figcaption>
+<h3>Divya
+<small> - Programador </small>
+</h3>
+<span>El estudiante graduado <br>Dpto. de Ingeniería informática <br>La Universidad Estatal de San José. </span>
+</figcaption>
+<ul class="list-inline person-details-icons">
+<li>
+                                                   <a href="#">
+<i class="fa-lg fa-twitter"></i>
+                                                   </a>
+</li>
+<li>
+                                                   <a href="#">
+<i class="fa-lg fa-linkedin"></i>
+                                                   </a>
+</li>
+<li>
+                                                   <a href="#">
+<i class="fa-lg fa-facebook"></i>
+                                                   </a>
+</li>
+<li>
+                                                   <a href="#">
+<i class="fa-lg fa-dribbble"></i>
+                                                   </a>
+</li>
+<li>
+                                                   <a href="#">
+<i class="fa-lg fa-google-plus"></i>
+                                                   </a>
+</li>
+</ul>
+</figure>
+</div>
+                                   <!-- //Portfolio Item// -->
+                                   <!-- Person Details -->
+<div class="col-sm-3 person-details">
+<figure>
+<img src="./assets/img/theteam/pooja.jpg" alt="Pooja">
+<figcaption>
+<h3>Pooja
+<small> - Programador </small>
+</h3>
+<span>El estudiante graduado <br>Dpto. de Ingeniería informática <br>La Universidad Estatal de San José. </span>
+</figcaption>
+<ul class="list-inline person-details-icons">
+<li>
+                                                   <a href="#">
+<i class="fa-lg fa-twitter"></i>
+                                                   </a>
+</li>
+<li>
+                                                   <a href="#">
+<i class="fa-lg fa-linkedin"></i>
+                                                   </a>
+</li>
+<li>
+                                                   <a href="#">
+<i class="fa-lg fa-facebook"></i>
+                                                   </a>
+</li>
+<li>
+                                                   <a href="#">
+<i class="fa-lg fa-dribbble"></i>
+                                                   </a>
+</li>
+<li>
+                                                   <a href="#">
+<i class="fa-lg fa-google-plus"></i>
+                                                   </a>
+</li>
+</ul>
+</figure>
+</div>
+                                   <!-- //Portfolio Item// -->
+                                   <!-- Person Details -->
+<div class="col-sm-3 person-details">
+<figure>
+<img src="./assets/img/theteam/usha.jpg" alt="Usha">
+<figcaption>
+<h3>Usha
+<small> - Programador </small>
+</h3>
+<span>El estudiante graduado <br>Dpto. de Ingeniería informática <br>La Universidad Estatal de San José. </span>
+</figcaption>
+<ul class="list-inline person-details-icons">
+<li>
+                                                   <a href="#">
+<i class="fa-lg fa-twitter"></i>
+                                                   </a>
+</li>
+<li>
+                                                   <a href="#">
+<i class="fa-lg fa-linkedin"></i>
+                                                   </a>
+</li>
+<li>
+                                                   <a href="#">
+<i class="fa-lg fa-facebook"></i>
+                                                   </a>
+</li>
+<li>
+                                                   <a href="#">
+<i class="fa-lg fa-dribbble"></i>
+                                                   </a>
+</li>
+<li>
+                                                   <a href="#">
+<i class="fa-lg fa-google-plus"></i>
+                                                   </a>
+</li>
+</ul>
+</figure>
+</div>
+                                   <!-- //Portfolio Item// -->
+                                   <!-- Person Details -->
+<div id = "team" class="col-sm-3 person-details">
+<figure>
+<img src="./assets/img/theteam/varsha.jpg" alt="Varsha">
+<figcaption>
+<h3>
+<small>- Programador Varsha </small>
+</h3>
+<span>El estudiante graduado <br>Dpto. de Ingeniería informática <br>La Universidad Estatal de San José. </span>
+</figcaption>
+<ul class="list-inline person-details-icons">
+<li>
+                                                   <a href="#">
+<i class="fa-lg fa-twitter"></i>
+                                                   </a>
+</li>
+<li>
+                                                   <a href="#">
+<i class="fa-lg fa-linkedin"></i>
+                                                   </a>
+</li>
+<li>
+                                                   <a href="#">
+<i class="fa-lg fa-facebook"></i>
+                                                   </a>
+</li>
+<li>
+                                                   <a href="#">
+<i class="fa-lg fa-dribbble"></i>
+                                                   </a>
+</li>
+<li>
+                                                   <a href="#">
+<i class="fa-lg fa-google-plus"></i>
+                                                   </a>
+</li>
+</ul>
+</figure>
+</div>
+                                   <!-- //Portfolio Item// -->
+</div>
+<hr class="margin-vert-60">
+                               <!-- End Meet the Team -->
+                               <!-- Our Skills -->
+<h2>Nuestras competencias </h2>
+<div class="row">
+<div class="col-md-6">
+<h3 class="progress-label">Diseño Gráfico
+<span class="pull-right"> 42% </span>
+</h3>
+<div class="progress progress-sm">
+<div class="progress-bar progress-bar-primary" role="progressbar" aria-valuenow="90" aria-valuemin="0" aria-valuemax="100" style="width: 90%">
+</div>
+</div>
+<h3 class="progress-label">
+<span class="pull-right">El 82% de Investigación </span>
+</h3>
+<div class="progress progress-sm">
+<div class="progress-bar progress-bar-primary" role="progressbar" aria-valuenow="82" aria-valuemin="0" aria-valuemax="100" style="width: 82%">
+</div>
+</div>
+<h3 class="progress-label">Requisito de recopilar
+<span class="pull-right"> 74% </span>
+</h3>
+<div class="progress progress-sm">
+<div class="progress-bar progress-bar-primary" role="progressbar" aria-valuenow="74" aria-valuemin="0" aria-valuemax="100" style="width: 74%">
+</div>
+</div>
+<h3 class="progress-label">
+<span class="pull-right">El 92% de programación </span>
+</h3>
+<div class="progress progress-sm">
+<div class="progress-bar progress-bar-primary" role="progressbar" aria-valuenow="78" aria-valuemin="0" aria-valuemax="100" style="width: 78%">
+</div>
+</div>
+</div>
+<div class="col-md-6">
+<p style="text-align:justify">Somos equipo de cuatro jóvenes que aspiran a convertirse en planificadores de eventos. Nos encanta dar la mejor solución a nuestros clientes. Actualmente somos estudiantes de la Universidad Estatal de San José siguiendo nuestra Maestría en Ingeniería Informática. </p>
+<p style="text-align:justify">Somos expertos en programación en muchas de las lenguas populares, scripting y diseño. Actualmente en nuestra web y curso de diseño de IU, estamos diseñando este sitio web para proporcionar una mejor planificación de eventos web con una idea única de dar experiencia de realidad virtual a nuestros clientes. Nuestra principal motivación es ayudar a nuestros clientes a obtener una mejor sensación de nuestros servicios. </p>
+</div>
+</div>
+                               <!-- End Our Skills -->
+</div>
+</div>
+                       <!-- === END CONTENT === -->
+                       <!-- === BEGIN FOOTER === -->
+</div>
+<div id="base" class="container padding-vert-30">
+<div class="row">
+                           <!-- Disclaimer -->
+<div class="col-md-6">
+<h3 class="margin-bottom-10">Cláusula de exención de responsabilidad </h3>
+<p style="text-align:justify">Todas las imágenes de este sitio web son para propósitos de presentación/demonstartion sólo para CMPE 280 cursos en la Universidad Estatal de San José, destinado a representar un sitio vivo y no son o no han comprado solicitated. </p>
+<p style="text-align:justify">La mayoría de las imágenes utilizadas aquí están disponibles en
+                                   <a class="nobold" href="https://www.google.com/" target="_blank">google.com.</a>Si usted desea comprar de sus titulares de derechos de autor, por favor visite los sitios web apropiados. Tenemos ninguna responsabilidad de las imágenes o plantilla o vídeo. </p>
+<div class="clearfix"></div>
+</div>
+                           <!-- End Disclaimer -->
+                           <!-- Contact Details -->
+<div class="col-md-3">
+<h3 class="margin-bottom-10">Datos de contacto </h3>
+<p>Uno Washington Square,
+<br />San Jose, CA
+<br />95192
+</p>
+<p>Correo electrónico:
+                                   <a id="help"  href = "#"    onClick="renderContactPage_SP()">info@eclectic.com</a>
+<br />Sitio web:
+                                   <a id = "website" href = "#" onClick="renderIndexPage_SP()" >www.eclectic.com</a>
+</p>
+</div>
+                           <!-- End Contact Details -->
+<div class="container padding-vert-30">
+<div class="row">
+<div id="copyright">
+<p>(c) 2016 ecléctica Copyright info. </p>
+</div>
+</div>
+</div>
+</div>
+       <!-- JS -->
+<script type="text/javascript" src="./assets/js/jquery.min.js" type="text/javascript"></SCRIPT>
+<script type="text/javascript" src="./assets/js/bootstrap.min.js" type="text/javascript"></SCRIPT>
+<script type="text/javascript" src="./assets/js/scripts.js"></SCRIPT>
+       <!-- Isotope - Portfolio Sorting -->
+<script type="text/javascript" src="./assets/js/jquery.isotope.js" type="text/javascript"></SCRIPT>
+       <!-- Mobile Menu - Slicknav -->
+<script>
+		 var user =  getQueryVariable("userid");
+		   if(login == "1") {
+	    	$("#login").hide();
+			$("#account").show();
+			$("#name").html(user);
+	    }
+        </SCRIPT>
+<script type="text/javascript" src="./assets/js/jquery.slicknav.js" type="text/javascript"></SCRIPT>
+       <!-- Animate on Scroll-->
+<script type="text/javascript" src="./assets/js/jquery.visible.js" charset="utf-8"></SCRIPT>
+       <!-- Modernizr -->
+<script src="./assets/js/modernizr.custom.js" type="text/javascript"></SCRIPT>
+       <!-- End JS -->
+</body>
+</html>
+<!-- === END FOOTER === -->
