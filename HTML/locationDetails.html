@@ -253,7 +253,7 @@ function renderIndexPage() {
                                                 <input type="date" id="eventdate" style="height:30px">
                                             </td>
                                             <td>
-                                                <input type="button" class="btn btn-success" value="Reserve" onclick="reserveVenue()" style="float: right; border-radius: 0px;background-color:#8270a4; border-color:#8270a4">
+                                                <input type="button" class="btn btn-success" id="reserve" value="Reserve" onclick="reserveVenue()" style="float: right; border-radius: 0px;background-color:#8270a4; border-color:#8270a4" disabled>
                                             </td>
                                            
                                         </div>
@@ -501,7 +501,7 @@ function renderIndexPage() {
 					login = "0";
 					
 					if(login == "1") {
-					
+								$('#reserve').prop("disabled",false);
 								$("#login-btn").hide();
 								$("#account-btn").show();
 								var user = getQueryVariable("userid");
