@@ -52,9 +52,11 @@ $(document).ready( function() {
 	}
 	
 	function validate() {
+		var re = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
 		
 		function check() {
 			oForm = document.forms[0];
+			
 			if(oForm.elements[0].value.length == 0) {
 					document.getElementById("fname").focus();
 					grecaptcha.reset();
@@ -113,7 +115,7 @@ $(document).ready( function() {
 				return true;
 			}
 		}		
-		if(check()) {
+		if(check() && re.test(oForm.elements[2].value)) {
 			submitdata();
 		}
 	}
