@@ -79,6 +79,20 @@ function renderIndexPage_HB() {
     else
         location.href = "index_hb.html?login=0";
 }
+function renderIndexPage_HI() {
+    
+    if(login == "1")
+        location.href = "index_hi.html?login=1&userid="+user;
+    else
+        location.href = "index_hi.html?login=0";
+}
+function renderIndexPage_SP() {
+    
+    if(login == "1")
+        location.href = "index_sp.html?login=1&userid="+user;
+    else
+        location.href = "index_sp.html?login=0";
+}
 function renderIndexPage_JP() {
     
     if(login == "1")
@@ -150,6 +164,18 @@ function renderIndexPage_JP() {
             else
                 location.href = "contact_hb.html?login=0";
         }
+function renderContactPage_HI() {
+    if(login == "1")
+        location.href = "contact_hi.html?login=1&userid="+user;
+    else
+        location.href = "contact_hi.html?login=0";
+}
+function renderContactPage_SP() {
+    if(login == "1")
+        location.href = "contact_sp.html?login=1&userid="+user;
+    else
+        location.href = "contact_sp.html?login=0";
+}
         function renderContactPage_JP() {
             if(login == "1")
                 location.href = "contact_jp.html?login=1&userid="+user;
@@ -169,6 +195,18 @@ function renderIndexPage_JP() {
             else
                 location.href = "pages-about-us_hb.html?login=0";
         }
+function renderAboutPage_HI() {
+    if(login == "1")
+        location.href = "pages-about-us_hi.html?login=1&userid="+user;
+    else
+        location.href = "pages-about-us_hi.html?login=0";
+}
+function renderAboutPage_SP() {
+    if(login == "1")
+        location.href = "pages-about-us_sp.html?login=1&userid="+user;
+    else
+        location.href = "pages-about-us_sp.html?login=0";
+}
         function renderAboutPage_JP() {
             if(login == "1")
                 location.href = "pages-about-us_jp.html?login=1&userid="+user;
