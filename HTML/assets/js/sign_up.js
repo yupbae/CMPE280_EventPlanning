@@ -102,11 +102,11 @@ $(document).ready( function() {
 			if(!document.getElementById("checkb").checked) {
 				grecaptcha.reset();
 				document.getElementById("regBtn").disabled = true;
-				alert("You can regsiter only if you agree to the terms and conditions!");
+				alert("You can register only if you agree to the terms and conditions!");
 				document.getElementById("checkb").focus();
 				return false;
 			}
-			if(!$("#password1").val().match(/\w{4}\d+[!,#,$,%,$]{1}/) && !($("#password1").val().length >= 7 && $("#password1").val().length <= 20)) {
+			if(!$("#password1").val().match(/\w{4}\d+[!,#,$,%,@]{1}/) && !($("#password1").val().length >= 7 && $("#password1").val().length <= 20)) {
 				document.getElementById("password1").focus();
 				alert("Password does not meet requirements!!");
 				return false;
@@ -149,12 +149,11 @@ $(document).ready( function() {
 								var SQLInsertStat = json.sqlINSERTstatus;
 								var op = json.operation;
 								var userid = json.userid;
-								if(SQLInsertStat === "DUPLICATEError"){
-								alert("Firstname or Email already exists!!");
-					                console.log("SQl Duplicate insert");
+								if(SQLInsertStat == "DUPLICATEError"){
+								alert("Error: User or Email ID Record Already Exists. Try with a new one...");
 									document.getElementById("regBtn").disabled = true;
 									grecaptcha.reset();
-								}else if(op === "success" && SQLInsertStat === "Success"  ){
+								}else if(op == "success" && SQLInsertStat == "Success"  ){
 									grecaptcha.reset();
 									document.getElementById("regBtn").disabled = true;
 									window.document.location.href = 'index.html?login=1&userid='+userid;
