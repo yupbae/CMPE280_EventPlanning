@@ -2,7 +2,9 @@
 
 website link:
 
-http://eclectic.com.s3-website-us-east-1.amazonaws.com/
+http://ec2-54-183-40-122.us-west-1.compute.amazonaws.com/
+                    -or-
+http://www.ec2-54-183-40-122.us-west-1.compute.amazonaws.com/
 
 Setup instructions:
 Download the source code zip file.
