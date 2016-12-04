@@ -15,7 +15,7 @@
   	} 
 //	through the global variable $_POST, like this:
         $user= isset($_POST['user']) ? $_POST['user'] : 'null';
-  	$sql = "SELECT booking_id, location_id, eventdate, review FROM bookings WHERE username = '$user'";
+  	$sql = "SELECT booking_id, location_id, eventdate, review FROM bookings WHERE username = '$user' order by eventdate desc";
   	$result = $conn->query($sql);
       	$count = mysqli_num_rows($result);
         $response["Booking"] = array();
