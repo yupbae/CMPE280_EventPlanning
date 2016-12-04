@@ -44,23 +44,32 @@
 
 function sendMessage() {
 	oForm = document.forms[0];
+	var re = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
 	
-	if(oForm.elements[0].value.length == 0) {
-		alert("* Fields are Required!");
-		document.getElementById("name").focus();		
-	}
-	else if(oForm.elements[1].value.length == 0) {
-		alert("* Fields are Required!");
-		document.getElementById("email").focus();
-	}
-	else if(oForm.elements[2].value.length == 0) {
-		alert("* Fields are Required!");
-		document.getElementById("msg").focus();
-	}
-	else {
+	if(check() && re.test(oForm.elements[1].value)) {
 		alert("Thank you for your interest in Eclectic.We'll get back to you very soon!!");
 	}
 	
+	function check () {
+		
+	if(oForm.elements[0].value.length == 0) {
+		alert("* Fields are Required!");
+		document.getElementById("name").focus();
+		return false;		
+	}
+	if(oForm.elements[1].value.length == 0) {
+		alert("* Fields are Required!");
+		document.getElementById("email").focus();
+		return false;
+	 }
+	if(oForm.elements[2].value.length == 0) {
+		alert("* Fields are Required!");
+		document.getElementById("msg").focus();
+		return false;
+	 }
+	 else
+	 return true;
+	}
 }
 
 function getQueryVariable(variable) {
@@ -276,7 +285,7 @@ function getQueryVariable(variable) {
                                     </label>
                                     <div class="row margin-bottom-20">
                                         <div class="col-md-6 col-md-offset-0">
-                                            <input class="form-control" type="text" id = "email">
+                                            <input class="form-control" type="email"id = "email">
                                         </div>
                                     </div>
                                     <label>Message</label>
@@ -332,7 +341,7 @@ function getQueryVariable(variable) {
                             <!-- Disclaimer -->
                             <div class="col-md-6">
                                 <h3 class="margin-bottom-10">Disclaimer</h3>
-                                <p style="text-align:justify">All images on this website are for presentation/demonstartion purposes only for cmpe 280 course in San Jose State University, intended to represent a live site and are not have not been bought or solicitated.</p>
+                                <p style="text-align:justify">All images on this website are for presentation/demonstration purposes only for CMPE 280 course in San Jose State University, intended to represent a live site and have not been bought or solicitated.</p>
                                 <p style="text-align:justify">Most of the images used here are available from
                                     <a class="nobold" href="https://www.google.com/" target="_blank">google.com</a>. If you wish to purchase them from their copyright owners please visit the appropriate websites. We hold no responsibilty of the images or template or video.</p>
                                 <div class="clearfix"></div>
