@@ -150,7 +150,7 @@ $(document).ready( function() {
 								var op = json.operation;
 								var userid = json.userid;
 								if(SQLInsertStat === "DUPLICATEError"){
-									document.getElementById("email1").innerHTML = "Error: Email ID Record Already Exists. Try with a new one...";
+								alert("Firstname or Email already exists!!");
 					                console.log("SQl Duplicate insert");
 									document.getElementById("regBtn").disabled = true;
 									grecaptcha.reset();
