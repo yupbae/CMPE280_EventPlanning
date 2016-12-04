@@ -20,21 +20,26 @@ function CreateXMLHttpRequest() {
 		}
 	}
 function loginAction() {
+		var re = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
 		var name = $("#email1").val();
 		var password = $("#password1").val();
 		if(name.length == 0 ){
-			document.getElementById("email1").focus()
 			grecaptcha.reset();
-			alert("UserID required!!");
+			alert("Username required!!");
 			document.getElementById("loginBtn").disabled = true;
 			
 		}
 		else if (password.length == 0) {
-			document.getElementById("password1").focus();
 			grecaptcha.reset();
 			alert("Password required!!");
 			document.getElementById("loginBtn").disabled = true;
 		}
+		else if (!re.test($("#email1").val())) {
+			grecaptcha.reset();
+			alert("Invalid username");
+			document.getElementById("loginBtn").disabled = true;
+		}
+		
 		else {
 			var dataString = 'email1='+name+'&password1='+password;
 			
