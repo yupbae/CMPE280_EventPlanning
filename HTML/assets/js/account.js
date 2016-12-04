@@ -51,7 +51,7 @@ function sbtReview()
 					alert("Review submitted");
 				}
 				else if(op === "Error") {
-					alert("No bookings recorded");
+					alert("Unable to submit review");
 				}
 			}
 		}
@@ -124,7 +124,8 @@ function accountInfo(user) {
 									displayInfo(info);
 								}
 								else if(op === "Error") {
-									alert("No bookings recorded");
+									display_bookings = "<td>No bookings recorded</td>";
+									$('#bookings').html(display_bookings);
 								}
 						    }
 					    }
@@ -149,7 +150,7 @@ function recentInfo(user) {
 									displayRecent(recent,user);
 								}
 								else if(op === "Error") {
-									alert("No bookings recorded");
+									alert("No recently viewed locations");
 								}
 						    }
 					    }
