@@ -36,7 +36,7 @@ $(document).ready( function() {
 		else {
 			document.getElementById("number").className = "invalid";
 		}
-		if(val.match(/[!,#,$,%]{1}/)) {
+		if(val.match(/[!,#,$,%,@]{1}/)) {
 			document.getElementById("special").className = "valid"; 
 		}
 		else {
@@ -106,7 +106,7 @@ $(document).ready( function() {
 				document.getElementById("checkb").focus();
 				return false;
 			}
-			if(!$("#password1").val().match(/\w{4}\d+[!,#,$,%]{1}/) && !($("#password1").val().length >= 7 && $("#password1").val().length <= 20)) {
+			if(!$("#password1").val().match(/\w{4}\d+[!,#,$,%,$]{1}/) && !($("#password1").val().length >= 7 && $("#password1").val().length <= 20)) {
 				document.getElementById("password1").focus();
 				alert("Password does not meet requirements!!");
 				return false;
