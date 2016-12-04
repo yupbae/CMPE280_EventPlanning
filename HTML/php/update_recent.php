@@ -24,7 +24,9 @@
     if (in_array($loc_id, $rec_array)) {
         $jsonobj->operation = 'Ok';
     } else {
-         array_shift($rec_array);
+         if (count($rec_array) == 3) {
+		 array_shift($rec_array);
+	 }
          array_push($rec_array,$loc_id);
          $rec_str = implode (",", $rec_array);
   	$sql = "UPDATE recently_viewed set recent = '$rec_str' where username = '$user'";
