@@ -6,21 +6,24 @@
 <html lang="en">
     <!--<![endif]-->
     <head>
-        <title>Eclectic - Event Planners.</title>
+    	<link rel="icon" href="./assets/img/icon.PNG" type="image/png">
+        <title>Eclectic - Location Details.</title>
         <!-- Meta -->
         <meta http-equiv="content-type" content="text/html; charset=utf-8" />
-        <meta name="description" content="">
-        <meta name="author" content="">
+         <meta name="description" content="Know more about the venue details and also get a virtual tour of the venue.">
+        <meta name="keyword" content="Eclectic,AWS Event Planners, SJSU, CMPE 280,Virtual Reality 					        Tour,Business,Wedding,Cultural,Birthday,Services, Venue">
+        <meta name="author" content="Divya Nair,Pooja Prabhuswamy,Usha Boddeda,Varsha Kodali">
+        <meta name="google-site-verification" content="googleef63d5d366b9aeb5">
         <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
         
         <!-- Bootstrap Core CSS -->
-        <link rel="stylesheet" href="assets/css/bootstrap.css" rel="stylesheet">
+        <link rel="stylesheet" href="./assets/css/bootstrap.css" rel="stylesheet">
         <!-- Template CSS -->
-        <link rel="stylesheet" href="assets/css/animate.css" rel="stylesheet">
-        <link rel="stylesheet" href="assets/css/font-awesome.css" rel="stylesheet">
-        <link rel="stylesheet" href="assets/css/nexus.css" rel="stylesheet">
-        <link rel="stylesheet" href="assets/css/responsive.css" rel="stylesheet">
-        <link rel="stylesheet" href="assets/css/custom.css" rel="stylesheet">
+        <link rel="stylesheet" href="./assets/css/animate.css" rel="stylesheet">
+        <link rel="stylesheet" href="./assets/css/font-awesome.css" rel="stylesheet">
+        <link rel="stylesheet" href="./assets/css/nexus.css" rel="stylesheet">
+        <link rel="stylesheet" href="./assets/css/responsive.css" rel="stylesheet">
+        <link rel="stylesheet" href="./assets/css/custom.css" rel="stylesheet">
         <!-- Google Fonts-->
         <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Open Sans:300,400" />
         <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Source Sans Pro:300,400" />
@@ -164,7 +167,7 @@ function renderIndexPage() {
                         <!-- Logo -->
                         <div class="logo">
                             <a id = "image" onClick="renderIndexPage()">
-                                <img src="assets/img/logo1.png" alt="Logo" />
+                                <img src="assets/img/logo1.png" alt="Eclectic Logo" />
                             </a>
                         </div>
                         <!-- End Logo -->
@@ -181,15 +184,8 @@ function renderIndexPage() {
                                         </li>
                         
                                         <li>
-                                            <span>About</span>
-                                            <ul>
-                                                <li>
-                                                    <a href = "#" id = "philosophy" onClick="renderAboutPage()">Philosophy</a>
-                                                </li>
-                                                <li>
-                                                    <a href = "#" id ="team" onClick="renderTeamPage()">The Team</a>
-                                                </li>
-                                            </ul>
+                                            <a href = "#" id = "philosophy" onClick="renderAboutPage()">About</a>
+                                            
                                         </li>
                                         <li>
                                             <span>Event Locations</span>
@@ -290,10 +286,10 @@ function renderIndexPage() {
                                                 <!-- Carousel Images -->
                                                 <div class="carousel-inner" style="height:300px;">
                                                     <div class="item next left">
-                                                        <img id="img1" class="img-thumbnail" src="">
+                                                        <img id="img1" class="img-thumbnail" src="" alt = "image1">
                                                             </div>
                                                     <div class="item active left">
-                                                        <img id="img2" class="img-thumbnail" src="">
+                                                        <img id="img2" class="img-thumbnail" src="" alt="image2">
                                                             </div>
                                                 </div>
                                                 <!-- End Carousel Images -->
@@ -327,11 +323,11 @@ function renderIndexPage() {
                                                         
                                                         <div class="tab-content">
                                                             <div id="inside" class="tab-pane fade in active">
-                                                                <img id="DiVR"src="assets/img/comingSoon.jpg" hidden>
+                                                                <img id="DiVR"src="./assets/img/comingSoon.jpg" alt="coming soon" hidden>
                                                                     <iframe width="100%" height="500px" allowfullscreen frameborder="0" id= "iVR"></iframe>
                                                             </div>
                                                             <div id="outside" class="tab-pane fade">
-                                                                <img id="DoVR" src="assets/img/comingSoon.jpg" hidden>
+                                                                <img id="DoVR" src="./assets/img/comingSoon.jpg" alt="coming soon" hidden>
                                                                     <iframe width="100%" height="500px" allowfullscreen frameborder="0" id= "oVR"></iframe>
                                                             </div>
                                                         </div>
@@ -341,12 +337,14 @@ function renderIndexPage() {
                                             <hr>
                                             <div>
                                                 <h2>Location</h2>
-                                            <div id="map"></div>
-                                        </div>
+												<div id="map"></div>
+											</div>
                                         <!-- End Default Panel -->
                                        
-                        </div>
-                     </div>
+									</div>
+								</div>
+							</div>
+                    </div>
                         <!-- === END CONTENT === -->
                         <!-- === BEGIN FOOTER === -->
                     <div id="base" class="container padding-vert-30">
@@ -354,7 +352,7 @@ function renderIndexPage() {
                             <!-- Disclaimer -->
                             <div class="col-md-6">
                                 <h3 class="margin-bottom-10">Disclaimer</h3>
-                                <p style="text-align:justify">All images on this website are for presentation/demonstartion purposes only for CMPE 280 course in San Jose State University, intended to represent a live site and are not have not been bought or solicitated.</p>
+                                <p style="text-align:justify">All images on this website are for presentation/demonstration purposes only for CMPE 280 course in San Jose State University, intended to represent a live site and have not been bought or solicitated.</p>
                                 <p style="text-align:justify">Most of the images used here are available from
                                 <a class="nobold" href="https://www.google.com/" target="_blank">google.com</a>. If you wish to purchase them from their copyright owners please visit the appropriate websites. We hold no responsibilty of the images or template or video.</p>
                                 <div class="clearfix"></div>
@@ -385,7 +383,7 @@ function renderIndexPage() {
         <!-- JS -->
 		<script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.1.1.min.js"></script>
 		<script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAPrFaqptBZTrKq9psSASrZc9-jwrmndoY&callback=initMap"></script>
-		<script type="text/javascript" src="assets/json/eventlocations.js"></script>
+		<script type="text/javascript" src="./assets/json/eventlocations.js"></script>
 		<script>
 		
 		var id= getQueryVariable("id");
@@ -483,12 +481,12 @@ function renderIndexPage() {
 												});
 		}
 		</script>
-        <script type="text/javascript" src="assets/js/jquery.min.js" type="text/javascript"></script>
-        <script type="text/javascript" src="assets/js/bootstrap.min.js" type="text/javascript"></script>
+        <script type="text/javascript" src="./assets/js/jquery.min.js" type="text/javascript"></script>
+        <script type="text/javascript" src="./assets/js/bootstrap.min.js" type="text/javascript"></script>
         <!-- Isotope - Portfolio Sorting -->
-        <script type="text/javascript" src="assets/js/jquery.isotope.js" type="text/javascript"></script>
+        <script type="text/javascript" src="./assets/js/jquery.isotope.js" type="text/javascript"></script>
         <!-- Mobile Menu - Slicknav -->
-        <script type="text/javascript" src="assets/js/jquery.slicknav.js" type="text/javascript"></script>
+        <script type="text/javascript" src="./assets/js/jquery.slicknav.js" type="text/javascript"></script>
          <script>
 		 	$(document).ready( function() {
 				var now = new Date();
@@ -577,9 +575,9 @@ function renderIndexPage() {
 		}
         </script>
         <!-- Animate on Scroll-->
-        <script type="text/javascript" src="assets/js/jquery.visible.js" charset="utf-8"></script>
+        <script type="text/javascript" src="./assets/js/jquery.visible.js" charset="utf-8"></script>
         <!-- Modernizr -->
-        <script src="assets/js/modernizr.custom.js" type="text/javascript"></script>
+        <script src="./assets/js/modernizr.custom.js" type="text/javascript"></script>
         <!-- End JS -->
     </body>
 </html>

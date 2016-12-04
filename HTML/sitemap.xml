@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset
+      xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+      xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+      xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9
+            http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
+<!-- created with Free Online Sitemap Generator www.xml-sitemaps.com -->
+
+<url>
+  <loc>http://ec2-54-183-40-122.us-west-1.compute.amazonaws.com/</loc>
+  <lastmod>2016-12-03T20:26:08+00:00</lastmod>
+</url>
+<url>
+  <loc>http://ec2-54-183-40-122.us-west-1.compute.amazonaws.com/pages-login.html</loc>
+  <lastmod>2016-12-03T20:26:09+00:00</lastmod>
+</url>
+<url>
+  <loc>http://ec2-54-183-40-122.us-west-1.compute.amazonaws.com/index.html?login=0</loc>
+  <lastmod>2016-12-03T20:26:08+00:00</lastmod>
+</url>
+<url>
+  <loc>http://ec2-54-183-40-122.us-west-1.compute.amazonaws.com/locations-by-theme.html?themeSelected=Business&amp;guestesCount=All</loc>
+  <lastmod>2016-12-03T20:26:09+00:00</lastmod>
+</url>
+<url>
+  <loc>http://ec2-54-183-40-122.us-west-1.compute.amazonaws.com/locations-by-theme.html?themeSelected=Wedding&amp;guestesCount=All</loc>
+  <lastmod>2016-12-03T20:26:09+00:00</lastmod>
+</url>
+<url>
+  <loc>http://ec2-54-183-40-122.us-west-1.compute.amazonaws.com/locations-by-theme.html?themeSelected=Cultural&amp;guestesCount=All</loc>
+  <lastmod>2016-12-03T20:26:09+00:00</lastmod>
+</url>
+<url>
+  <loc>http://ec2-54-183-40-122.us-west-1.compute.amazonaws.com/locations-by-theme.html?themeSelected=Birthday&amp;guestesCount=All</loc>
+  <lastmod>2016-12-03T20:26:09+00:00</lastmod>
+</url>
+<url>
+  <loc>http://ec2-54-183-40-122.us-west-1.compute.amazonaws.com/index.html</loc>
+  <lastmod>2016-12-03T20:26:08+00:00</lastmod>
+</url>
+<url>
+  <loc>http://ec2-54-183-40-122.us-west-1.compute.amazonaws.com/pages-about-us.html</loc>
+  <lastmod>2016-12-03T20:26:09+00:00</lastmod>
+</url>
+<url>
+  <loc>http://ec2-54-183-40-122.us-west-1.compute.amazonaws.com/locations-by-theme.html?date=01/12/2016&amp;themeSelected=Business&amp;guestesCount=All</loc>
+  <lastmod>2016-12-03T20:26:09+00:00</lastmod>
+</url>
+<url>
+  <loc>http://ec2-54-183-40-122.us-west-1.compute.amazonaws.com/locations-by-theme.html?date=01/12/2016&amp;themeSelected=Wedding&amp;guestesCount=All</loc>
+  <lastmod>2016-12-03T20:26:09+00:00</lastmod>
+</url>
+<url>
+  <loc>http://ec2-54-183-40-122.us-west-1.compute.amazonaws.com/locations-by-theme.html?date=01/12/2016&amp;themeSelected=Cultural&amp;guestesCount=All</loc>
+  <lastmod>2016-12-03T20:26:09+00:00</lastmod>
+</url>
+<url>
+  <loc>http://ec2-54-183-40-122.us-west-1.compute.amazonaws.com/locations-by-theme.html?date=01/12/2016&amp;themeSelected=Birthday&amp;guestesCount=All</loc>
+  <lastmod>2016-12-03T20:26:09+00:00</lastmod>
+</url>
+<url>
+  <loc>http://ec2-54-183-40-122.us-west-1.compute.amazonaws.com/services.html</loc>
+  <lastmod>2016-12-03T20:26:09+00:00</lastmod>
+</url>
+<url>
+  <loc>http://ec2-54-183-40-122.us-west-1.compute.amazonaws.com/contact.html</loc>
+  <lastmod>2016-12-03T20:26:08+00:00</lastmod>
+</url>
+<url>
+  <loc>http://ec2-54-183-40-122.us-west-1.compute.amazonaws.com/pages-sign-up.html</loc>
+  <lastmod>2016-12-03T20:26:09+00:00</lastmod>
+</url>
+<url>
+  <loc>http://ec2-54-183-40-122.us-west-1.compute.amazonaws.com/pages-forgot-pwd.html</loc>
+  <lastmod>2016-12-03T20:26:09+00:00</lastmod>
+</url>
+<url>
+  <loc>http://ec2-54-183-40-122.us-west-1.compute.amazonaws.com/locationDetails.html?id="+json.location[i].id+"&amp;login="+login+"&amp;userid="+user+"</loc>
+  <lastmod>2016-12-03T20:26:09+00:00</lastmod>
+</url>
+<url>
+  <loc>http://ec2-54-183-40-122.us-west-1.compute.amazonaws.com/locationDetails.html?id='+json.location[i].id+'&amp;login='+login+'&amp;userid='+user+'</loc>
+  <lastmod>2016-12-03T20:26:09+00:00</lastmod>
+</url>
+<url>
+  <loc>http://ec2-54-183-40-122.us-west-1.compute.amazonaws.com/index.html?&amp;login=0</loc>
+  <lastmod>2016-12-03T20:26:08+00:00</lastmod>
+</url>
+</urlset>

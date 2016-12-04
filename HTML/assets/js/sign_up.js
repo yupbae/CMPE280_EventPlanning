@@ -36,7 +36,7 @@ $(document).ready( function() {
 		else {
 			document.getElementById("number").className = "invalid";
 		}
-		if(val.match(/[!,#,$,%]{1}/)) {
+		if(val.match(/[!,#,$,%,@]{1}/)) {
 			document.getElementById("special").className = "valid"; 
 		}
 		else {
@@ -52,9 +52,11 @@ $(document).ready( function() {
 	}
 	
 	function validate() {
+		var re = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
 		
 		function check() {
 			oForm = document.forms[0];
+			
 			if(oForm.elements[0].value.length == 0) {
 					document.getElementById("fname").focus();
 					grecaptcha.reset();
@@ -104,7 +106,7 @@ $(document).ready( function() {
 				document.getElementById("checkb").focus();
 				return false;
 			}
-			if(!$("#password1").val().match(/\w{4}\d+[!,#,$,%]{1}/) && !($("#password1").val().length >= 7 && $("#password1").val().length <= 20)) {
+			if(!$("#password1").val().match(/\w{4}\d+[!,#,$,%,$]{1}/) && !($("#password1").val().length >= 7 && $("#password1").val().length <= 20)) {
 				document.getElementById("password1").focus();
 				alert("Password does not meet requirements!!");
 				return false;
@@ -113,7 +115,7 @@ $(document).ready( function() {
 				return true;
 			}
 		}		
-		if(check()) {
+		if(check() && re.test(oForm.elements[2].value)) {
 			submitdata();
 		}
 	}
@@ -131,8 +133,7 @@ $(document).ready( function() {
 		}
 	}
 	function submitdata() {
-		    alert("submit");
-			var firstname = $("#fname").val();
+		    		var firstname = $("#fname").val();
 			var lastname = $("#lname").val();
 			var email = $("#email1").val();
 			var password = $("#password1").val();
@@ -149,7 +150,7 @@ $(document).ready( function() {
 								var op = json.operation;
 								var userid = json.userid;
 								if(SQLInsertStat === "DUPLICATEError"){
-									document.getElementById("email1").innerHTML = "Error: Email ID Record Already Exists. Try with a new one...";
+								alert("Firstname or Email already exists!!");
 					                console.log("SQl Duplicate insert");
 									document.getElementById("regBtn").disabled = true;
 									grecaptcha.reset();
