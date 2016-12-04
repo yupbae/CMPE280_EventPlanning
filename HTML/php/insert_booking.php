@@ -7,7 +7,7 @@
 	$jsonobj = new stdClass();
         $jsonobj->operation = null;
 
-        $conn = mysqli_connect('eclectic.ciwss8n8nsgm.us-west-1.rds.amazonaws.com', 'cmpe280', 'cmpe280project', 'eclectic', 3306);
+        $conn = mysqli_connect('eclectic.ciwss8n8nsgm.us-west-1.rds.amazonaws.com', 'cmpe280', 'cmpe280project', 'eclectic');
 	// Check connection
   if ($conn->connect_error >0) {
     $jsonobj->operation = "Error" ;
